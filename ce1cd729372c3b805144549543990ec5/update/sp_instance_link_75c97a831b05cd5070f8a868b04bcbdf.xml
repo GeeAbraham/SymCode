@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_link">
+    <sp_instance_link action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph>stack-overflow</glyph>
+        <id/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <order>1</order>
+        <roles>x_ssnbv_symcode.admin</roles>
+        <sc_cat_item display_value="Create Versions">ef6b7ecb1b05cd5070f8a868b04bcb7e</sc_cat_item>
+        <sc_category/>
+        <short_description>Register new version for package from here</short_description>
+        <size>md</size>
+        <sp_column display_value="3">75bb0e7d3775b3005144549543990ee4</sp_column>
+        <sp_page display_value="sc_cat_item">9f12251147132100ba13a5554ee490f4</sp_page>
+        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sys_class_name>sp_instance_link</sys_class_name>
+        <sys_created_by>syed.imam@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-01-19 09:59:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>75c97a831b05cd5070f8a868b04bcbdf</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Register Version for Package</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_instance_link_75c97a831b05cd5070f8a868b04bcbdf</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-07-07 06:52:46</sys_updated_on>
+        <title>Register Version for Package</title>
+        <type>sc_cat_item</type>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"link_template": {
+		"value": "Circle Icon",
+		"displayValue": "Circle Icon"
+	}
+}]]></widget_parameters>
+    </sp_instance_link>
+    <sys_translated_text action="delete_multiple" query="documentkey=75c97a831b05cd5070f8a868b04bcbdf"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>75c97a831b05cd5070f8a868b04bcbdf</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:39:47</sys_created_on>
+        <sys_id>27035aa51b7579d070f8a868b04bcb8c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:39:47</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>여기에서 패키지의 새 버전을 등록하세요.</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>75c97a831b05cd5070f8a868b04bcbdf</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:00:32</sys_created_on>
+        <sys_id>edeabf371b93011070f8a868b04bcbdf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:00:32</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>從這裡註冊包的新版本</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>75c97a831b05cd5070f8a868b04bcbdf</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:48:57</sys_created_on>
+        <sys_id>3d25dae91bb579d070f8a868b04bcb79</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:48:57</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>패키지 버전 등록</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>75c97a831b05cd5070f8a868b04bcbdf</documentkey>
+        <fieldname>title</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:19:32</sys_created_on>
+        <sys_id>fb3f37731b1b011070f8a868b04bcbe6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:19:32</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>註冊包的版本</value>
+    </sys_translated_text>
+</record_update>

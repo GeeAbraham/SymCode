@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_ssnbv_symcode.SymCodePackageUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SymCodePackageUtil</name>
+        <script><![CDATA[var SymCodePackageUtil = Class.create();
+SymCodePackageUtil.prototype = Object.extendsObject(SymCodeUtil, {
+
+	refreshVersionMetadata: function(versionId) {
+		var digest = new GlideDigest();
+
+		// Erase all metadata
+		// TODO: this is inefficient, one could improve this but not high prio
+		var delGr = new GlideRecord(this.TABLE_PACKAGE_VERSION_META);
+		delGr.addQuery('version', versionId);
+		delGr.deleteMultiple();
+
+		// Then read all add attachments and re-create metadata
+		var metadata = {};
+		var attGr = new GlideRecord('sys_attachment');
+		attGr.addQuery('table_name', this.TABLE_PACKAGE_VERSION);
+		attGr.addQuery('table_sys_id', versionId);
+		attGr.query();
+		while (attGr.next()) {
+			var xml = new GlideSysAttachment().getContent(attGr);
+			var obj = new global.XMLHelper(xml).toObject();
+			for (var table in obj) {
+				if (table[0] == '@') continue;
+				var payload = obj[table];
+				if (!Array.isArray(payload)) payload = [payload];
+				for (var i=0; i<payload.length; i++) {
+					var metaGr = new GlideRecord(this.TABLE_PACKAGE_VERSION_META);
+					metaGr.initialize();
+					metaGr.version = versionId;
+					metaGr.name = payload[i].name;
+					metaGr.table_name = table;
+					metaGr.table_id = payload[i].sys_id;
+					metaGr.payload = payload[i].payload;
+					metaGr.checksum = digest.getMD5Hex(payload[i].payload).toLowerCase();
+					metaGr.insert();
+				}				
+			}
+		}				
+
+	},
+	
+	/**
+	* Returns details of one package.
+	*
+	* @param {String} packageId Package ID.
+	* @returns {Object} Package details.
+	* @throws Error if package is not found.
+	*/
+	getPackage: function(packageId) {
+		var packageGr = new GlideRecord(this.TABLE_PACKAGE);
+		if (!packageGr.get(packageId)) throw 'Could not get package!';
+		return this.encodeRecord(packageGr);
+	},
+	
+	/**
+	* Returns details of one package version.
+	*
+	* @param {String} versionId Version ID.
+	* @returns {Object} Version details.
+	* @throws Error if version is not found.
+	*/
+	getVersion: function(versionId) {
+		var versionGr = new GlideRecord(this.TABLE_PACKAGE_VERSION);
+		if (!versionGr.get(versionId)) throw 'Could not get version!';
+		return this.encodeRecord(versionGr);
+	},
+
+	/**
+	* Returns details of all versions of packages.
+	*
+	* @returns {Object} Versions.
+	*/
+	getVersions: function() {
+		var versions = {};
+		var versionGr = new GlideRecord(this.TABLE_PACKAGE_VERSION);
+		versionGr.addQuery('package.active', true);
+		versionGr.query();
+		while (versionGr.next())
+			versions[versionGr.getUniqueValue()] = this.encodeRecord(versionGr);
+		return versions;
+	},	
+	
+	/**
+	* Returns details of lastest version of packages.
+	*
+	* @returns {Object} Latest versions.
+	*/
+	getLatestVersions: function() {
+		var versions = [];
+		var gr = new GlideRecord(this.TABLE_PACKAGE);
+		gr.addQuery('active', true);
+		gr.addNotNullQuery('latest_version');
+		gr.query();
+		while (gr.next()) 
+			versions[gr.latest_version.toString()] = this.encodeRecord(gr.latest_version.getRefRecord());
+		return versions;
+	},
+	
+	/**
+	* Returns details if all versions required by given version(s) 
+	* (not including given version itself).
+	*
+	* @param {Array} versionIds Version IDs.
+	* @returns {Object} Required versions.
+	*/
+	getRequiredVersions: function(versionIds) {
+		var required = {};
+		var gr = new GlideRecord(this.TABLE_PACKAGE_VERSION_REQUIREMENT);
+		gr.addQuery('version', 'IN', versionIds);
+		gr.addQuery('requirement.state','released'); // updated due to story -STRY0198534 to return only relesed record
+		gr.addQuery('requirement', 'NOT IN', versionIds);		
+		gr.query();
+		while (gr.next())
+			required[gr.requirement.toString()] = this.encodeRecord(gr.requirement.getRefRecord());
+		if (gr.getRowCount() > 0) {
+			var add = this.getRequiredVersions(Object.keys(required));
+			for (var i in add) required[i] = add[i]; 
+		}
+		return required;
+	},
+
+	/**
+	* Returns details of all versions matching given update sets.
+	* Can be used e.g. to determine which verisons have been installed 
+	* to remote instance based on installed update sets.
+	*
+	* TODO: does not support multi-update-set!
+	*
+	* @param {Array} updateSets Update set IDs.
+	* @returns {Object} Versions.
+	*/
+	getVersionsByUpdateSet: function(updateSets) {
+		this.debug('Get versions by update sets: '+updateSets);
+		var versions = {};
+		
+		// First get version candidates (versions requiring at least one of given update sets)
+		var candidates = {};
+		var metaGr = new GlideRecord(this.TABLE_PACKAGE_VERSION_META);
+		metaGr.addQuery('version.package.active', true);
+		metaGr.addQuery('table_name', 'sys_remote_update_set');
+		metaGr.addQuery('table_id', 'IN', updateSets);
+		metaGr.query();
+		while (metaGr.next()) 
+			if (!candidates[metaGr.version.toString()]) 
+				candidates[metaGr.version.toString()] = this.encodeRecord(metaGr.version.getRefRecord());
+		this.debug('Got candidates: '+Object.keys(candidates));
+		
+		// Then get correct versions (all requirements fulfilled) 
+		CANDIDATE: for (var candidateId in candidates) {
+			this.debug('Candidate: '+candidateId);
+			var candidateRequires = this.getRequiredVersions(candidateId);
+			this.debug('Candidate requires versions: '+Object.keys(candidateRequires));
+			var metaGr2 = new GlideRecord(this.TABLE_PACKAGE_VERSION_META);
+			metaGr2.addQuery('table_name', 'sys_remote_update_set');
+			metaGr2.addQuery('version', candidateId).addOrCondition('version', 'IN', Object.keys(candidateRequires));
+			metaGr2.query();
+			while (metaGr2.next()) {
+				if (updateSets.indexOf(metaGr2.table_id.toString()) < 0) {
+					this.debug('Update set not installed: '+metaGr2.table_id.toString());
+					continue CANDIDATE;
+				}
+			}
+			this.debug('Version fully installed: '+candidateId);
+			versions[candidateId] = candidates[candidateId];
+		}
+		
+		// Done
+		return versions;
+	},
+
+	type: 'SymCodePackageUtil'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-05-04 07:43:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0b3b360437d1bf405144549543990e37</sys_id>
+        <sys_mod_count>69</sys_mod_count>
+        <sys_name>SymCodePackageUtil</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_script_include_0b3b360437d1bf405144549543990e37</sys_update_name>
+        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-04-28 07:44:37</sys_updated_on>
+    </sys_script_include>
+</record_update>

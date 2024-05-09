@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_vlist_action">
+    <sp_vlist_action action="INSERT_OR_UPDATE">
+        <color>default</color>
+        <glyph>arrow-up</glyph>
+        <hint/>
+        <name>Install</name>
+        <order>100</order>
+        <sp_rectangle_vlist display_value="Available to instances">605dbfa31b38c090a24764a07e4bcb22</sp_rectangle_vlist>
+        <sys_class_name>sp_vlist_action</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-11-05 09:27:26</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b60140f71b38c090a24764a07e4bcb17</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Install</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_vlist_action_b60140f71b38c090a24764a07e4bcb17</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-11-05 10:22:22</sys_updated_on>
+        <url>?id=symcode_install_version&amp;available_version_id={{sys_id}}</url>
+    </sp_vlist_action>
+</record_update>

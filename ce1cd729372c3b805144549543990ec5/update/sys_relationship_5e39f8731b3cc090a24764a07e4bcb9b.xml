@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_relationship">
+    <sys_relationship action="INSERT_OR_UPDATE">
+        <advanced>false</advanced>
+        <apply_to/>
+        <basic_apply_to>x_ssnbv_symcode_package</basic_apply_to>
+        <basic_query_from>x_ssnbv_symcode_package_version</basic_query_from>
+        <insert_callback/>
+        <name>Versions to be installed</name>
+        <query_from/>
+        <query_with><![CDATA[(function refineQuery(current, parent) {
+	var requires = Object.keys(new SymCodePackageUtil().getRequiredVersions(parent.latest_version.toString()));
+	requires.push(parent.latest_version.toString());
+	current.addQuery('sys_id', 'IN', requires);
+})(current, parent);]]></query_with>
+        <reference_field>package</reference_field>
+        <related_list/>
+        <simple_reference>false</simple_reference>
+        <sys_class_name>sys_relationship</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-11-05 13:32:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5e39f8731b3cc090a24764a07e4bcb9b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Versions to be installed</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_relationship_5e39f8731b3cc090a24764a07e4bcb9b</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-11-05 15:01:27</sys_updated_on>
+    </sys_relationship>
+    <sys_translated_text action="delete_multiple" query="documentkey=5e39f8731b3cc090a24764a07e4bcb9b"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>5e39f8731b3cc090a24764a07e4bcb9b</documentkey>
+        <fieldname>name</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:51:19</sys_created_on>
+        <sys_id>e8b552a11bf579d070f8a868b04bcb37</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:51:19</sys_updated_on>
+        <tablename>sys_relationship</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>설치할 버전</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>5e39f8731b3cc090a24764a07e4bcb9b</documentkey>
+        <fieldname>name</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:20:40</sys_created_on>
+        <sys_id>99d6d949877bb85052f9ece30cbb35dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:20:40</sys_updated_on>
+        <tablename>sys_relationship</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Putanga hei whakauru</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>5e39f8731b3cc090a24764a07e4bcb9b</documentkey>
+        <fieldname>name</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:21:43</sys_created_on>
+        <sys_id>f7bffbfb8793811052f9ece30cbb3598</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:21:43</sys_updated_on>
+        <tablename>sys_relationship</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>要安裝的版本</value>
+    </sys_translated_text>
+</record_update>

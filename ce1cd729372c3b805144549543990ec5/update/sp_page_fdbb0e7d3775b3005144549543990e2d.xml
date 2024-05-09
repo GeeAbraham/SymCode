@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>other</category>
+        <css>/*&#13;
+section.page {&#13;
+  background-color: $sp-homepage-bg;&#13;
+}&#13;
+section.page, main.body {&#13;
+    padding-top: 0px !important;&#13;
+}&#13;
+*/&#13;
+&#13;
+.homepage-quicklinks {&#13;
+  background-color: transparent;&#13;
+}&#13;
+&#13;
+.iconlink {&#13;
+  border-left: 5px solid rgb(66, 139, 202);&#13;
+  background-color: #fff;&#13;
+  padding: 1em;&#13;
+}&#13;
+&#13;
+&#13;
+</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>symcode_index</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-03 11:16:58</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>fdbb0e7d3775b3005144549543990e2d</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>symcode_index</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_page_fdbb0e7d3775b3005144549543990e2d</sys_update_name>
+        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2021-11-09 06:53:08</sys_updated_on>
+        <title>Service Portal</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=fdbb0e7d3775b3005144549543990e2d"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>fdbb0e7d3775b3005144549543990e2d</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:57:06</sys_created_on>
+        <sys_id>51079eed1bf579d070f8a868b04bcbb6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:57:06</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>서비스 포털</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>fdbb0e7d3775b3005144549543990e2d</documentkey>
+        <fieldname>title</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:26:13</sys_created_on>
+        <sys_id>ee18d94d877bb85052f9ece30cbb353c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:26:13</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Pouaka Ratonga</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>fdbb0e7d3775b3005144549543990e2d</documentkey>
+        <fieldname>title</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:28:57</sys_created_on>
+        <sys_id>f16184848727811052f9ece30cbb35e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:28:57</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>服務門戶</value>
+    </sys_translated_text>
+</record_update>

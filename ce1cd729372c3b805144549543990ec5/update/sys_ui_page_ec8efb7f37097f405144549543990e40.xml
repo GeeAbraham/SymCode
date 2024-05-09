@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_ssnbv_symcode_install_version.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+	<g:evaluate>
+		var availableVersionId = RP.getParameterValue('sysparm_available_version_id')
+		
+		var gr = new GlideRecord(new SymCodeUtil().TABLE_AVAILABLE_VERSION); 
+		if (!gr.get(availableVersionId)) throw 'Could not get available version!'; 	
+		
+		var instanceId = gr.instance.toString();
+		var versionId = gr.version.toString();
+		
+		var instanceUtil = new SymCodeInstanceUtil(instanceId);
+		var url = instanceUtil.instanceGr.url.toString();
+		
+		var credential = instanceUtil.getCredential();
+		var username = credential.fields.username.value;
+		var password = credential.fields.password.value;
+		
+		var ids = instanceUtil.installVersion(versionId);
+		var gotoUrl = (ids.length > 1 ? url+'/sys_remote_update_set_list.do?sysparm_query=sys_idIN'+ids : url+'/sys_remote_update_set.do?sys_id='+ids);
+	</g:evaluate>
+	
+	<form id="login_form" action="${url}/login.do" method="post">
+		<input type="text" name="user_name" value="${username}"/>
+		<input type="password" name="user_password" value="${password}"/>
+		<input type="text" name="ni.nolog.user_password" value="true"/>
+		<input type="text" name="ni.noecho.user_name" value="true"/>
+		<input type="text" name="ni.noecho.user_password" value="true"/>
+		<input type="text" name="sys_action" value="sysverb_login"/>
+		<input type="text" name="sysparm_goto_url" value="${gotoUrl}"/>
+		<input type="submit"/>
+	</form>
+	
+	<script>
+		//document.getElementById('login_form').submit();
+	</script>
+	
+</j:jelly>]]></html>
+        <name>install_version</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-05-03 17:59:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ec8efb7f37097f405144549543990e40</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name>install_version</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_ui_page_ec8efb7f37097f405144549543990e40</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-06-05 07:40:35</sys_updated_on>
+    </sys_ui_page>
+</record_update>

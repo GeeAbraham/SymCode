@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>x_ssnbv_symcode.SymCodeDocUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SymCodeDocUtil</name>
+        <script><![CDATA[var SymCodeDocUtil = Class.create();
+SymCodeDocUtil.prototype = Object.extendsObject(SymCodeUtil, {
+	
+	getApplicationFiles: function(versionId) {
+		var gr = new GlideRecord(this.TABLE_PACKAGE_VERSION_META);
+		gr.addQuery('version', versionId);
+		gr.addQuery('table_name', 'sys_update_xml');
+		gr.query();
+		while (gr.next()) {
+			gs.info(gr.payload.toString());
+		}
+	},
+
+	type: 'SymCodeDocUtil'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-11-08 10:52:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9851f3a01b41c490a24764a07e4bcb11</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>SymCodeDocUtil</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_script_include_9851f3a01b41c490a24764a07e4bcb11</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-11-16 13:52:01</sys_updated_on>
+    </sys_script_include>
+</record_update>

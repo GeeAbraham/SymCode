@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>package_version_details</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>syed.imam@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-06-06 11:41:17</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a56c79af1bff45d070f8a868b04bcb94</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>package_version_details</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_page_a56c79af1bff45d070f8a868b04bcb94</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-06-06 11:41:17</sys_updated_on>
+        <title>PackageVersionDetails</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=a56c79af1bff45d070f8a868b04bcb94"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>a56c79af1bff45d070f8a868b04bcb94</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:57:03</sys_created_on>
+        <sys_id>e8071eed1bf579d070f8a868b04bcbcb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:57:03</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>패키지버전 세부정보</value>
+    </sys_translated_text>
+</record_update>

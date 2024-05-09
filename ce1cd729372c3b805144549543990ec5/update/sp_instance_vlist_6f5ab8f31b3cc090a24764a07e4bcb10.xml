@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_vlist">
+    <sp_instance_vlist action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field>name</display_field>
+        <field_list/>
+        <filter table="x_ssnbv_symcode_package_version">package={{sys_id}}<item endquery="false" field="package" goto="false" newquery="false" operator="=" or="false" value="{{sys_id}}"/>
+        </filter>
+        <glyph/>
+        <id/>
+        <maximum_entries>20</maximum_entries>
+        <order>4</order>
+        <order_by>name</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">b3b1f9981b894490a24764a07e4bcb1c</sp_column>
+        <sp_page display_value="package_version_details">a56c79af1bff45d070f8a868b04bcb94</sp_page>
+        <sp_widget display_value="SymCode - Simple List">3e81f2c6dbf5f300c28c7f1daf9619c8</sp_widget>
+        <sys_class_name>sp_instance_vlist</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-11-05 13:37:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6f5ab8f31b3cc090a24764a07e4bcb10</sys_id>
+        <sys_mod_count>42</sys_mod_count>
+        <sys_name>Versions to be installed</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_instance_vlist_6f5ab8f31b3cc090a24764a07e4bcb10</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-06-06 12:08:50</sys_updated_on>
+        <table>x_ssnbv_symcode_package_version</table>
+        <title>Versions to be installed</title>
+        <url>?id=symcode_package&amp;table=x_ssnbv_symcode_package&amp;sys_id={{package}}&amp;view=sp</url>
+        <widget_parameters><![CDATA[{
+	"always_show": {
+		"value": "",
+		"displayValue": ""
+	},
+	"panel_body_height": {
+		"value": "",
+		"displayValue": ""
+	},
+	"image_field": {
+		"value": "",
+		"displayValue": ""
+	},
+	"secondary_fields": {
+		"value": "",
+		"displayValue": ""
+	},
+	"rounded_images": {
+		"value": "",
+		"displayValue": ""
+	},
+	"list_page": {
+		"value": "",
+		"displayValue": ""
+	},
+	"hide_footer": {
+		"value": "",
+		"displayValue": ""
+	},
+	"view": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]></widget_parameters>
+    </sp_instance_vlist>
+    <sys_translated_text action="delete_multiple" query="documentkey=6f5ab8f31b3cc090a24764a07e4bcb10"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>6f5ab8f31b3cc090a24764a07e4bcb10</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:48:56</sys_created_on>
+        <sys_id>b525dae91bb579d070f8a868b04bcb76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:48:56</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>설치할 버전</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>6f5ab8f31b3cc090a24764a07e4bcb10</documentkey>
+        <fieldname>title</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:19:05</sys_created_on>
+        <sys_id>ca761509877bb85052f9ece30cbb35f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:19:05</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Putanga hei whakauru</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>6f5ab8f31b3cc090a24764a07e4bcb10</documentkey>
+        <fieldname>title</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:19:32</sys_created_on>
+        <sys_id>e73f77f38793811052f9ece30cbb359a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:19:32</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>要安裝的版本</value>
+    </sys_translated_text>
+</record_update>

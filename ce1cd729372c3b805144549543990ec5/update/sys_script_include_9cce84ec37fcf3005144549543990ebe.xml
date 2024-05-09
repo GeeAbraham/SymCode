@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_ssnbv_symcode.SymCodeInstanceUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SymCodeInstanceUtil</name>
+        <script><![CDATA[/**
+* Utility containing methods for communicating with remote instance and for
+* dealing with instance specific local data.
+*/
+var SymCodeInstanceUtil = Class.create();
+SymCodeInstanceUtil.prototype = Object.extendsObject(SymCodeUtil, {
+	instanceId: null,
+	instanceGr: null,
+	cookies: {},
+	updatesetID: null,
+	
+	/**
+	* Takes instance id and gets local instance record. Instance record
+	* can be accessed then via this.instanceGr for convenience.
+	*
+	* @param {Number} instanceId Instance ID.
+	* @throws Error if instance with given ID is not found.
+	*/
+	initialize: function(instanceId) {
+		this.instanceId = instanceId;
+		var gr = new GlideRecord(this.TABLE_INSTANCE);
+		if (!instanceId || !gr.get(instanceId)) throw 'Instance not found!';
+		this.instanceGr = gr;
+		this.updatesetID ='Sample';
+	},
+
+	/**
+	* Gets stats from remote instance and updates local instance record.
+	*
+	* At the moment build tag and build name is retrieved from remote 
+	* instance (as we may need to know in which major release instance 
+	* is in). 
+	*/
+	refreshStats: function() {	
+		
+		// Get stats from instance
+		var properties = this.getRecords('sys_properties', 'name=glide.buildtag.last', 'name,value', 'name');
+		
+		// Update stats
+		this.instanceGr.build_name = properties['glide.buildtag.last'].value.split('-')[1];
+		this.instanceGr.build_tag = properties['glide.buildtag.last'].value;
+		this.instanceGr.update();
+	},
+	
+	/**
+	* Gets list of installed versions from remote instance and updates
+	* local installed versions list.
+	*
+	* Please notice that this could make available versions list outdated
+	* and refreshAvailableVersions() should be called afterwards.
+	*/
+	refreshInstalledVersions: function() {
+		this.debug('Refresh installed versions...');
+
+		// Get versions
+		var committed = this.getRecords('sys_remote_update_set', 'state=committed', 'sys_id');
+		var packageVersions = Object.keys(new SymCodePackageUtil().getVersionsByUpdateSet(Object.keys(committed)));
+		var currentVersions = Object.keys(this.getInstalledVersions());
+		this.debug('Committed update sets: '+Object.keys(committed));
+		this.debug('Committed versions: '+packageVersions);
+		this.debug('Installed versions: '+packageVersions);
+		
+		// Create missing versions
+		var missingVersions = this.arrayUtil.diff(packageVersions, currentVersions);		
+		for (var i=0; i<missingVersions.length; i++) {
+			var missingGr = new GlideRecord(this.TABLE_INSTALLED_VERSION);
+			missingGr.initialize();			
+			missingGr.instance = this.instanceId;
+			missingGr.version = missingVersions[i];
+			missingGr.insert();
+		}
+		
+		// Delete leftover versions
+		var deleteVersions = this.arrayUtil.diff(currentVersions, packageVersions);
+		var deleteGr = new GlideRecord(this.TABLE_INSTALLED_VERSION);
+		deleteGr.addQuery('instance', this.instanceId);
+		deleteGr.addQuery('version', 'IN', deleteVersions);
+		deleteGr.deleteMultiple();
+	},
+	
+	/**
+	* (Re-)generates local available versions list. 
+	*
+	* This should be called if available versions list is outdated for 
+	* any reason e.g. a new version has just been installed.
+	*
+	* Please notice that list of installed versions must be up to date 
+	* in order this function to produce correct results. Usually 
+	* refreshAvailableVersions() should be called before calling this
+	* (except if e.g. new version is released and it is not possible that 
+	* it has been installed to any instance).
+	*/
+	refreshAvailableVersions: function() {
+		
+		// Get versions
+		var availableVersions = Object.keys(this.getAvailableVersions());
+		var installedVersions = Object.keys(this.getInstalledVersions());
+		var latestVersions = Object.keys(new SymCodePackageUtil().getLatestVersions());
+		var newVersions = this.arrayUtil.diff(latestVersions, installedVersions);
+		
+		// Create missing versions
+		var missingVersions = this.arrayUtil.diff(newVersions, availableVersions);
+		for (var i=0; i<missingVersions.length; i++) {
+			var missingGr = new GlideRecord(this.TABLE_AVAILABLE_VERSION);
+			missingGr.initialize();
+			missingGr.instance = this.instanceId;
+			missingGr.version = missingVersions[i];
+			missingGr.insert();
+		}
+		
+		// Delete leftover versions
+		var deleteVersions = this.arrayUtil.diff(availableVersions, newVersions);
+		var deleteGr = new GlideRecord(this.TABLE_AVAILABLE_VERSION);
+		deleteGr.addQuery('instance', this.instanceId);
+		deleteGr.addQuery('version', 'IN', deleteVersions);
+		deleteGr.deleteMultiple();		
+	},
+	
+	getInstance: function() {
+		return this.encodeRecord(this.instanceGr);
+	},
+
+	/**
+	* Returns versions installed to this instance.
+	*
+	* Please notice that this returns just local data as is and does not 
+	* refresh anyhting from the server. Use refreshInstalledVersions()
+	* first to fully refresh available versions if needed.
+	*
+	* @returns {Object} Available versions.
+	*/
+	getInstalledVersions: function() {
+		var versions = {};
+		var gr = new GlideRecord(this.TABLE_INSTALLED_VERSION);
+		gr.addQuery('instance', this.instanceId);
+		gr.query();
+		while (gr.next())
+			versions[gr.version.toString()] = this.encodeRecord(gr.version.getRefRecord());
+		return versions;
+	},
+	
+	/**
+	* Returns package versions available for installation for this instance.
+	*
+	* Please notice that this returns just local data as is and does not 
+	* refresh anyhting from the server. Use refreshAvailableVersions()
+	* first to fully refresh available versions if needed.
+	*
+	* @returns {Object} Available versions.
+	*/
+	getAvailableVersions: function() {
+		var versions = {};
+		var gr = new GlideRecord(this.TABLE_AVAILABLE_VERSION);
+		gr.addQuery('instance', this.instanceId);
+		gr.query();
+		while (gr.next())
+			versions[gr.version.toString()] = this.encodeRecord(gr.version.getRefRecord());
+		return versions;
+	},
+	
+	/**
+	* Returns credentials for current user.
+	*
+	* @returns {Object} Credentials.
+	* @throws Error if credentials does not exist.
+	*/
+	getCredential: function() {
+		var gr = new GlideRecord(this.TABLE_CREDENTIAL);
+		gr.addQuery('instance', this.instanceId);
+		//updated/commented for defect - DFCT0023734 - satish garud
+		//gr.addQuery('user', gs.getUserID());
+		gr.query();
+		if (!gr.next()) throw 'Could not get credentials';
+		return this.encodeRecord(gr);
+	},
+
+	/**
+	* Uploads a new version to remote instance and returns list IDs of 
+	* retrieved update sets created. User must be then redirected to 
+	* remote instance and user should preview and commit all update sets.
+	* Also tries to create retrieved update set batch which can be committed
+	* by single commit and in such case returns only main retrieved update 
+	* set ID. 
+	*
+	* After everything has been committed, refreshInstalledVersions() 
+	* should be called so that local installed version list will be updated
+	* and then refreshAvailableVersions() should be called so that local 
+	* available versions list will be updated as well.
+	*
+	* @param {String} versionId Version ID.
+	* @returns {Array} IDs of retrieved update sets or main set in remote instance.
+	* @throws Error if anything goes wrong.
+	*/
+	installVersion: function(versionId) {
+
+		// Get versions to be installed
+		// TODO: the same code is used in widgets, move code to package util
+		var packageUtil = new SymCodePackageUtil();
+		var version = packageUtil.getVersion(versionId);
+		var requiredVersions = packageUtil.getRequiredVersions(versionId);
+		var installedVersions = this.getInstalledVersions();
+		requiredVersions[version.sysId] = version;
+		this.debug('Required versions: '+Object.keys(requiredVersions));
+		this.debug('Installed versions: '+Object.keys(installedVersions));		
+		for (var i in installedVersions)
+			if (requiredVersions[i])
+				delete(requiredVersions[i]);
+		this.debug('Install version: '+Object.keys(requiredVersions));
+		
+		// Upload versions
+		// TODO: if multiple update sets then make one parent!
+		var uploadedParentId = null;
+		var uploadedChildIds = [];
+		var attGr = new GlideRecord('sys_attachment');
+		attGr.addQuery('table_name', version.recordClassName);
+		attGr.addQuery('table_sys_id', 'IN', Object.keys(requiredVersions));
+		attGr.query();
+		while (attGr.next()) {
+			this.debug('Upload attachment: '+attGr.getUniqueValue());
+			var xml = new GlideSysAttachment().getContent(attGr);
+			var obj = new global.XMLHelper(xml).toObject();
+			if (!obj.sys_remote_update_set) throw 'Attachment is not an update set!';
+			this.importXml('sys_remote_update_set', attGr.file_name.toString(), xml);
+			this.debug('uploadedParentId: before '+ obj.sys_remote_update_set.sys_id);
+			if (!uploadedParentId && attGr.table_sys_id == versionId) uploadedParentId = obj.sys_remote_update_set.sys_id;
+			else uploadedChildIds.push(obj.sys_remote_update_set.sys_id);
+		}
+		this.debug('Parent ID: '+uploadedParentId);
+		this.debug('Child IDs: '+uploadedChildIds);
+		
+		// Set parent for required versions
+		if (uploadedParentId) {
+			for (var i=0; i<uploadedChildIds.length; i++) {
+				this.debug('Set parent for: '+uploadedChildIds[i]);
+				this.putRecord('sys_remote_update_set', uploadedChildIds[i], {'parent':uploadedParentId});
+			}
+		}
+		
+		// Done
+		if (typeof(uploadedParentId) == "undefined"){
+			var filename = attGr.file_name.toString();
+			var updateset = filename.substr(0, filename.indexOf('.'));
+			var response = this.getRecordsUS('sys_remote_update_set', 'name='+updateset, 'sys_id');
+			return this.updatesetID;
+		}
+		return (uploadedParentId ? [uploadedParentId] : uploadedChildIds);
+	},
+	
+	login: function() {
+		this.debug('Login into instance: '+this.instanceGr.getDisplayValue());
+		var credential = this.getCredential();
+		var response = this._sendRequest('Login', {
+			'username':encodeURIComponent(credential.fields.username.value),	
+			'password':encodeURIComponent(credential.fields.password.value),	
+		});
+		var responseObject = this.jsonUtil.decode(response.getBody());
+		if (responseObject.status == 'error') throw responseObject.message;
+		this.debug('Login succeeded.');
+		return responseObject;
+	},
+
+	getRecords: function(table, query, fields, key) {
+		if (!key) key = 'sys_id';
+		this.debug('Get records from table: '+table);
+		var credential = this.getCredential();
+		var response = this._sendRequest('GetRecords', {
+			'table': encodeURIComponent(table),
+			'query': encodeURIComponent(query),
+			'fields': encodeURIComponent(fields),
+		}, credential.fields.username.value, credential.fields.password.value);
+		var responseObject = this.jsonUtil.decode(response.getBody());
+		var result = responseObject.result;
+		var records = {};
+		result.forEach(function(e){records[e[key]] = e;});
+		this.debug('Got '+Object.keys(records).length);
+		return records;
+	},
+	
+	putRecord: function(table, id, record) {
+		this.debug('Update record in table: '+table);
+		var credential = this.getCredential();
+		var response = this._sendRequest('PutRecord', {
+			'table': encodeURIComponent(table),
+			'id': encodeURIComponent(id),
+			'content': JSON.stringify(record),
+		}, credential.fields.username.value, credential.fields.password.value);
+		var responseObject = this.jsonUtil.decode(response.getBody());
+		this.debug('GOT RESPONSE: '+response.getBody());
+	},
+	
+	importXml: function(target, filename, xml) {
+		this.debug('Import XML into instance: '+this.instanceGr.getDisplayValue());
+		
+		// Login
+		this.login();
+		
+		// Get CSRF token
+		var response = this._sendRequest('GetPage', {'page': 'upload.do'});
+		var gck = response.getBody().match('var g_ck = \'([^\']+)\'');
+		if (!gck) throw 'Could not get CSRF token!';
+		gck = gck.pop();
+		
+		// Upload
+		var response = this._sendRequest('Upload', {
+			'gck': gck,
+			'target': target,
+			'filename': filename,
+			'xml': xml,
+		});
+		
+		// Check response
+		// TODO: this is not enough, validate that record really was created
+		var headers = response.getHeaders();
+		if (headers['X-Is-Logged-In'] != 'true') throw 'Not logged in!';
+		
+		// Done!
+		this.debug('XML imported getBody ' + response.getBody());
+		this.debug('XML imported headers ' + headers);
+		this.debug('XML imported.');
+		return response.getBody();
+	},
+	
+	_sendRequest: function(restMessage, params, username, password) {
+		var rest = new sn_ws.RESTMessageV2('SymCode', restMessage);
+		if (username) rest.setBasicAuth(username, password);
+		rest.setStringParameterNoEscape('url', this.instanceGr.url.toString());
+		if (params) for (var i in params) rest.setStringParameterNoEscape(i, params[i]);
+		this._setCookies(rest);
+		this.debug('Send request: '+rest.getRequestBody());
+		var response = rest.execute();
+		if (response.haveError()) throw response.getErrorCode()+': '+response.getErrorMessage();
+		if (response.getStatusCode() != '200') throw response.getStatusCode()+' '+response.getBody();
+		this.debug('Got '+response.getStatusCode()+' response: '+response.getBody());
+		this._getCookies(response);
+		return response;
+	},
+
+	_getCookies: function(response) {
+		var cookies = new global.SymCodeGlobalUtil().getResponseCookies(response);
+		for (var i=0; i<cookies.length; i++) {
+			var parts =  cookies[i].split(/; */);
+			var payload = parts.shift().split('='); 
+			var cookie = {
+				'name': payload.shift(),
+				'value': payload.join('='),
+			};		
+			parts.forEach(function(part){
+				var meta = part.split('=');
+				cookie[meta.shift()] = meta.join('');
+			});
+			this.debug('Got cookie: '+this.jsonUtil.encode(cookie));
+			this.cookies[cookie.name] = cookie;
+		}
+	},
+
+	_setCookies: function(request) {
+		var cookies = [];
+		for (var i in this.cookies) {
+			var cookie = this.cookies[i];
+			cookies.push(cookie.name+'='+cookie.value);
+			this.debug('Set cookie: '+this.jsonUtil.encode(cookie));
+		}
+		request.setRequestHeader('Cookie', cookies.join('; '));
+	},
+	
+	getRecordsUS: function(table, query, fields, key) {
+		if (!key) key = 'sys_id';
+		this.debug('Get records from table: '+table);
+		var credential = this.getCredential();
+		var response = this._sendRequestUS('GetRecords', {
+			'table': encodeURIComponent(table),
+			'query': encodeURIComponent(query),
+			'fields': encodeURIComponent(fields),
+		}, credential.fields.username.value, credential.fields.password.value);
+		var responseObject = this.jsonUtil.decode(response.getBody());
+		var result = responseObject.result;
+		var records = {};
+		result.forEach(function(e){records[e[key]] = e;});
+		this.debug('Got '+Object.keys(records).length);
+		return records;
+	},
+
+	_sendRequestUS: function(restMessage, params, username, password) {
+		var rest = new sn_ws.RESTMessageV2('SymCode', restMessage);
+		if (username) rest.setBasicAuth(username, password);
+		rest.setStringParameterNoEscape('url', this.instanceGr.url.toString());
+		if (params) for (var i in params) rest.setStringParameterNoEscape(i, params[i]);
+		this._setCookies(rest);
+		var response = rest.execute();
+		var responseBody = response.getBody();
+		if (responseBody.includes('sys_id'))
+			{
+			var responseParse= JSON.parse(responseBody);
+			this.updatesetID =responseParse.result[0].sys_id;
+			this.debug('Got updatesetID: '+ this.updatesetID);
+			}
+		if (response.haveError()) throw response.getErrorCode()+': '+response.getErrorMessage();
+		if (response.getStatusCode() != '200') throw response.getStatusCode()+' '+response.getBody();
+		this._getCookies(response);
+		return response;
+	},
+	
+	type: 'SymCodeInstanceUtil'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-04-10 11:56:38</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9cce84ec37fcf3005144549543990ebe</sys_id>
+        <sys_mod_count>318</sys_mod_count>
+        <sys_name>SymCodeInstanceUtil</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_script_include_9cce84ec37fcf3005144549543990ebe</sys_update_name>
+        <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2023-01-07 22:41:43</sys_updated_on>
+    </sys_script_include>
+</record_update>

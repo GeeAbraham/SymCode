@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name>breadcrumbs-container</class_name>
+        <container_class_name/>
+        <name>Package Versions - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="symcode_package_versions">9a570a721bb01c1034bb202e6e4bcb8d</sp_page>
+        <subheader>true</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>jani.luostarinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2020-05-19 12:51:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>e2570a721bb01c1034bb202e6e4bcb92</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Package Versions - Container 1</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_container_e2570a721bb01c1034bb202e6e4bcb92</sys_update_name>
+        <sys_updated_by>jani.luostarinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2020-05-19 12:51:44</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>

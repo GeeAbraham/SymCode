@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_email_template">
+    <sysevent_email_template action="INSERT_OR_UPDATE">
+        <collection>x_ssnbv_symcode_package_version</collection>
+        <email_layout/>
+        <message/>
+        <message_html><![CDATA[<p><span style="font-family: 'comic sans ms', sans-serif; font-size: 10pt;">Hello <strong>SymCode Admin</strong>,</span></p>
+<p><span style="font-family: 'comic sans ms', sans-serif; font-size: 10pt;">A new SymCode version <strong>${name},</strong> for the <strong>${package} </strong>package<strong>,</strong> is ready for your validation and approval.</span></p>
+<p><span style="font-family: 'comic sans ms', sans-serif; font-size: 10pt;">Version: <strong>${name}</strong></span></p>
+<p><span style="font-family: 'comic sans ms', sans-serif; font-size: 10pt;">Package:<strong> ${package}</strong></span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'comic sans ms', sans-serif; font-size: 10pt;">Please select <strong>${URI_REF}</strong> to view the version. Request you to validate and approve this version and its parent package</span><span style="font-family: 'comic sans ms', sans-serif; font-size: 10pt;">.</span></p>
+<p>&nbsp;</p>
+<p><span style="white-space: pre-line; font-family: 'comic sans ms', sans-serif; font-size: 10pt;">Thanks,</span></p>
+<p><span style="font-family: 'comic sans ms', sans-serif; font-size: 10pt;">TfSNow Support</span></p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Symcode version approval request</name>
+        <sms_alternate/>
+        <subject>SymCode Version ${name} is ready for approval</subject>
+        <sys_class_name>sysevent_email_template</sys_class_name>
+        <sys_created_by>geevarughese.abraham@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-08-17 15:52:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>667829f21b11ddd070f8a868b04bcb2d</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Symcode version approval request</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sysevent_email_template_667829f21b11ddd070f8a868b04bcb2d</sys_update_name>
+        <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 16:56:39</sys_updated_on>
+        <sys_version>2</sys_version>
+        <u_company_notification>false</u_company_notification>
+    </sysevent_email_template>
+</record_update>

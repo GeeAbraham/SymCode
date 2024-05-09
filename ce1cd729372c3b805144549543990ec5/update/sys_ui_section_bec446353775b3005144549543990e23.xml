@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Description" section_id="bec446353775b3005144549543990e23" sys_domain="global" table="x_ssnbv_symcode_package" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description</element>
+            <position>0</position>
+            <sys_created_by>geevarughese.abraham@fujitsu.com</sys_created_by>
+            <sys_created_on>2021-11-17 11:50:04</sys_created_on>
+            <sys_id>86f6fa3287bf789052f9ece30cbb3567</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Description" display_value="Description" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">bec446353775b3005144549543990e23</sys_ui_section>
+            <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+            <sys_updated_on>2021-11-17 11:50:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>requirements</element>
+            <position>1</position>
+            <sys_created_by>geevarughese.abraham@fujitsu.com</sys_created_by>
+            <sys_created_on>2021-11-17 11:50:04</sys_created_on>
+            <sys_id>42f6fa3287bf789052f9ece30cbb3568</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Description" display_value="Description" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">bec446353775b3005144549543990e23</sys_ui_section>
+            <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+            <sys_updated_on>2021-11-17 11:50:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>key_features</element>
+            <position>2</position>
+            <sys_created_by>geevarughese.abraham@fujitsu.com</sys_created_by>
+            <sys_created_on>2021-11-17 11:50:04</sys_created_on>
+            <sys_id>c6f6fa3287bf789052f9ece30cbb3568</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Description" display_value="Description" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">bec446353775b3005144549543990e23</sys_ui_section>
+            <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+            <sys_updated_on>2021-11-17 11:50:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Description</caption>
+            <header>false</header>
+            <name>x_ssnbv_symcode_package</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-03 10:46:44</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bec446353775b3005144549543990e23</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_ssnbv_symcode_package</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+            <sys_update_name>sys_ui_section_bec446353775b3005144549543990e23</sys_update_name>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-03 10:46:44</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

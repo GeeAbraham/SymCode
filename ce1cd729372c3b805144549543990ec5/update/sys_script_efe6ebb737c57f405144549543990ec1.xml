@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_ssnbv_symcode_package_version</collection>
+        <condition>current.state.changes() || current.operation() == 'delete'</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Set latest release</name>
+        <order>120</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous) {
+	
+	// Get latest version
+	var gr = new GlideRecord(new SymCodeUtil().TABLE_PACKAGE_VERSION);
+	gr.addQuery('package', current['package'].toString());
+	gr.addQuery('state', 'released');
+	gr.orderByDesc('released_on');
+	gr.setLimit(1);
+	gr.query();
+	
+	// Update package
+	var packageGr = current['package'].getRefRecord();
+	packageGr.latest_version = (gr.next() ? gr.getUniqueValue() : '');
+	packageGr.update();
+	
+	//send notification to instance owners
+	var recowner ="";
+	var recUser ="";
+	var inc = new GlideRecord('x_ssnbv_symcode_installed_package_version');
+	inc.addQuery('version.package',packageGr.sys_id);
+	inc.query();
+	while(inc.next())
+		{
+			if(!gs.nil(recowner && recUser))
+				{
+					recowner= recowner+','+inc.instance.owner;
+					recUser = recUser+','+inc.instance.users;
+				}
+			else
+				{
+					recUser = inc.instance.users ;
+					recowner = inc.instance.owner ;
+				}
+			
+		}
+	gs.eventQueue('x_ssnbv_symcode.instance.owner', current, recowner, recUser);
+	
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-05-03 16:16:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>efe6ebb737c57f405144549543990ec1</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>Set latest release</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_script_efe6ebb737c57f405144549543990ec1</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-08-04 15:51:32</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=efe6ebb737c57f405144549543990ec1"/>
+</record_update>

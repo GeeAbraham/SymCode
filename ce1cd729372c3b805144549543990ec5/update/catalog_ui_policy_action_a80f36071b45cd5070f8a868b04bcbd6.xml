@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Create Versions">ef6b7ecb1b05cd5070f8a868b04bcb7e</catalog_item>
+        <catalog_variable>IO:f76bf20f1b05cd5070f8a868b04bcb3b</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field/>
+        <mandatory>ignore</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>syed.imam@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-01-19 10:22:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a80f36071b45cd5070f8a868b04bcbd6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>released_on</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_a80f36071b45cd5070f8a868b04bcbd6</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-01-19 10:22:09</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Make name and released on field read only">159d76431b45cd5070f8a868b04bcba9</ui_policy>
+        <variable>released_on</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+</record_update>

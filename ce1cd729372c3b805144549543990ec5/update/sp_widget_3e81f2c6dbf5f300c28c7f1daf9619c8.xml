@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>standard</category>
+        <client_script><![CDATA[function ($scope, $location, $rootScope, spUtil, $interpolate,$uibModal) {
+	var c = this;
+
+	this.data.filterText = "";
+	this.showFilter = false;
+	
+	this.newRecord = function() {
+		$location.search({
+			'id': ($scope.options.new_form ? $scope.options.new_form : 'form'),
+			'table': $scope.options.table,
+			'sys_id': -1,
+			'view': 'sp',
+		});
+	};
+
+	//added to get credentials
+	
+
+
+
+
+	
+	this.onClick = function($event, item, url, action) {
+		
+		$event.stopPropagation();
+		$event.preventDefault();
+		if (typeof url == "string") {
+			var urlExp = $interpolate(url);
+			url = urlExp(item);
+			if (action && Object.keys(action).length>0) window.open(url); 
+			else $location.url(url);
+		} else if (url && typeof url == "object")
+			$location.search(url);
+		else {
+			var evt = {};
+			evt.url = url;
+			evt.table = item.className;
+			evt.sys_id = item.sys_id;
+			evt.record = item;
+			evt.rectangle_id = c.options.sys_id;
+			evt.action = action;
+			// put out the selection with simple list "sl_" prefix
+			$location.search('sl_sys_id', evt.sys_id);
+			$location.search('sl_table', evt.table);
+			$location.search('spa', 1); // spa means "I've got this"
+			$rootScope.$broadcast('$sp.list.click', evt);
+		}
+	};
+
+	if (c.options.table)
+		spUtil.recordWatch($scope, c.options.table, c.options.filter);
+
+	this.getMaxShownLabel = function(maxEntries, totalCount) {
+		if (totalCount == c.data.maxCount)
+			return "${First [0] of more than [1]}".replace('[0]', maxEntries).replace('[1]', totalCount);
+
+		return "${First [0] of [1]}".replace('[0]', maxEntries).replace('[1]', totalCount);
+	};
+
+	this.seeAllPage = c.options.list_page_dv || 'list';
+	this.targetPageID = (c.options.sp_page) ? "&target_page_id=" + c.options.sp_page : "";
+
+	c.getMaxHeight = function() {
+		return c.options.panel_body_height || 'none';
+	};
+	
+	c.getActionColor = function(action) {
+		return "text-" + action.color;
+	};
+
+	c.update = function update() {
+			c.server.update();
+	}
+
+	c.toggleFilter = function() {
+		c.showFilter = !c.showFilter;
+	}
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.panel {&#13;
+position: relative;&#13;
+}&#13;
+&#13;
+.panel-default &gt; .panel-heading {&#13;
+    color: #3a3f51;&#13;
+    background-color: #f5f5f5;&#13;
+    border-color: #ddd;&#13;
+}&#13;
+&#13;
+.panel-heading i {&#13;
+  cursor: pointer;&#13;
+  position: absolute;&#13;
+  padding: 10px;&#13;
+  top: 0px;&#13;
+  right: 0px;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+.panel-title-text {&#13;
+  position: relative;&#13;
+  top: 2px;&#13;
+}&#13;
+&#13;
+.panel-title .btn {&#13;
+  margin-left: 1em !important;&#13;
+}&#13;
+&#13;
+.disabled-filter {&#13;
+	color: #A0A0A0;&#13;
+}&#13;
+&#13;
+.list-group-item.ng-enter {&#13;
+  transition: all 1s;&#13;
+  -webkit-transition: all 1s;&#13;
+&#13;
+  background-color: #c0dcfa;&#13;
+}&#13;
+&#13;
+.list-group-item.ng-enter-active {&#13;
+  background-color: #fff;&#13;
+}&#13;
+&#13;
+.hide-x-overflow {&#13;
+  overflow-x: hidden;&#13;
+}&#13;
+&#13;
+.translated-html &gt; p {&#13;
+  margin: 0px;&#13;
+  padding: 0px;&#13;
+}&#13;
+&#13;
+IMG {&#13;
+  max-width: 320px;&#13;
+  max-height: 240px;&#13;
+}&#13;
+&#13;
+IMG.img-sm {&#13;
+  max-height: 40px;&#13;
+  max-width: 40px;&#13;
+}&#13;
+&#13;
+.filter-box {&#13;
+  margin-top: 10px;&#13;
+}&#13;
+&#13;
+.panel-footer {&#13;
+  .number-shown-label {&#13;
+    margin-top: 0;&#13;
+    margin-bottom: 0;&#13;
+    font-size: 16px;&#13;
+    display: inline-block;&#13;
+  }&#13;
+&#13;
+  a {&#13;
+    color: inherit;&#13;
+  }&#13;
+}</css>
+        <data_table>sp_instance_vlist</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>table,filter,maximum_entries,display_field,color,size,glyph,sp_page</field_list>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>SymCode - Simple List</name>
+        <option_schema>[{"name":"always_show","section":"Behavior","label":"Show even when empty","type":"boolean"},{"name":"panel_body_height","section":"Presentation","label":"List body height","type":"string"},{"name":"image_field","section":"Presentation","label":"Image field","type":"field_name"},{"name":"secondary_fields","section":"Data","label":"Secondary fields","type":"field_list"},{"name":"rounded_images","section":"Presentation","label":"Rounded images","type":"boolean"},{"displayValue":"Page","name":"list_page","section":"Data","label":"List page","type":"reference","value":"sp_page","ed":{"reference":"sp_page"}},{"name":"hide_footer","section":"Presentation","label":"Hide Footer","type":"boolean"},{"displayValue":"UI View","hint":"View to use when target page is a form","name":"view","section":"Behavior","label":"View","type":"reference","value":"sys_ui_view","ed":{"reference":"sys_ui_view"}}]</option_schema>
+        <public>true</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[(function () {
+	data.filterMsg = gs.getMessage("Filter...");
+	if(gs.nil(options.hide_footer))
+	    options.hide_footer = false;
+    options.hide_footer = (options.hide_footer == "true" || options.hide_footer == true);
+	options.table = $sp.getParameter('t') || options.table;
+	if (!options.table)
+		return;
+
+	var gr = new GlideRecordSecure(options.table); // does ACL checking for us
+	if(!gr.isValid()) {
+		data.isValid = false;
+		return;
+	} else
+		data.isValid = true;
+	// grTemp is used to check isValidField since using GlideRecordSecure fails for date/time fields
+	var grTemp = new GlideRecord(options.table);
+	
+	// interpolate and add filter 
+	if (options.filter) {
+		options.filter = options.filter.replace(/{{(.*?)}}/, function(k){ return $sp.getParameter(k.slice(2, -2)); });
+		gr.addEncodedQuery(options.filter);
+	}
+	
+	// add filter from relationship (simple list is user together with form emulating defined relationships)
+	data.relationship = options.relationship;
+	if (data.relationship) {
+		var relGr = new GlideRecord('sys_relationship');
+		var parentGr = new GlideRecord($sp.getParameter('table'));
+		if (relGr.get(data.relationship) && parentGr.get($sp.getParameter('sys_id'))) {
+			var evaluator = new GlideScopedEvaluator(); 
+			evaluator.putVariable('current', gr);
+			evaluator.putVariable('parent', parentGr);
+			var result = evaluator.evaluateScript(relGr, 'query_with');
+		}
+	}
+	
+	options.title = options.title || gr.getLabel();
+	options.display_field = $sp.getParameter('f') || options.display_field;
+	if (!options.display_field || !grTemp.isValidField(options.display_field))
+		options.display_field = gr.getDisplayName();
+
+	if (input && input.filterText) {
+		gr.addEncodedQuery(options.display_field + "LIKE" + input.filterText)
+	}
+
+	options.title = options.title || gr.getLabel();
+	options.secondary_fields = options.secondary_fields || "";
+	options.secondary_fields = options.secondary_fields.split(",");
+	options.interpolate_fields = options.interpolate_fields || "";
+	options.interpolate_fields = options.interpolate_fields.split(",");
+	if (!options.order_by || !grTemp.isValidField(options.order_by))
+		options.order_by = options.display_field;
+
+	// Set ID of sp_page from option schema
+	if (options.list_page) {
+		var sp_page = GlideRecord('sp_page');
+		if (sp_page.get(options.list_page))
+			options.list_page_dv = sp_page.getDisplayValue('id');
+	}
+
+	// redo query with limit
+	if (options.order_direction == "asc")
+		gr.orderBy(options.order_by);
+	else
+		gr.orderByDesc(options.order_by);
+
+	data.maxCount = 500;
+	gr.setLimit(data.maxCount);
+	gr.query();
+
+	data.count = gr.getRowCount();
+	data.actions = getActions();
+	data.list = [];
+	var recordIdx = 0;
+	while (gr.next()) {
+		if (options.maximum_entries && recordIdx == options.maximum_entries)
+			break;
+
+		var record = {};
+		if (data.actions.length > 0) {
+			for (var i in gr) {
+				if (gr.isValidField(i)) {
+					var glideElement = gr[i];
+					var name = glideElement.getName();
+					if (name.indexOf("sys_") == -1)
+						record[name] = gr.getValue(name);
+				}
+			}
+		}
+
+		record.sys_id = gr.getValue('sys_id');
+		record.className = gr.getRecordClassName();
+		if (options.image_field) {
+			record.image_field = gr.getDisplayValue(options.image_field);
+			if (!record.image_field)
+				record.image_field = "noimage.pngx";
+		}
+
+		if (options.display_field)
+			record.display_field = getField(gr, options.display_field);
+
+		record.secondary_fields = [];
+		options.secondary_fields.forEach(function(f) {
+			record.secondary_fields.push(getField(gr, f));
+		});
+		
+		options.interpolate_fields.forEach(function(f){
+			record[f] = gr.getValue(f);
+		});
+
+		if (options.sp_page) {
+			var view = "sp";
+			if (options.view) {
+				var viewGR = new GlideRecord("sys_ui_view");
+				viewGR.get(options.view);
+				view = viewGR.getValue("name");
+			}
+			record.url = {id: options.sp_page, table: record.className, sys_id: record.sys_id, view: view};
+		} else if (options.url != '')
+			record.url = options.url;
+		else
+			record.url = null;
+
+		data.list.push(record);
+		recordIdx++;
+	}
+
+	function getField(gr, name) {
+		var f = {};
+		f.display_value = gr.getDisplayValue(name);
+		f.value = gr.getValue(name);
+		var ge = gr[name];
+			if (ge == null)
+				return f;
+
+		f.type = ge.getED().getInternalType()
+		f.label = ge.getLabel();
+		return f;
+	}
+
+	function getActions() {
+		var rl = new GlideRecord("sp_vlist_action");
+		rl.addQuery("sp_rectangle_vlist",$sp.getValue("sys_id"));
+		rl.query();
+		var actions = [];
+		while(rl.next()) {
+			var action = {};
+			$sp.getRecordValues(action, rl, "name,glyph,hint,url,color");
+			actions.push(action);
+		}
+		return actions;
+	}
+})()]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-04 08:40:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3e81f2c6dbf5f300c28c7f1daf9619c8</sys_id>
+        <sys_mod_count>87</sys_mod_count>
+        <sys_name>SymCode - Simple List</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_3e81f2c6dbf5f300c28c7f1daf9619c8</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-07-04 18:51:24</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default" ng-if="c.data.isValid && (c.options.always_show || c.data.filterText || c.data.list.length)">
+	<!--  {{::c.options.color}} b -->  
+  <div class="panel-heading" ng-if="::!c.options.hide_header">
+    <h2 class="h4 panel-title">
+      <span ng-if="c.options.glyph">
+        <fa name="{{::c.options.glyph}}" />
+      </span>
+      <span class="panel-title-text">
+        {{::c.options.title}}
+      </span>
+      <button name="new" role="link" class="btn btn-primary btn-sm m-l-xs" ng-click="c.newRecord()" ng-if="options.show_new" aria-label="${Create new record}">${New}</button>
+    </h2>
+    <!-- <i class="fa fa-filter" ng-click="c.toggleFilter()" ng-class="{'disabled-filter': !c.showFilter}"></i> -->
+    <div ng-show="c.showFilter">
+      <input aria-label="${Filter}" ng-model="c.data.filterText" ng-model-options="{debounce: 300}" sn-focus="c.showFilter" placeholder="{{::data.filterMsg}}" ng-change="c.update()" class="form-control input-sm filter-box">
+    </div>
+  </div>
+  <ul class="list-group hide-x-overflow" ng-style="::{maxHeight: c.getMaxHeight()}" style="overflow-y: auto;">
+    <li ng-if="c.data.list.length > 0" ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item">
+      <a class="focus-inline-block" ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" >
+        <div ng-repeat="action in c.data.actions" href="" ng-click="c.onClick($event, item, action.url, action)" class="btn btn-primary pull-right">{{action.name}}</div>
+        <!--<span ng-repeat="action in c.data.actions" href="" ng-click="c.onClick($event, item, action.url, action)" ng-if="action.glyph"
+              class="list-action l-h-40 pull-right">
+          <fa name="{{action.glyph}}" ng-class="c.getActionColor(action)" />
+        </span>-->
+        <span ng-if="c.options.image_field" class="pull-left m-r"
+              ng-class="{'avatar': c.options.rounded_images, 'thumb-sm': c.options.rounded_images}">
+          <img ng-src="{{item.image_field}}" alt="..." class="img-sm" ng-class="{'img-circle': c.options.rounded_images}">
+        </span>
+        <div>
+          <div ng-switch on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+            <span class="translated-html" ng-switch-when="translated_html" ng-bind-html="item.display_field.value"></span>
+            <div ng-switch-default>{{item.display_field.display_value}}</div>
+          </div>
+          <small class="text-muted" ng-repeat="f in item.secondary_fields">
+            <span ng-if="!$first"> • </span>
+            <span ng-switch="f.type" title="{{::f.label}}">
+              <span ng-switch-when="glide_date"><sn-time-ago timestamp="::f.value" /></span>
+              <span ng-switch-when="glide_date_time"><sn-time-ago timestamp="::f.value" /></span>
+              <span ng-switch-default="">{{f.display_value}}</span>
+            </span>
+          </small>
+        </div>
+      </a>
+    </li>
+     <div ng-if="!c.data.list.length" class="list-group-item">
+     ${No records found}
+    </div>
+  </ul>
+  <div class="panel-footer" ng-if="!c.options.hide_footer && c.options.maximum_entries && c.data.count > c.options.maximum_entries">
+    <div class="h4 number-shown-label">{{c.getMaxShownLabel(c.options.maximum_entries, c.data.count)}}</div>
+    <a class="pull-right" ng-href="?id={{c.seeAllPage}}&table={{c.options.table}}&filter={{c.options.filter}}{{c.targetPageID}}">${View all}</a>
+  </div>
+</div>
+
+
+
+]]></template>
+    </sp_widget>
+</record_update>

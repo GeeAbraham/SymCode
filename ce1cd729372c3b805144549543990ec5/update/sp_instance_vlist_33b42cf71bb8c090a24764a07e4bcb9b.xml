@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_vlist">
+    <sp_instance_vlist action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css>.panel {&#13;
+  margin-bottom: 0px;&#13;
+}</css>
+        <display_field>version</display_field>
+        <field_list/>
+        <filter table="x_ssnbv_symcode_installed_package_version">instance.sys_id={{sys_id}}^EQ<item endquery="false" field="instance.sys_id" goto="false" newquery="false" operator="=" or="false" value="{{sys_id}}"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <glyph/>
+        <id/>
+        <maximum_entries>20</maximum_entries>
+        <order>3</order>
+        <order_by>version</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">8dcf21181b894490a24764a07e4bcbf0</sp_column>
+        <sp_page/>
+        <sp_widget display_value="SymCode - Simple List">3e81f2c6dbf5f300c28c7f1daf9619c8</sp_widget>
+        <sys_class_name>sp_instance_vlist</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-11-05 12:03:19</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>33b42cf71bb8c090a24764a07e4bcb9b</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Installed versions</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_instance_vlist_33b42cf71bb8c090a24764a07e4bcb9b</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-11-07 14:36:02</sys_updated_on>
+        <table>x_ssnbv_symcode_installed_package_version</table>
+        <title>Installed versions</title>
+        <url>?id=symcode_version&amp;table=x_ssnbv_symcode_version&amp;sys_id={{version}}&amp;view=sp</url>
+        <widget_parameters><![CDATA[{
+  "secondary_fields": "version.package.category",
+  "interpolate_fields": "version",
+  "always_show": true,
+}]]></widget_parameters>
+    </sp_instance_vlist>
+    <sys_translated_text action="delete_multiple" query="documentkey=33b42cf71bb8c090a24764a07e4bcb9b"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>33b42cf71bb8c090a24764a07e4bcb9b</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:48:53</sys_created_on>
+        <sys_id>b4251ae91bb579d070f8a868b04bcb87</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:48:53</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>설치된 버전</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>33b42cf71bb8c090a24764a07e4bcb9b</documentkey>
+        <fieldname>title</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:19:01</sys_created_on>
+        <sys_id>8d76d109877bb85052f9ece30cbb35fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:19:01</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Nga putanga kua whakauruhia</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>33b42cf71bb8c090a24764a07e4bcb9b</documentkey>
+        <fieldname>title</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:19:25</sys_created_on>
+        <sys_id>c63fffb38793811052f9ece30cbb3501</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:19:25</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>已安裝的版本</value>
+    </sys_translated_text>
+</record_update>

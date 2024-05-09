@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $filter, $sce) {
+	var c = this;
+	
+	$scope.getUrl = function() {
+		return $sce.trustAsResourceUrl();
+	};
+	
+	$scope.login = function() {
+		var form = document.getElementById('login_form');
+		form.action = $scope.data.instance.fields.url.value+'/login.do';
+		document.getElementById('user_name').value = $scope.data.credential.fields.username.value;
+		document.getElementById('user_password').value = $scope.data.credential.fields.password.value;
+		document.getElementById('sysparm_goto_url').value = $scope.data.gotoUrl;
+		form.submit();
+	},
+	
+	(function(){
+		$scope.login();
+	})();
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>SymCode - Login</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[(function() {
+	
+	// Get parameters
+	data.instanceId = $sp.getParameter('instance_id');
+	data.gotoUrl = $sp.getParameter('goto_url');
+	
+	// Get instance
+	var instanceUtil = new SymCodeInstanceUtil(data.instanceId);
+	data.instance = instanceUtil.getInstance();
+	data.credential = instanceUtil.getCredential();
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-11-07 10:26:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3cb1ee5c1b0d4490a24764a07e4bcb16</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>SymCode - Login</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_3cb1ee5c1b0d4490a24764a07e4bcb16</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-11-07 10:52:10</sys_updated_on>
+        <template><![CDATA[<p>Logging in to {{::data.instance.displayValue}}...</p>
+<div style="display: none;">
+  <form id="login_form" action="" method="post">
+    <input type="text" name="user_name" id="user_name" value=""/><br/>
+    <input type="password" name="user_password" id="user_password" value=""/><br/>
+    <input type="text" name="sysparm_goto_url" id="sysparm_goto_url" value=""/><br/>
+    <input type="text" name="ni.nolog.user_password" value="true"/><br/>
+    <input type="text" name="ni.noecho.user_name" value="true"/><br/>
+    <input type="text" name="ni.noecho.user_password" value="true"/><br/>
+    <input type="text" name="sys_action" value="sysverb_login"/><br/>
+    <input type="submit" value="Login"/>
+  </form>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

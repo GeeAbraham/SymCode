@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>-----------------------------18467633426500&#13;
+Content-Disposition: form-data; name="sysparm_ck"&#13;
+&#13;
+${gck}&#13;
+-----------------------------18467633426500&#13;
+Content-Disposition: form-data; name="sysparm_target"&#13;
+&#13;
+${target}&#13;
+-----------------------------18467633426500&#13;
+Content-Disposition: form-data; name="attachFile"; filename="${filename}"&#13;
+Content-Type: text/xml&#13;
+&#13;
+${xml}&#13;
+&#13;
+-----------------------------18467633426500--&#13;
+</content>
+        <function_name>Upload</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>SymCode [ Upload ]</qualified_name>
+        <rest_endpoint>${url}/sys_upload.do</rest_endpoint>
+        <rest_message display_value="SymCode">8a0a2710db303700c28c7f1daf9619a2</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-04-10 12:59:36</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a25d946c373037005144549543990e8f</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Upload</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_rest_message_fn_a25d946c373037005144549543990e8f</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-06-26 20:03:42</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

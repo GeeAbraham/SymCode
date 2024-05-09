@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_search_source">
+    <sp_search_source action="INSERT_OR_UPDATE">
+        <advanced_typeahead_config>false</advanced_typeahead_config>
+        <condition table="x_ssnbv_symcode_package">active=true^EQ<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <data_fetch_script><![CDATA[(function(query) {
+  var results = [];
+  /* Calculate your results here. */
+  
+  return results;
+})(query);]]></data_fetch_script>
+        <display_fields>description</display_fields>
+        <enable_typeahead>true</enable_typeahead>
+        <facet_generation_script><![CDATA[(function(query, facetService, searchResults) {
+	/* Calculate your facets here using facetService */
+	/* var stateFacet = facetService.createFacet('State', 'state'); */
+	/* stateFacet.addFacetItem('Facet Item Label', '123'); */
+
+})(query, facetService, searchResults);]]></facet_generation_script>
+        <id>symcode-packages</id>
+        <is_scripted_source>false</is_scripted_source>
+        <name>Packages</name>
+        <page display_value="symcode_package">79b499b93771b3005144549543990e36</page>
+        <pagination_supported>true</pagination_supported>
+        <primary_display_field>name</primary_display_field>
+        <roles/>
+        <search_page_template><![CDATA[<div>
+  <a href="?id=symcode_package&sys_id={{item.sys_id}}&table={{item.table}}" class="h4 text-primary m-b-sm block">
+    <span ng-bind-html="highlight(item.primary, data.q)"></span>
+  </a>
+  <span class="text-muted" ng-repeat="f in item.fields">
+    <span class="m-l-xs m-r-xs" ng-if="!$first"> &middot; </span>
+    {{f.label}}: <span ng-bind-html="highlight(f.display_value, data.q)"></span>
+  </span>
+</div>]]></search_page_template>
+        <source_table>x_ssnbv_symcode_package</source_table>
+        <sys_class_name>sp_search_source</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-03 11:45:01</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>67f1d2f537b5b3005144549543990ee2</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Packages</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_search_source_67f1d2f537b5b3005144549543990ee2</sys_update_name>
+        <sys_updated_by>jani.luostarinen@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2020-11-03 09:09:51</sys_updated_on>
+        <typeahead_glyph/>
+        <typeahead_template/>
+    </sp_search_source>
+    <sys_translated_text action="delete_multiple" query="documentkey=67f1d2f537b5b3005144549543990ee2"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>67f1d2f537b5b3005144549543990ee2</documentkey>
+        <fieldname>name</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:41:50</sys_created_on>
+        <sys_id>e9835ea91b7579d070f8a868b04bcbdd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:41:50</sys_updated_on>
+        <tablename>sp_search_source</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>패키지</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>67f1d2f537b5b3005144549543990ee2</documentkey>
+        <fieldname>name</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:13:03</sys_created_on>
+        <sys_id>bd155581877bb85052f9ece30cbb3573</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:13:03</sys_updated_on>
+        <tablename>sp_search_source</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Mōkī</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>67f1d2f537b5b3005144549543990ee2</documentkey>
+        <fieldname>name</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:08:43</sys_created_on>
+        <sys_id>2dcc73371b57011070f8a868b04bcb8b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:08:43</sys_updated_on>
+        <tablename>sp_search_source</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>套餐</value>
+    </sys_translated_text>
+</record_update>

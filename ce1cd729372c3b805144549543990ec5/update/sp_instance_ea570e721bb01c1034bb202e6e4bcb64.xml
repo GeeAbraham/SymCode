@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <class_name/>
+        <color>primary</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">2e570e721bb01c1034bb202e6e4bcb62</sp_column>
+        <sp_widget display_value="SymCode - Package Categories">bb979dbd3771b3005144549543990eba</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>jani.luostarinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2020-05-19 12:51:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ea570e721bb01c1034bb202e6e4bcb64</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Categories</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_instance_ea570e721bb01c1034bb202e6e4bcb64</sys_update_name>
+        <sys_updated_by>jani.luostarinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2020-05-19 13:02:08</sys_updated_on>
+        <title>Categories</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=ea570e721bb01c1034bb202e6e4bcb64"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>ea570e721bb01c1034bb202e6e4bcb64</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:49:03</sys_created_on>
+        <sys_id>5f25dee91bb579d070f8a868b04bcb86</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:49:03</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>카테고리</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>ea570e721bb01c1034bb202e6e4bcb64</documentkey>
+        <fieldname>title</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:19:14</sys_created_on>
+        <sys_id>9886d509877bb85052f9ece30cbb357c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:19:14</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Ngā Kāwai</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>ea570e721bb01c1034bb202e6e4bcb64</documentkey>
+        <fieldname>title</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:19:43</sys_created_on>
+        <sys_id>624f3bb31b1b011070f8a868b04bcb5c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:19:43</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>類別</value>
+    </sys_translated_text>
+</record_update>

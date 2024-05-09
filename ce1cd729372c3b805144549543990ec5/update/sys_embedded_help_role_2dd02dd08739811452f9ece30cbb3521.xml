@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_ssnbv_symcode.approver" name="x_ssnbv_symcode.approver">c4c02d908739811452f9ece30cbb358b</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>syed.imam@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-02-16 21:14:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>2dd02dd08739811452f9ece30cbb3521</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c4c02d908739811452f9ece30cbb358b</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_embedded_help_role_2dd02dd08739811452f9ece30cbb3521</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-02-16 21:14:32</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

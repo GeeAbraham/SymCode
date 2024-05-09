@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $filter) {
+	var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>label {&#13;
+  margin: 0px;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+.input-group {&#13;
+  width: 100%;&#13;
+  margin-bottom: 12px;&#13;
+}&#13;
+&#13;
+.input-group input[readonly] {&#13;
+  width: 100%;&#13;
+  height: auto;&#13;
+  margin: 0px;&#13;
+  padding: 0px;&#13;
+  border: none;&#13;
+  background-color: transparent;&#13;
+  color: inherit;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>SymCode - Install Version - Instance</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[(function() {
+	
+	// Get parameters
+	data.availableVersionId = $sp.getParameter('available_version_id');
+	
+	// Get available version
+	var packageUtil = new SymCodePackageUtil();
+	var availableGr = new GlideRecord(packageUtil.TABLE_AVAILABLE_VERSION); 
+	if (!availableGr.get(data.availableVersionId)) throw 'Could not get available version!';
+	data.versionId = availableGr.version.toString();
+	data.instanceId = availableGr.instance.toString();
+	
+	// Get instance
+	var instanceUtil = new SymCodeInstanceUtil(data.instanceId);
+	data.instance = instanceUtil.getInstance();
+	data.credential = instanceUtil.getCredential();
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-05 10:35:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>18555422dbfd3700c28c7f1daf9619cd</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>SymCode - Install Version - Instance</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_18555422dbfd3700c28c7f1daf9619cd</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-10-25 09:05:02</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{::options.color}}">
+  <div class="panel-heading">
+    Instance
+  </div>  
+  <div class="panel-body">
+    <label>Name</label>
+    <div class="input-group">
+      <span>{{::data.instance.displayValue}}</span>
+    </div>  
+    <label>Type</label>
+    <div class="input-group">
+      <span>{{::data.instance.fields.type.displayValue}}</span>
+    </div>  
+    <label>Company</label>
+    <div class="input-group">
+      <span>{{::data.instance.fields.company.displayValue}}</span>
+    </div>  
+    <label>URL</label>
+    <div class="input-group">
+      <span>{{::data.instance.fields.url.displayValue}}</span>
+    </div>  
+    <label>Username</label>
+    <div class="input-group">
+      <span>{{::data.credential.fields.username.displayValue}}</span>
+    </div>  
+  </div>  
+</div>
+
+<pre ng-if="0">{{data|json}}</pre>]]></template>
+    </sp_widget>
+</record_update>

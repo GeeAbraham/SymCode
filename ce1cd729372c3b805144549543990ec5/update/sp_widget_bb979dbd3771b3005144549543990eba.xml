@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $scope, $location) {
+	var c = this;
+	
+	$scope.onCategorySelected = function(e, category) {
+		e.stopPropagation();
+		e.preventDefault();
+		var url  = $location.search();
+		url.filter = (category ? 'category='+category.value+'^ORcategory.parent='+category.value+'^ORcategory.parent.parent='+category.value : '');
+		url.spa = 1;
+		$location.search(url);
+	};
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.panel{&#13;
+  	border: 2px solid #ddd;&#13;
+}&#13;
+&#13;
+.panel-default &gt; .panel-heading {&#13;
+    color: #3a3f51;&#13;
+    background-color: #f5f5f5;&#13;
+    border-color: #ddd;&#13;
+}&#13;
+&#13;
+.list-group {&#13;
+  margin: 0px;&#13;
+  padding: 0px;&#13;
+  border : none;&#13;
+}&#13;
+&#13;
+.list-group &gt; .list-group-item {&#13;
+  margin: 0px;&#13;
+  padding: 0px;&#13;
+  border-left: none;&#13;
+  border-right: none;&#13;
+}&#13;
+&#13;
+.list-group &gt; .list-group-item &gt; a {&#13;
+  display: inline-block;&#13;
+  padding: 10px 15px;&#13;
+}&#13;
+&#13;
+.list-group .list-group &gt; .list-group-item:last-child {&#13;
+  border: none;&#13;
+}&#13;
+&#13;
+.list-group .list-group &gt; .list-group-item &gt; a  {&#13;
+  padding-left: 30px;&#13;
+}&#13;
+&#13;
+.list-group .list-group .list-group &gt; .list-group-item &gt; a  {&#13;
+  padding-left: 45px;&#13;
+}&#13;
+&#13;
+.list-group .list-group .list-group .list-group &gt; .list-group-item &gt; a  {&#13;
+  padding-left: 60px;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>SymCode - Package Categories</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[(function() {
+    var util = new SymCodeUtil();
+
+    // Get categories
+    data.records = getCategories();
+
+    // Gets categories
+    function getCategories(parent) {
+        var records = [];
+        var gr = new GlideRecord(util.TABLE_CHOICE);
+        if (parent) gr.addQuery('parent', parent);
+        else gr.addNullQuery('parent');
+        gr.addQuery('table', util.TABLE_PACKAGE);
+        gr.addQuery('element', 'category');
+        gr.addQuery('u_active', 'true');
+        gr.orderBy('order');
+        gr.orderBy('label');
+        gr.query();
+        while (gr.next()) {
+            records.push({
+                'value': gr.getUniqueValue(),
+                'label': gr.getDisplayValue(),
+                'child': getCategories(gr.getUniqueValue()),
+            });
+        }
+        return records;
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-03 07:30:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>bb979dbd3771b3005144549543990eba</sys_id>
+        <sys_mod_count>139</sys_mod_count>
+        <sys_name>SymCode - Package Categories</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_bb979dbd3771b3005144549543990eba</sys_update_name>
+        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-02-26 08:12:37</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default"> <!--{{::options.color}}*/  -->
+  <div class="panel-heading" ng-click="onCategorySelected($event)">
+    {{::options.title}}
+  </div>
+  <div ng-include="'categoryTree'" ng-init="tree = data.records"/>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

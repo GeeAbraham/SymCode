@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_menu">
+    <sp_instance_menu action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column/>
+        <sp_widget display_value="Header Menu">5ef595c1cb12020000f8d856634c9c6e</sp_widget>
+        <sys_class_name>sp_instance_menu</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-01 18:13:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>48c7915937b533005144549543990e66</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>SymCode Header Menu</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_instance_menu_48c7915937b533005144549543990e66</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-06-03 11:16:23</sys_updated_on>
+        <title>SymCode Header Menu</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"enable_cart": {
+		"displayValue": "false",
+		"value": false
+	},
+      "enable_wishlist": {
+        "displayValue": "false",
+          "value": false
+      }
+}]]></widget_parameters>
+    </sp_instance_menu>
+    <sys_translated_text action="delete_multiple" query="documentkey=48c7915937b533005144549543990e66"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>48c7915937b533005144549543990e66</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:48:53</sys_created_on>
+        <sys_id>c5255ae91bb579d070f8a868b04bcb80</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:48:53</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>SymCode 헤더 메뉴</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>48c7915937b533005144549543990e66</documentkey>
+        <fieldname>title</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:19:02</sys_created_on>
+        <sys_id>19761509877bb85052f9ece30cbb3547</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:19:02</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Tahua Pane SymCode</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>48c7915937b533005144549543990e66</documentkey>
+        <fieldname>title</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:19:28</sys_created_on>
+        <sys_id>723f3f331b1b011070f8a868b04bcb30</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:19:28</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>SymCode 標題菜單</value>
+    </sys_translated_text>
+</record_update>

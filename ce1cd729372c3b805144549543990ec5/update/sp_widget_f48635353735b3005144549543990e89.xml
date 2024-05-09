@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $scope, $location) {
+	var c = this;
+
+	$rootScope.$on("$locationChangeStart", function(){
+		if ($location.search().spa == 1)
+			c.server.update();
+	});
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.item-short-desc {&#13;
+  	font-size: 14px;&#13;
+}&#13;
+&#13;
+h2 {&#13;
+    font-size: 1.8rem;&#13;
+    font-weight: 300;&#13;
+    line-height: 1.1;&#13;
+}&#13;
+&#13;
+.card-container .panel {&#13;
+  border-left: 5px solid rgb(66, 139, 202);&#13;
+}&#13;
+&#13;
+.panel-body {&#13;
+    margin-bottom: 2rem;&#13;
+    margin-top: 5px;&#13;
+  	margin-right: 5px;&#13;
+    background-color: #fff;&#13;
+    border: 0.1rem solid transparent;&#13;
+    border-radius: 0.4rem;&#13;
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);&#13;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);&#13;
+    padding: 4px;&#13;
+}&#13;
+&#13;
+.panel-default &gt; .panel-heading {&#13;
+    color: #3a3f51;&#13;
+    background-color: #f5f5f5;&#13;
+}&#13;
+&#13;
+.overflow-100 {&#13;
+    height: 11rem;&#13;
+    overflow: hidden;&#13;
+}&#13;
+&#13;
+.b {&#13;
+    border: 0.1rem solid #dee5e7;&#13;
+	margin: 10px;&#13;
+  	width:100%;&#13;
+   border-radius: 0.4rem;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>SymCode - Panels</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[(function() {
+	
+	// Get records
+	data.records = [];
+	var gr = new GlideRecord(options.table);
+	if ($sp.getParameter('filter')) gr.addEncodedQuery($sp.getParameter('filter'));
+	if (options.filter) gr.addEncodedQuery(options.filter);
+	if (options.maximum_entries) gr.setLimit(options.maximum_entries);
+	if (options.order_by && options.order_direction != 'desc') gr.orderBy(options.order_by);
+	if (options.order_by && options.order_direction == 'desc') gr.orderByDesc(options.order_by);
+	gr.query();
+	while (gr.next()) {
+		data.records.push({
+			'sys_id': gr.getUniqueValue(),
+			'table': gr.getTableName(),
+			'label': (options.display_field ? gr[options.display_field].getDisplayValue() : gr.getDisplayValue()),
+			'description': (options.description_field ? gr[options.description_field].getDisplayValue() : ''),
+			'html': (options.html_field ? gr[options.html_field].getDisplayValue() : ''),
+			'picture': (options.picture_field ? gr[options.picture_field].getDisplayValue() : ''),
+		});
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-03 09:44:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f48635353735b3005144549543990e89</sys_id>
+        <sys_mod_count>77</sys_mod_count>
+        <sys_name>SymCode - Panels</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_f48635353735b3005144549543990e89</sys_update_name>
+        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2021-11-12 09:51:15</sys_updated_on>
+        <template><![CDATA[<div ng-if="data.records.length"> 
+  
+  <h1 class="font-thin m-t-none" ng-if="::options.title">{{::options.title}}</h1>
+    <div class="row panel-container">  
+ 		
+    
+    	<div class="col-sm-6 col-md-4" ng-repeat="r in data.records" >
+          
+     
+    <!--<div class="col col-sm-{{::options.col_sm}}" ng-repeat="r in data.records">  -->
+      <a ng-href="?id={{::options.sp_page}}&table={{::r.table}}&sys_id={{::r.sys_id}}&view=sp">
+        
+          <div class="panel-body b">
+            <div class="overflow-100">
+            <h2 class="m-t-none m-b-xs _text-overflow-ellipsis" title="{{::r.label}}">{{::r.label}}</h2>
+            <img style="float: left; margin: 0px 1em 1em 0px; max-width: 20%;" src="{{::r.picture}}" ng-if="::r.picture"/>
+            <div class="text-muted item-short-desc">{{::r.description}}</div>
+            <div class="text-muted item-short-desc" ng-bind-html="::r.html"></div>
+            </div>
+          </div>
+       
+      </a>
+   <!-- </div> -->
+          
+    
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

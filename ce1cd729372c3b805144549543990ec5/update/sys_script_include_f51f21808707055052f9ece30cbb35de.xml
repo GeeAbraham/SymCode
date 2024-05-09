@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_ssnbv_symcode.SymcodeInstalledtoVersion</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>STRY0164733 - SymCode: Dynamically display what packages/versions have been installed on an instance without manually selecting 'Refresh' button</description>
+        <name>SymcodeInstalledtoVersion</name>
+        <script><![CDATA[var SymcodeInstalledtoVersion = Class.create();
+SymcodeInstalledtoVersion.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    loadpage: function() {
+        var userId = this.getParameter('userId');
+        var gr = new GlideRecord('x_ssnbv_symcode_credential');
+        gr.addQuery('user', userId);
+        gr.addQuery('instance.active', true);
+        gr.query();
+        while (gr.next()) {
+            try {
+                var util = new SymCodeInstanceUtil(gr.instance.toString());
+                util.refreshInstalledVersions();
+                util.refreshAvailableVersions();
+            } catch (ex) {}
+        }
+        //action.setRedirectURL(current);
+        return true;
+    },
+
+    type: 'SymcodeInstalledtoVersion'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>Satish.Garud@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-04-19 06:57:41</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f51f21808707055052f9ece30cbb35de</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>SymcodeInstalledtoVersion</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_script_include_f51f21808707055052f9ece30cbb35de</sys_update_name>
+        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-04-22 08:07:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

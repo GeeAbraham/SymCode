@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function validateComments() {
+//Gets called if the 'OK' dialog button is clicked
+//Make sure dialog comments are not empty
+var comments = gel("dial_comments").value;
+comments = trim(comments);
+if (comments == "") {
+//If comments are empty stop submission
+alert("Please provide comments to submit the dialog.");
+return false;
+}
+//If comments are not empty do this...
+GlideDialogWindow.get().destroy(); //Close the dialog window
+g_form.setValue("comments", comments); //Set the 'Comments' field with comments in the dialog
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_ssnbv_symcode_symcode_credential_window.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<table width="100%">
+<tbody>
+<tr id="description_row" valign="top">
+<td colspan="2"><!-- Short description value used as a label -->
+${jvar_short_text}</td>
+</tr>
+<tr>
+<td><!-- Comments text field (Contains comments from originating record as a default) --></td>
+</tr>
+<tr>
+<td colspan="2"></td>
+</tr>
+<tr id="dialog_buttons">
+<td colspan="2" align="right"><!-- Pull in 'dialog_buttons_ok_cancel' UI Macro for submit/cancel buttons. 'ok' option will call the 'validateComments' Client script function from the UI Page--></td>
+</tr>
+</tbody>
+</table>
+</j:jelly>]]></html>
+        <name>symcode_credential_window</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>syed.imam@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-07-01 05:46:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>73e795ab1b9c1d5070f8a868b04bcb0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>symcode_credential_window</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_ui_page_73e795ab1b9c1d5070f8a868b04bcb0c</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-07-01 05:46:06</sys_updated_on>
+    </sys_ui_page>
+</record_update>

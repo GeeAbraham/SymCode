@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_ssnbv_symcode.SymCodeUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SymCodeUtil</name>
+        <script><![CDATA[var SymCodeUtil = Class.create();
+SymCodeUtil.prototype = {
+	TABLE_INSTANCE: 'x_ssnbv_symcode_instance',
+	TABLE_CREDENTIAL: 'x_ssnbv_symcode_credential',
+	TABLE_PACKAGE: 'x_ssnbv_symcode_package',
+	TABLE_PACKAGE_VERSION: 'x_ssnbv_symcode_package_version',
+	TABLE_PACKAGE_VERSION_META: 'x_ssnbv_symcode_package_version_metadata',
+	TABLE_PACKAGE_VERSION_REQUIREMENT: 'x_ssnbv_symcode_package_version_requirement',
+	TABLE_AVAILABLE_VERSION: 'x_ssnbv_symcode_available_package_version',
+	TABLE_INSTALLED_VERSION: 'x_ssnbv_symcode_installed_package_version',
+	TABLE_CHOICE: 'x_ssnbv_symcode_choice',
+	jsonUtil: new global.JSON(),
+	arrayUtil: new global.ArrayUtil(),
+	debugI: 0,
+
+	initialize: function() {
+	},
+	
+	toArray: function(obj) {
+		var arr = [];
+		for (var key in obj)
+			arra.push(obj[key]);
+		return arr;
+	},
+	
+	/**
+	* Encodes given record as JSON compatible object.
+	*
+	* @param {GlideRecord} record Record to be encoded.
+	* @param {Array} [fieldNames] Fields to be encoded.
+	* @returns {Object} Encoded record.
+	*/
+	encodeRecord: function(record, fieldNames) {
+		var encodedRecord = {
+			'sysId':record.getUniqueValue(),
+			'displayValue':record.getDisplayValue(),
+			'recordClassName':record.getRecordClassName(),
+			'fields':{},
+		};
+		if (fieldNames && !Array.isArray(fieldNames)) fieldNames = fieldNames.split(','); 
+		for (var fieldName in record) {
+			if (record.isValidField(fieldName) && typeof record[fieldName] != 'function' && (!fieldNames || fieldNames.indexOf(fieldName) >= 0)) {
+				encodedRecord.fields[fieldName] = this.encodeElement(record[fieldName]);
+			}
+		}
+		return encodedRecord;
+	},	
+
+	/**
+	* Encodes given element as JSON compatible object.
+	*
+	* @param {GlideElement} element Element to be encoded.
+	* @returns {Object} Encoded element.
+	*/
+	encodeElement: function(element) {
+		var ed = element.getED();
+		return {
+			'name':ed.getName(),
+			'value':this.encodeValue(element),
+			'displayValue':element.getDisplayValue(),
+			'label':ed.getLabel(),
+			'internalType':ed.getInternalType(),
+		};
+	},
+
+	/**
+	* Encodes value of given element as JSON compatible object. This does almost the 
+	* same then element.getValue() except of some datatype conversions performed.
+	* In example boolean values are converted to real boolean values from 1 and 0,
+	* two-way encrypted passwords are decrypted etc. 
+	*
+	* @param {GlideElement} element Element.
+	* @returns {Object} Element's value.
+	*/
+	encodeValue: function(element) {
+		if (element.nil()) return null;
+		var internalType = element.getED().getInternalType();
+		if (internalType == 'boolean') return (element.toString() == 'true'); 
+		else if (internalType == 'password2') return element.getDecryptedValue(); 
+		else if (internalType == 'integer') return parseInt(element.toString());
+		else return element.toString();
+	},
+	
+	debug: function(msg) {
+		gs.debug(('00'+this.debugI).slice(-3)+': '+msg);
+		this.debugI++;
+	},
+	
+	type: 'SymCodeUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-04-10 12:29:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>475698a4373037005144549543990e41</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>SymCodeUtil</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_script_include_475698a4373037005144549543990e41</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-11-05 07:19:07</sys_updated_on>
+    </sys_script_include>
+</record_update>

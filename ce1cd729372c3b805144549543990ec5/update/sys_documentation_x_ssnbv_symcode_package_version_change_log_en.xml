@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="change_log" label="Change log" language="en" table="x_ssnbv_symcode_package_version">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>change_log</element>
+            <help/>
+            <hint/>
+            <label>Change log</label>
+            <language>en</language>
+            <name>x_ssnbv_symcode_package_version</name>
+            <plural>Change logs</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-01 07:57:16</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>e4f221d0dbf4c8104eacfb261d9619ae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Change log</sys_name>
+            <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+            <sys_update_name>sys_documentation_x_ssnbv_symcode_package_version_change_log_en</sys_update_name>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-01 07:57:16</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

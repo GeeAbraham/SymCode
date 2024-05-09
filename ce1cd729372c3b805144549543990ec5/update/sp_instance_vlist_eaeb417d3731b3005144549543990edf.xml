@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_vlist">
+    <sp_instance_vlist action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field>name</display_field>
+        <field_list/>
+        <filter table="x_ssnbv_symcode_package">active=true^EQ<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <glyph>server</glyph>
+        <id/>
+        <maximum_entries>0</maximum_entries>
+        <order>1</order>
+        <order_by>name</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">698bd59d37b533005144549543990ee9</sp_column>
+        <sp_page display_value="symcode_package">79b499b93771b3005144549543990e36</sp_page>
+        <sp_widget display_value="SymCode - Panels">f48635353735b3005144549543990e89</sp_widget>
+        <sys_class_name>sp_instance_vlist</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-03 06:38:14</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>eaeb417d3731b3005144549543990edf</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_instance_vlist_eaeb417d3731b3005144549543990edf</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-06-04 09:55:28</sys_updated_on>
+        <table>x_ssnbv_symcode_package</table>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+  "col_sm": "12",
+  "description_field": "",
+  "html_field": "description",
+  "picture_field": "picture",
+}]]></widget_parameters>
+    </sp_instance_vlist>
+    <sys_translated_text action="delete_multiple" query="documentkey=eaeb417d3731b3005144549543990edf"/>
+</record_update>

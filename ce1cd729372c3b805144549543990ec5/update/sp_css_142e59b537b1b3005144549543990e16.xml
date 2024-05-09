@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css">
+    <sp_css action="INSERT_OR_UPDATE">
+        <css>/**&#13;
+* Make catalog item fields less ugly&#13;
+*/&#13;
+sp-variable-layout &gt; fieldset &gt; div &gt; legend {&#13;
+  display: none;&#13;
+}&#13;
+&#13;
+.field-has-reference .add-on {&#13;
+  display: none;&#13;
+}&#13;
+&#13;
+/**&#13;
+* Make TinyMCE more lightweight&#13;
+*/&#13;
+.mce-ico {&#13;
+  width: 8px !important;&#13;
+  height: 8px !important;&#13;
+  font-size: 8px !important;&#13;
+  line-height: 8px !important;&#13;
+}&#13;
+&#13;
+.mce-btn button {&#13;
+  padding: 2px !important;&#13;
+  font-size: 8px !important;&#13;
+  line-height: 8px !important;&#13;
+}&#13;
+&#13;
+/*&#13;
+* Make breadcrumbs more lightweight&#13;
+*/&#13;
+.breadcrumbs-container {&#13;
+  background-color: transparent;&#13;
+  */border-bottom: none;*/&#13;
+}&#13;
+&#13;
+/*&#13;
+* Remove roundings and shadows&#13;
+*/&#13;
+.btn,&#13;
+.panel,&#13;
+.panel &gt; .panel-heading,&#13;
+.panel &gt; .panel-footer,&#13;
+.list-group,&#13;
+.list-group &gt; .list-group-item,&#13;
+.select2-container,&#13;
+.select2-container &gt; .select2-choice,&#13;
+.select2-container &gt; .select2-choices,&#13;
+.ref-picker-container,&#13;
+.form-control,&#13;
+.alert,&#13;
+.timeline-panel&#13;
+{&#13;
+  border-radius: 0px !important;&#13;
+  box-shadow: none !important;&#13;
+}&#13;
+&#13;
+/**&#13;
+* Panel to grey and panel background to white so panel can be stretched and streched area is grey&#13;
+*/&#13;
+.panel {&#13;
+  background-color: #f5f5f5;  &#13;
+}&#13;
+&#13;
+.panel-body {&#13;
+  background-color: #fff;  &#13;
+}&#13;
+&#13;
+/*/&#13;
+* Fix buttons colors in primary panel headers&#13;
+*/&#13;
+.panel-primary .panel-heading .btn-primary {&#13;
+  background-color: #f5f5f5;  &#13;
+  color: rgb(58, 63, 81);&#13;
+}&#13;
+&#13;
+&#13;
+</css>
+        <name>symcode-base.css</name>
+        <sys_class_name>sp_css</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-03 07:57:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>142e59b537b1b3005144549543990e16</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>symcode-base.css</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_css_142e59b537b1b3005144549543990e16</sys_update_name>
+        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2021-11-10 06:15:05</sys_updated_on>
+        <turn_off_scss_compilation>false</turn_off_scss_compilation>
+    </sp_css>
+</record_update>

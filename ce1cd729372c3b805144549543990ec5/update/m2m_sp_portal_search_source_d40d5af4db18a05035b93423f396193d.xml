@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_portal_search_source">
+    <m2m_sp_portal_search_source action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sp_portal display_value="SymCode">f05a649d37f133005144549543990ed1</sp_portal>
+        <sp_search_source display_value="Packages">67f1d2f537b5b3005144549543990ee2</sp_search_source>
+        <sys_class_name>m2m_sp_portal_search_source</sys_class_name>
+        <sys_created_by>jani.luostarinen@fujitsu.com</sys_created_by>
+        <sys_created_on>2020-11-03 08:57:53</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>d40d5af4db18a05035b93423f396193d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SymCode.Packages</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>m2m_sp_portal_search_source_d40d5af4db18a05035b93423f396193d</sys_update_name>
+        <sys_updated_by>jani.luostarinen@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2020-11-03 08:57:53</sys_updated_on>
+    </m2m_sp_portal_search_source>
+</record_update>

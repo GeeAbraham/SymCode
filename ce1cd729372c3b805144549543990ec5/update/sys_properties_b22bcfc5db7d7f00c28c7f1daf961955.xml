@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Package Version activity formatter fields</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>glide.ui.x_ssnbv_symcode_package_version_activity.fields</name>
+        <read_roles/>
+        <suffix/>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-01 07:58:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b22bcfc5db7d7f00c28c7f1daf961955</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>glide.ui.x_ssnbv_symcode_package_version_activity.fields</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_properties_b22bcfc5db7d7f00c28c7f1daf961955</sys_update_name>
+        <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-08-16 13:44:33</sys_updated_on>
+        <type>string</type>
+        <value>package,version,state,instructions,name,released_on,change_log,*Email*,approval</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=b22bcfc5db7d7f00c28c7f1daf961955"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="glide.ui.x_ssnbv_symcode_package_version_activity.fields" tablename="sys_properties">b22bcfc5db7d7f00c28c7f1daf961955</documentkey>
+        <fieldname>description</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:41:13</sys_created_on>
+        <sys_id>24631e691b7579d070f8a868b04bcb3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:41:13</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>패키지 버전 활동 포맷터 필드</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="glide.ui.x_ssnbv_symcode_package_version_activity.fields" tablename="sys_properties">b22bcfc5db7d7f00c28c7f1daf961955</documentkey>
+        <fieldname>description</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:11:12</sys_created_on>
+        <sys_id>eaa49d01877bb85052f9ece30cbb351e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:11:12</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Putanga Putanga apure whakahōputu mahi</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="glide.ui.x_ssnbv_symcode_package_version_activity.fields" tablename="sys_properties">b22bcfc5db7d7f00c28c7f1daf961955</documentkey>
+        <fieldname>description</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:05:59</sys_created_on>
+        <sys_id>992cbb771b17011070f8a868b04bcb77</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:05:59</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>包版本活動格式化程序字段</value>
+    </sys_translated_text>
+</record_update>

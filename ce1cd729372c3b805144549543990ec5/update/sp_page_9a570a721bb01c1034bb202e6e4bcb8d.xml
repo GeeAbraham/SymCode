@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>symcode_package_versions</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>jani.luostarinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2020-05-19 12:51:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9a570a721bb01c1034bb202e6e4bcb8d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>symcode_package_versions</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_page_9a570a721bb01c1034bb202e6e4bcb8d</sys_update_name>
+        <sys_updated_by>jani.luostarinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2020-05-19 12:51:44</sys_updated_on>
+        <title>Package Versions</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=9a570a721bb01c1034bb202e6e4bcb8d"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>9a570a721bb01c1034bb202e6e4bcb8d</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:57:02</sys_created_on>
+        <sys_id>d8071eed1bf579d070f8a868b04bcb0a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:57:02</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>패키지 버전</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>9a570a721bb01c1034bb202e6e4bcb8d</documentkey>
+        <fieldname>title</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:26:07</sys_created_on>
+        <sys_id>4518594d877bb85052f9ece30cbb35a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:26:07</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Putanga Putanga</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>9a570a721bb01c1034bb202e6e4bcb8d</documentkey>
+        <fieldname>title</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:28:51</sys_created_on>
+        <sys_id>c06140848727811052f9ece30cbb357e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:28:51</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>包版本</value>
+    </sys_translated_text>
+</record_update>

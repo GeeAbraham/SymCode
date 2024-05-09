@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Configures log verbosity: error, warn, info, debug, or trace.</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_ssnbv_symcode.logging.verbosity</name>
+        <read_roles/>
+        <suffix>logging.verbosity</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-04-10 13:10:24</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>34cf5020377037005144549543990e86</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_ssnbv_symcode.logging.verbosity</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_properties_34cf5020377037005144549543990e86</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-04-10 13:10:24</sys_updated_on>
+        <type>string</type>
+        <value>debug</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=34cf5020377037005144549543990e86"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="x_ssnbv_symcode.logging.verbosity" tablename="sys_properties">34cf5020377037005144549543990e86</documentkey>
+        <fieldname>description</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:40:13</sys_created_on>
+        <sys_id>8623dae51b7579d070f8a868b04bcbd6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:40:13</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>오류, 경고, 정보, 디버그 또는 추적 등 로그의 자세한 정도를 구성합니다.</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="x_ssnbv_symcode.logging.verbosity" tablename="sys_properties">34cf5020377037005144549543990e86</documentkey>
+        <fieldname>description</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:08:08</sys_created_on>
+        <sys_id>65f3158d873bb85052f9ece30cbb35af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:08:08</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Ka whirihora i te kupu korero rangitaki: he hapa, he whakatupato, he korero, he patuiro, he tohu ranei.</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="x_ssnbv_symcode.logging.verbosity" tablename="sys_properties">34cf5020377037005144549543990e86</documentkey>
+        <fieldname>description</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:02:14</sys_created_on>
+        <sys_id>a24b73ff1b93011070f8a868b04bcbbe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:02:14</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>配置日誌詳細程度：錯誤、警告、信息、調試或跟踪。</value>
+    </sys_translated_text>
+</record_update>

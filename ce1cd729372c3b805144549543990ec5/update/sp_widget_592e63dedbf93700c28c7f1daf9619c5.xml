@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $filter) {
+	var c = this;
+
+	/**
+	* Returns array of values from given map order by given 
+	* condition.
+	*
+	* @param {Object} map Map.
+	* @param {String} orderBy AngualrJS orderBy compatible order string.
+	* @param {Object} filter AngualrJS filter compatible filter object.
+	* @returns {Array} Values from array.
+	*/
+	$scope.toArray = function(map, orderBy, filter) {
+		map = Object.values(map);
+		if (map && filter) map = $filter('filter')(map, filter);
+		if (map && orderBy) map = $filter('orderBy')(map, orderBy);
+		return map || [];
+	};
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>label {&#13;
+  margin: 0px;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+.input-group {&#13;
+  width: 100%;&#13;
+  margin-bottom: 12px;&#13;
+}&#13;
+&#13;
+.input-group input[readonly] {&#13;
+  width: 100%;&#13;
+  height: auto;&#13;
+  margin: 0px;&#13;
+  padding: 0px;&#13;
+  border: none;&#13;
+  background-color: transparent;&#13;
+  color: inherit;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>SymCode - Install Version - Versions</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[(function() {
+	
+	// Get parameters
+	data.availableVersionId = $sp.getParameter('available_version_id');
+	
+	// Get available version
+	var packageUtil = new SymCodePackageUtil();
+	var availableGr = new GlideRecord(packageUtil.TABLE_AVAILABLE_VERSION); 
+	if (!availableGr.get(data.availableVersionId)) throw 'Could not get available version!';
+	data.versionId = availableGr.version.toString();
+	data.instanceId = availableGr.instance.toString();
+	
+	// Get versions to be installed
+	var instanceUtil = new SymCodeInstanceUtil(data.instanceId);
+	data.version = packageUtil.getVersion(data.versionId);
+	data.requiredVersions = packageUtil.getRequiredVersions(data.versionId);
+	data.installedVersions = instanceUtil.getInstalledVersions();
+	data.requiredVersions[data.version.sysId] = data.version;
+	for (var i in data.installedVersions)
+		if (data.requiredVersions[i])
+			delete(data.requiredVersions[i]);
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-05 07:44:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>592e63dedbf93700c28c7f1daf9619c5</sys_id>
+        <sys_mod_count>48</sys_mod_count>
+        <sys_name>SymCode - Install Version - Versions</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_592e63dedbf93700c28c7f1daf9619c5</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-10-25 09:04:45</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-{{::options.color}}">
+  <div class="panel-heading">
+    Versions to be installed 
+  </div>  
+  <div class="list-group">
+    <div class="list-group-item" ng-include="'symcode-version-details'" ng-repeat="version in ::toArray(data.requiredVersions, '-displayValue')"/>
+  </div>
+</div>
+
+<pre ng-if="0">{{data.installedVersions|json}}</pre>]]></template>
+    </sp_widget>
+</record_update>

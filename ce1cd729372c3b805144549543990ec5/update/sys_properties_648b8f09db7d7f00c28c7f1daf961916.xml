@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Instance activity formatter fields</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>glide.ui.x_ssnbv_symcode_instance_activity.fields</name>
+        <read_roles/>
+        <suffix/>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-01 08:00:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>648b8f09db7d7f00c28c7f1daf961916</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>glide.ui.x_ssnbv_symcode_instance_activity.fields</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_properties_648b8f09db7d7f00c28c7f1daf961916</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-06-01 08:01:38</sys_updated_on>
+        <type>string</type>
+        <value>name,type,company,active,build_name,build_tag,developers,owner,url,description</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=648b8f09db7d7f00c28c7f1daf961916"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="glide.ui.x_ssnbv_symcode_instance_activity.fields" tablename="sys_properties">648b8f09db7d7f00c28c7f1daf961916</documentkey>
+        <fieldname>description</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:40:38</sys_created_on>
+        <sys_id>00435a291b7579d070f8a868b04bcbe8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:40:38</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>인스턴스 활동 포맷터 필드</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="glide.ui.x_ssnbv_symcode_instance_activity.fields" tablename="sys_properties">648b8f09db7d7f00c28c7f1daf961916</documentkey>
+        <fieldname>description</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:09:23</sys_created_on>
+        <sys_id>333455cd873bb85052f9ece30cbb3585</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:09:23</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Tauira nga mara whakahōputu mahi</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey name="glide.ui.x_ssnbv_symcode_instance_activity.fields" tablename="sys_properties">648b8f09db7d7f00c28c7f1daf961916</documentkey>
+        <fieldname>description</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:03:41</sys_created_on>
+        <sys_id>eb9bfff71bd3011070f8a868b04bcb16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:03:41</sys_updated_on>
+        <tablename>sys_properties</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>實例活動格式化程序字段</value>
+    </sys_translated_text>
+</record_update>

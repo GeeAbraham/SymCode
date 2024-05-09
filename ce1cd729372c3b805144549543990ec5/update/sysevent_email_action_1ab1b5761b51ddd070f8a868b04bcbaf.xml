@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>false</action_insert>
+        <action_update>false</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>x_ssnbv_symcode_package_version</collection>
+        <condition/>
+        <content_type>text/html</content_type>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digestable>false</digestable>
+        <enable_dynamic_translation>false</enable_dynamic_translation>
+        <event_name>x_ssnbv_symcode.version.notify.approval</event_name>
+        <event_parm_1>true</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>event</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html/>
+        <message_list/>
+        <message_text/>
+        <messaging_channels/>
+        <messaging_content/>
+        <name>SymCode Version Approval</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields/>
+        <recipient_groups name="TfSNow CoE SymCode Approver">43fb681a4f3e0200b92af1728110c77a</recipient_groups>
+        <recipient_users>88235af10f57f5005cd283fc22050ee8</recipient_users>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject/>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>geevarughese.abraham@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-08-17 16:35:25</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1ab1b5761b51ddd070f8a868b04bcbaf</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>SymCode Version Approval</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sysevent_email_action_1ab1b5761b51ddd070f8a868b04bcbaf</sys_update_name>
+        <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 16:40:26</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Symcode version approval request">667829f21b11ddd070f8a868b04bcb2d</template>
+        <type>email</type>
+        <u_company_notification>false</u_company_notification>
+        <weight>0</weight>
+    </sysevent_email_action>
+</record_update>

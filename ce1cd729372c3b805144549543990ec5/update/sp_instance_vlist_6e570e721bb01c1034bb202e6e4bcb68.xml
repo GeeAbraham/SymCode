@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_vlist">
+    <sp_instance_vlist action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>primary</color>
+        <css/>
+        <display_field>name</display_field>
+        <field_list/>
+        <filter/>
+        <glyph>empty</glyph>
+        <id/>
+        <maximum_entries>0</maximum_entries>
+        <order>1</order>
+        <order_by>name</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">ae570e721bb01c1034bb202e6e4bcb66</sp_column>
+        <sp_page display_value="symcode_version">106353d81bcd4490a24764a07e4bcb27</sp_page>
+        <sp_widget display_value="SymCode - Simple List">3e81f2c6dbf5f300c28c7f1daf9619c8</sp_widget>
+        <sys_class_name>sp_instance_vlist</sys_class_name>
+        <sys_created_by>jani.luostarinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2020-05-19 12:51:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6e570e721bb01c1034bb202e6e4bcb68</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_instance_vlist_6e570e721bb01c1034bb202e6e4bcb68</sys_update_name>
+        <sys_updated_by>jani.luostarinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2020-05-19 13:27:57</sys_updated_on>
+        <table>x_ssnbv_symcode_package_version</table>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{  
+   "always_show":{  
+      "displayValue":true,
+      "value":true
+   },
+   "image_field":{  
+      "value":null,
+      "displayValue":""
+   },
+   "secondary_fields":{  
+      "value":"state",
+      "displayValue":"state"
+   },
+   "panel_body_height":{  
+      "value":null,
+      "displayValue":""
+   },
+   "rounded_images":{  
+      "displayValue":false,
+      "value":false
+   },
+   "hide_footer":{  
+      "displayValue":true,
+      "value":true
+   },
+   "show_new": true,
+   "new_form": "symcode_version"
+}]]></widget_parameters>
+    </sp_instance_vlist>
+    <sys_translated_text action="delete_multiple" query="documentkey=6e570e721bb01c1034bb202e6e4bcb68"/>
+</record_update>

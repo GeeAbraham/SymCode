@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_link">
+    <sp_instance_link action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph>server</glyph>
+        <id/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <order>1</order>
+        <roles/>
+        <sc_cat_item display_value="Register your Instance">3beca72f1b60015070f8a868b04bcb9e</sc_cat_item>
+        <sc_category/>
+        <short_description>Register your Instances from here</short_description>
+        <size>md</size>
+        <sp_column display_value="1">7dbb0e7d3775b3005144549543990edc</sp_column>
+        <sp_page display_value="sc_cat_item">9f12251147132100ba13a5554ee490f4</sp_page>
+        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sys_class_name>sp_instance_link</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-03 11:16:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>79bb0e7d3775b3005144549543990ee2</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Register your instance</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_instance_link_79bb0e7d3775b3005144549543990ee2</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-07-07 06:52:56</sys_updated_on>
+        <title>Register your instance</title>
+        <type>sc_cat_item</type>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"link_template": {
+		"value": "Circle Icon",
+		"displayValue": "Circle Icon"
+	}
+}]]></widget_parameters>
+    </sp_instance_link>
+    <sys_translated_text action="delete_multiple" query="documentkey=79bb0e7d3775b3005144549543990ee2"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>79bb0e7d3775b3005144549543990ee2</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:39:47</sys_created_on>
+        <sys_id>e3035aa51b7579d070f8a868b04bcb8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:39:47</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>여기에서 인스턴스를 등록하세요.</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>79bb0e7d3775b3005144549543990ee2</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:06:49</sys_created_on>
+        <sys_id>a6a3914d873bb85052f9ece30cbb35ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:06:49</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Tirotiro me te rapu tuhinga, utu, tuku urupare ranei</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>79bb0e7d3775b3005144549543990ee2</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:00:32</sys_created_on>
+        <sys_id>69eab3771b93011070f8a868b04bcb9e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:00:32</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>從這裡註冊您的實例</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>79bb0e7d3775b3005144549543990ee2</documentkey>
+        <fieldname>title</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:48:57</sys_created_on>
+        <sys_id>f925dae91bb579d070f8a868b04bcb7d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:48:57</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>인스턴스 등록</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>79bb0e7d3775b3005144549543990ee2</documentkey>
+        <fieldname>title</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:19:06</sys_created_on>
+        <sys_id>96765509877bb85052f9ece30cbb3515</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:19:06</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Tauira</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>79bb0e7d3775b3005144549543990ee2</documentkey>
+        <fieldname>title</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:19:33</sys_created_on>
+        <sys_id>fb3fb7f38793811052f9ece30cbb35b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:19:33</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>註冊您的實例</value>
+    </sys_translated_text>
+</record_update>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="x_ssnbv_symcode_package" version="2" view="sp">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Package - Service Portal" name="x_ssnbv_symcode_package" related_list="NULL" sys_domain="global" view="ec2daaf9d7523100a9ad1e173e24d4ea">be28587edbfd7700c28c7f1daf961934</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-06 05:26:05</sys_created_on>
+            <sys_id>3a28587edbfd7700c28c7f1daf961935</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-06 05:26:05</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Package - Service Portal</calculated_name>
+            <filter/>
+            <name>x_ssnbv_symcode_package</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-06 05:26:05</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>be28587edbfd7700c28c7f1daf961934</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Package - Service Portal</sys_name>
+            <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+            <sys_update_name>sys_ui_related_x_ssnbv_symcode_package_sp</sys_update_name>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-06 05:26:05</sys_updated_on>
+            <sys_user/>
+            <view display_value="Service Portal" name="sp">ec2daaf9d7523100a9ad1e173e24d4ea</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

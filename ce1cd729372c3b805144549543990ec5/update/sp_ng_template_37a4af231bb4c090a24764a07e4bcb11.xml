@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="INSERT_OR_UPDATE">
+        <id>categoryTree</id>
+        <sp_widget display_value="SymCode - Package Categories">bb979dbd3771b3005144549543990eba</sp_widget>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-11-05 07:23:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>37a4af231bb4c090a24764a07e4bcb11</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>categoryTree</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_ng_template_37a4af231bb4c090a24764a07e4bcb11</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-11-05 12:19:54</sys_updated_on>
+        <template><![CDATA[<div class="list-group">
+  <div class="list-group-item" ng-repeat="r in tree" ng-click="onCategorySelected($event, r)">
+    <a class="nav-label">
+      {{::r.label}}
+    </a>
+    <div ng-include="'categoryTree'" ng-init="tree = r.child" ng-if="r.child.length > 0"/>
+  </div>
+</div>
+]]></template>
+    </sp_ng_template>
+</record_update>

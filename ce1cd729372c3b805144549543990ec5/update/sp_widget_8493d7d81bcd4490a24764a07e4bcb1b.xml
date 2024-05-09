@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location) {
+	var c = this;
+	(function(){
+		if ($scope.data.packageId)
+			$location.search({
+				'id': 'symcode_package',
+				'table': 'x_ssnbv_symcode_package',
+				'sys_id': $scope.data.packageId,
+				'view': 'sp',
+			});
+	})();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>SymCode - Version</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var versionId = $sp.getParameter('sys_id');
+	var version = new SymCodePackageUtil().getVersion(versionId);
+	data.packageId = version.fields['package'].value;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-11-07 14:04:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8493d7d81bcd4490a24764a07e4bcb1b</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>SymCode - Version</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_8493d7d81bcd4490a24764a07e4bcb1b</sys_update_name>
+        <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+        <sys_updated_on>2019-11-07 14:12:23</sys_updated_on>
+        <template/>
+    </sp_widget>
+</record_update>

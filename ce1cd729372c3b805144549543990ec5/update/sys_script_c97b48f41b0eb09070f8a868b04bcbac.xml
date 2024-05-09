@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_ssnbv_symcode_servicenow_version</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_ssnbv_symcode_servicenow_version">currentCHANGESTOtrue^EQ<item endquery="false" field="current" goto="false" newquery="false" operator="CHANGESTO" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Validate current field </name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    var version = new GlideRecord('x_ssnbv_symcode_servicenow_version');
+    version.addQuery('current', true);
+    version.addQuery('sys_id', '!=', current.sys_id);
+    version.query();
+    while (version.next()) {
+        version.current = false;
+        version.update();
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>geevarughese.abraham@fujitsu.com</sys_created_by>
+        <sys_created_on>2021-08-15 18:23:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c97b48f41b0eb09070f8a868b04bcbac</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Validate current field </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_script_c97b48f41b0eb09070f8a868b04bcbac</sys_update_name>
+        <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2021-08-15 18:29:09</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=c97b48f41b0eb09070f8a868b04bcbac"/>
+</record_update>

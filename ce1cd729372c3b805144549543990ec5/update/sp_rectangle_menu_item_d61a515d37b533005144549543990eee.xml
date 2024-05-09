@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rectangle_menu_item">
+    <sp_rectangle_menu_item action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <color>default</color>
+        <condition/>
+        <display_1>name</display_1>
+        <display_2>sys_class_name</display_2>
+        <display_date>sys_created_on</display_date>
+        <filter table="x_ssnbv_symcode_package">active=true^latest_version.state=released^EQ<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item display_value="Released" endquery="false" field="latest_version.state" goto="false" newquery="false" operator="=" or="false" value="released"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <glyph>gift</glyph>
+        <hint/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <label>Packages</label>
+        <order>90</order>
+        <record_script><![CDATA[// settings
+var max = 100; //max count Updated for STRY0083992
+
+// prepare data
+data.items = [];
+data.record_watchers = [];
+
+// get records Updated based  on Story STRY0137764
+getRecords(data, 'x_ssnbv_symcode_package', 'active=true^latest_version.state=released', 'latest_version.released_on', max, 'name', '', 'sys_created_on');
+
+// finalize data
+data.count = data.items.length;
+//data.items = data.items.slice(0, max); 
+data.items = data.items.slice(0, 5); 
+data.items.unshift({title: gs.getMessage('Show all'), type: 'link',show_always: true, href: '?id=symcode_packages&filter=latest_version.state=released', items: []}); 
+
+// omit dropdown, go to list page
+data.href = '?id=requests';
+data.show_always = true;
+
+// worker
+function getRecords(data, table, filter, order, max, title, subtitle, date, link) {
+	data.record_watchers.push({'table':table,'filter':filter});
+	var gr = new GlideRecord(table);
+	gr.addEncodedQuery(filter);
+	gr.orderBy(order);
+	gr.setLimit(max);
+	gr.query();
+	while (gr.next()) {
+	  var a = {
+		'title': gr[title].getDisplayValue()+(subtitle ? ' '+gr[subtitle].getDisplayValue() : ''),
+		'subtitle': (subtitle ? gr[subtitle].getDisplayValue() : ''),
+		'date_internal': gr[date].toString(),
+		'date': gr[date].getDisplayValue(),
+        'type': 'link',
+      	'href': '?id=symcode_package&table='+gr.getTableName()+'&sys_id='+gr.getUniqueValue()+'&view=sp',
+      };
+	  data.items.push(a);
+	}
+}]]></record_script>
+        <sc_cat_item/>
+        <sc_category/>
+        <short_description/>
+        <sp_page/>
+        <sp_rectangle_menu display_value="SymCode Header Menu">48c7915937b533005144549543990e66</sp_rectangle_menu>
+        <sp_rectangle_menu_item/>
+        <sys_class_name>sp_rectangle_menu_item</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-01 18:23:14</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>d61a515d37b533005144549543990eee</sys_id>
+        <sys_mod_count>42</sys_mod_count>
+        <sys_name>Packages</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_rectangle_menu_item_d61a515d37b533005144549543990eee</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-05-04 13:32:06</sys_updated_on>
+        <table>x_ssnbv_symcode_package</table>
+        <type>scripted</type>
+        <url/>
+        <url_target/>
+    </sp_rectangle_menu_item>
+    <sys_translated_text action="delete_multiple" query="documentkey=d61a515d37b533005144549543990eee"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>d61a515d37b533005144549543990eee</documentkey>
+        <fieldname>label</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:47:48</sys_created_on>
+        <sys_id>c5e496691bb579d070f8a868b04bcbc3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:47:48</sys_updated_on>
+        <tablename>sp_rectangle_menu_item</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>패키지</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>d61a515d37b533005144549543990eee</documentkey>
+        <fieldname>label</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:18:07</sys_created_on>
+        <sys_id>333699c5877bb85052f9ece30cbb3544</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:18:07</sys_updated_on>
+        <tablename>sp_rectangle_menu_item</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Mōkī</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>d61a515d37b533005144549543990eee</documentkey>
+        <fieldname>label</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:18:20</sys_created_on>
+        <sys_id>d6febf7b1bd7011070f8a868b04bcb38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:18:20</sys_updated_on>
+        <tablename>sp_rectangle_menu_item</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>套餐</value>
+    </sys_translated_text>
+</record_update>

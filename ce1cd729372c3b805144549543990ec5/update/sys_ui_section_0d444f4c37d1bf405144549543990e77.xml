@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="0d444f4c37d1bf405144549543990e77" sys_domain="global" table="x_ssnbv_symcode_package_version_metadata" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>version</element>
+            <position>0</position>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-04 12:44:57</sys_created_on>
+            <sys_id>c879e7cadbf9f300c28c7f1daf96192d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ssnbv_symcode_package_version_metadata" sys_domain="global" view="Default view">0d444f4c37d1bf405144549543990e77</sys_ui_section>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-04 12:44:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>checksum</element>
+            <position>1</position>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-04 12:44:57</sys_created_on>
+            <sys_id>4c79e7cadbf9f300c28c7f1daf96192d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ssnbv_symcode_package_version_metadata" sys_domain="global" view="Default view">0d444f4c37d1bf405144549543990e77</sys_ui_section>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-04 12:44:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-04 12:44:57</sys_created_on>
+            <sys_id>cc79e7cadbf9f300c28c7f1daf96192d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ssnbv_symcode_package_version_metadata" sys_domain="global" view="Default view">0d444f4c37d1bf405144549543990e77</sys_ui_section>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-04 12:44:57</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>3</position>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-04 12:44:57</sys_created_on>
+            <sys_id>4079e7cadbf9f300c28c7f1daf96192e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ssnbv_symcode_package_version_metadata" sys_domain="global" view="Default view">0d444f4c37d1bf405144549543990e77</sys_ui_section>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-04 12:44:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>table_name</element>
+            <position>4</position>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-04 12:44:57</sys_created_on>
+            <sys_id>c079e7cadbf9f300c28c7f1daf96192e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ssnbv_symcode_package_version_metadata" sys_domain="global" view="Default view">0d444f4c37d1bf405144549543990e77</sys_ui_section>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-04 12:44:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>table_id</element>
+            <position>5</position>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-06-04 12:44:57</sys_created_on>
+            <sys_id>4479e7cadbf9f300c28c7f1daf96192e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ssnbv_symcode_package_version_metadata" sys_domain="global" view="Default view">0d444f4c37d1bf405144549543990e77</sys_ui_section>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-06-04 12:44:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>payload</element>
+            <position>6</position>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-11-08 09:22:34</sys_created_on>
+            <sys_id>e2bcd3a01b01c490a24764a07e4bcb20</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_ssnbv_symcode_package_version_metadata" sys_domain="global" view="Default view">0d444f4c37d1bf405144549543990e77</sys_ui_section>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-11-08 09:22:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_ssnbv_symcode_package_version_metadata</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+            <sys_created_on>2019-05-04 08:23:17</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0d444f4c37d1bf405144549543990e77</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_ssnbv_symcode_package_version_metadata</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+            <sys_update_name>sys_ui_section_0d444f4c37d1bf405144549543990e77</sys_update_name>
+            <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
+            <sys_updated_on>2019-05-04 08:23:17</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

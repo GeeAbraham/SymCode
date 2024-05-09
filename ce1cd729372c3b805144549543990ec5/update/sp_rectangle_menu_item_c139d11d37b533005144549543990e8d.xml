@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rectangle_menu_item">
+    <sp_rectangle_menu_item action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <color>default</color>
+        <condition/>
+        <display_1>name</display_1>
+        <display_2>type</display_2>
+        <display_date>sys_created_on</display_date>
+        <filter table="x_ssnbv_symcode_instance">active=true^EQ^ORDERBYname<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+            <item endquery="false" field="" goto="false" newquery="false" operator="ORDERBY" or="false" value="name"/>
+        </filter>
+        <glyph>server</glyph>
+        <hint/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <label>Instances</label>
+        <order>100</order>
+        <record_script><![CDATA[// settings
+var max = 100; //max count Updated for STRY0083992
+
+// prepare data
+data.items = [];
+data.record_watchers = [];
+
+// get records
+getRecords(data, 'x_ssnbv_symcode_instance', 'active=true', 'name', max, 'name', '', 'sys_created_on');
+
+// finalize data
+data.count = data.items.length;
+data.items = data.items.slice(0, 5); 
+data.items.unshift({title: gs.getMessage('Show all'), type: 'link',show_always: true, href: '?id=symcode_instances', items: []}); 
+
+// omit dropdown, go to list page
+data.href = '?id=requests';
+data.show_always = true;
+
+// worker
+function getRecords(data, table, filter, order, max, title, subtitle, date, link) {
+	data.record_watchers.push({'table':table,'filter':filter});
+	var gr = new GlideRecord(table);
+	gr.addEncodedQuery(filter);
+	gr.orderBy(order);
+	gr.setLimit(max);
+	gr.query();
+	while (gr.next()) {
+	  var a = {
+		'title': gr[title].getDisplayValue()+(subtitle ? ' '+gr[subtitle].getDisplayValue() : ''),
+		'subtitle': (subtitle ? gr[subtitle].getDisplayValue() : ''),
+		'date_internal': gr[date].toString(),
+		'date': gr[date].getDisplayValue(),
+        'type': 'link',
+      	'href': '?id=symcode_instance&table='+gr.getTableName()+'&sys_id='+gr.getUniqueValue()+'&view=sp',
+      };
+	  data.items.push(a);
+	}
+}]]></record_script>
+        <sc_cat_item/>
+        <sc_category/>
+        <short_description/>
+        <sp_page/>
+        <sp_rectangle_menu display_value="SymCode Header Menu">48c7915937b533005144549543990e66</sp_rectangle_menu>
+        <sp_rectangle_menu_item/>
+        <sys_class_name>sp_rectangle_menu_item</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-01 18:19:48</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c139d11d37b533005144549543990e8d</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>Instances</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_rectangle_menu_item_c139d11d37b533005144549543990e8d</sys_update_name>
+        <sys_updated_by>syed.imam@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-04-29 21:13:04</sys_updated_on>
+        <table>x_ssnbv_symcode_instance</table>
+        <type>scripted</type>
+        <url/>
+        <url_target/>
+    </sp_rectangle_menu_item>
+    <sys_translated_text action="delete_multiple" query="documentkey=c139d11d37b533005144549543990e8d"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>c139d11d37b533005144549543990e8d</documentkey>
+        <fieldname>label</fieldname>
+        <language>ko</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2023-10-10 10:47:48</sys_created_on>
+        <sys_id>81e496691bb579d070f8a868b04bcbc0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2023-10-10 10:47:48</sys_updated_on>
+        <tablename>sp_rectangle_menu_item</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>인스턴스</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>c139d11d37b533005144549543990e8d</documentkey>
+        <fieldname>label</fieldname>
+        <language>mi</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-11-11 18:18:06</sys_created_on>
+        <sys_id>a73699c5877bb85052f9ece30cbb3529</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-11-11 18:18:06</sys_updated_on>
+        <tablename>sp_rectangle_menu_item</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>Tauira</value>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>c139d11d37b533005144549543990e8d</documentkey>
+        <fieldname>label</fieldname>
+        <language>zh-TW</language>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-13 19:18:19</sys_created_on>
+        <sys_id>cafe7f7b1bd7011070f8a868b04bcb6f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-13 19:18:19</sys_updated_on>
+        <tablename>sp_rectangle_menu_item</tablename>
+        <u_document_sys_id/>
+        <u_tmp/>
+        <value>實例</value>
+    </sys_translated_text>
+</record_update>

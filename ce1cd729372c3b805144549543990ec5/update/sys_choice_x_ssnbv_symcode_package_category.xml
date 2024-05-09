@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="category" table="x_ssnbv_symcode_package" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>category</element>
+            <name>x_ssnbv_symcode_package</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2019-10-25 19:36:22</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>0df261d0dbf4c8104eacfb261d961972</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>category</sys_name>
+            <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+            <sys_update_name>sys_choice_x_ssnbv_symcode_package_category</sys_update_name>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2019-10-25 19:36:22</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Administration</label>
+            <language>fr</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-02-18 16:56:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>20bc8b9b1bd6a4104d85a713604bcb96</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-02-18 16:56:37</sys_updated_on>
+            <value>admin</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Administration</label>
+            <language>en</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2019-10-25 19:36:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>45f261d0dbf4c8104eacfb261d961971</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2019-10-25 19:36:22</sys_updated_on>
+            <value>admin</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Whakahaerenga</label>
+            <language>mi</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-11-10 18:23:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a2fdcc701bffbc9070f8a868b04bcb00</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-11-10 18:23:58</sys_updated_on>
+            <value>admin</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>行政</label>
+            <language>zh-TW</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2022-05-16 03:49:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d117c0b487af811052f9ece30cbb357e</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2022-05-16 03:49:29</sys_updated_on>
+            <value>admin</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Communication</label>
+            <language>en</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2019-10-25 19:36:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>85f261d0dbf4c8104eacfb261d961971</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2019-10-25 19:36:22</sys_updated_on>
+            <value>communication</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>la communication</label>
+            <language>fr</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-02-18 22:16:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c9d5d0e71b52e4104d85a713604bcb8d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-02-18 22:16:09</sys_updated_on>
+            <value>communication</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Whakawhitiwhiti</label>
+            <language>mi</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-11-11 02:06:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>12d7f938873b385052f9ece30cbb35ed</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-11-11 02:06:40</sys_updated_on>
+            <value>communication</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>溝通</label>
+            <language>zh-TW</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2022-05-15 16:51:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e36035a0876f411052f9ece30cbb358c</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2022-05-15 16:51:12</sys_updated_on>
+            <value>communication</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Email</label>
+            <language>fr</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-02-19 01:25:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4a11c5ef1b1ae4104d85a713604bcb59</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-02-19 01:25:11</sys_updated_on>
+            <value>email</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Email</label>
+            <language>en</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2019-10-25 19:36:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c5f261d0dbf4c8104eacfb261d961971</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2019-10-25 19:36:22</sys_updated_on>
+            <value>email</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Īmēra</label>
+            <language>mi</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-11-10 23:12:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>cc00557087f3385052f9ece30cbb35e3</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-11-10 23:12:23</sys_updated_on>
+            <value>email</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>電子郵件</label>
+            <language>zh-TW</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2022-05-16 15:05:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e9d126b087e7051052f9ece30cbb35fb</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2022-05-16 15:05:24</sys_updated_on>
+            <value>email</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Process</label>
+            <language>en</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2019-10-25 19:36:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>09f261d0dbf4c8104eacfb261d961971</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2019-10-25 19:36:22</sys_updated_on>
+            <value>process</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Processus</label>
+            <language>fr</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-02-17 20:22:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>96223e8b1bdae0104d85a713604bcb47</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-02-17 20:22:13</sys_updated_on>
+            <value>process</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Tukanga</label>
+            <language>mi</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-11-10 06:10:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7c3625ec87ff745052f9ece30cbb3594</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-11-10 06:11:03</sys_updated_on>
+            <value>process</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>過程</label>
+            <language>zh-TW</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2022-05-15 02:43:32</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a97eaa5487e7011052f9ece30cbb35f3</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2022-05-15 02:43:37</sys_updated_on>
+            <value>process</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Portail de service</label>
+            <language>fr</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-02-18 17:27:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>22a3575b1b1aa4104d85a713604bcb10</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-02-18 17:27:04</sys_updated_on>
+            <value>service_portal</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Pouaka Ratonga</label>
+            <language>mi</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2021-11-10 18:50:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c8149c3c1bffbc9070f8a868b04bcb13</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2021-11-10 18:50:45</sys_updated_on>
+            <value>service_portal</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Service Portal</label>
+            <language>en</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2019-10-25 19:36:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>49f261d0dbf4c8104eacfb261d961971</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2019-10-25 19:36:22</sys_updated_on>
+            <value>service_portal</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>服務門戶</label>
+            <language>zh-TW</language>
+            <name>x_ssnbv_symcode_package</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2022-05-16 04:47:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c18450f08723c11052f9ece30cbb35a1</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2022-05-16 04:48:13</sys_updated_on>
+            <value>service_portal</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

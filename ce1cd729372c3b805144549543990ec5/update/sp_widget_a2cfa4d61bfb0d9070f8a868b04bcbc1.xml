@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($rootScope, $scope, $timeout, $location, $log, $window, spUtil, nowAttachmentHandler, spAriaUtil, spNavStateManager) {
+
+    /* widget controller */
+    var c = this;
+
+    // feedback Useful yes button
+
+    c.Usefulyes = function() {
+        c.data.parmeter1 = "yes";
+        //c.data.package_sys_id = c.sys_id;
+        c.data.action = "Useful_yes";
+        c.server.update().then(function() {
+            //Process your response
+            c.data.action = undefined;
+            //c.data.msg = response.data.successMessage;
+
+        });
+
+    };
+
+    // feedback Useful No button
+    c.Usefulno = function() {
+        //alert("no");       
+        c.data.parmeter1 = "no";
+        c.data.action = "Useful_no";
+        c.server.update().then(function() {
+            //Process your response
+            c.data.action = undefined;
+            //c.data.msg = response.data.successMessage;
+
+        });
+    };
+
+    c.submitFedback = function(getFeedBack) {
+        //alert("Message -" + c.comments);
+        if (c.comments == undefined) {
+            alert("Please enter the Feedabck");
+        } else {
+            c.data.parmeter1 = c.comments;
+            c.data.action = "getFeedBack";
+            c.server.update().then(function() {
+                //Process your response
+                c.data.action = undefined;
+                //c.data.msg = response.data.successMessage;
+
+            });
+        }
+        document.getElementById('article_comments').value = "";
+    };
+
+    c.submitRatings = function() {
+        c.data.parmeter1 = c.data.rating;
+        //alert("Message -" + c.data.rating);
+        c.data.action = "Ratings";
+        c.server.update().then(function() {
+            //Process your response
+            c.data.action = undefined;
+        });
+    };
+
+    c.clearMessage = function() {
+        $timeout(function() {
+            c.data.response = "";
+            g_form.clearMessages();
+        }, 500);
+    };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.kb-help-wrapper{&#13;
+  .kb-button{&#13;
+    margin-left : 5px;&#13;
+  }&#13;
+  .kb-line{&#13;
+    border-color : #ccc;&#13;
+  }&#13;
+  .help-buttons{&#13;
+    display:inline;&#13;
+  }&#13;
+  .kb-rate-star, .kb-inline{&#13;
+    display: inline;&#13;
+  }&#13;
+  .kb-star-on {&#13;
+    text-shadow: $fav-star-outline;&#13;
+  }&#13;
+  .kb-star-off {&#13;
+    color: $fav-star-color-off !important;&#13;
+    text-shadow: $fav-star-outline;&#13;
+  }&#13;
+  .kb-rating-stars{&#13;
+    .glyphicon{&#13;
+      line-height: 0;&#13;
+    }&#13;
+        .rating-stars [role="button"] {&#13;
+      cursor: text;&#13;
+    }&#13;
+  }&#13;
+}&#13;
+.kb-desktop{&#13;
+  .kb-help-label {&#13;
+    font-size:18px !important;&#13;
+  }&#13;
+  .rating-section{&#13;
+    position:relative;&#13;
+    top:3px;&#13;
+    .kb-rate-article{&#13;
+      position:relative;&#13;
+      top:-1px;&#13;
+      .kb-inline{&#13;
+        font-size:18px !important;&#13;
+      }&#13;
+    }&#13;
+    .kb-rate-star{&#13;
+      position:relative;&#13;
+      &amp;.r-pad-top{&#13;
+        top:2px;&#13;
+      }&#13;
+            .kb-inline{&#13;
+        font-size:20px !important;&#13;
+      }&#13;
+    }&#13;
+  }&#13;
+  .help-section{&#13;
+    position:relative;&#13;
+    top:2px;&#13;
+    .help-use-button{&#13;
+      display: inline-flex;&#13;
+      .help-use-text{&#13;
+        text-align: center;&#13;
+        padding-top: 5px;&#13;
+      }&#13;
+      .help-buttons{&#13;
+        .btn{&#13;
+          height: 32px;&#13;
+          width: 70px;&#13;
+          margin-left: 12px;&#13;
+          font-size: 13px;&#13;
+        }&#13;
+      }&#13;
+    }&#13;
+  }&#13;
+}&#13;
+.kb-mobile{&#13;
+  letter-spacing: 1px;&#13;
+  .kb-no-bottom{&#13;
+    margin-bottom:0px;&#13;
+  }&#13;
+  &amp;.mesp-ui{&#13;
+    .kb-no-bottom{&#13;
+      margin-bottom:20px;&#13;
+    }&#13;
+  }&#13;
+  .kb-help-label {&#13;
+    margin:0 0 20px 0;&#13;
+    font-size: 20px;&#13;
+    display: block;&#13;
+    position: inherit;&#13;
+  }&#13;
+  .help-buttons{&#13;
+    .btn{&#13;
+      height: 40px;&#13;
+      width: 85px;&#13;
+      margin-left: 12px;&#13;
+    }&#13;
+        .help-icon{&#13;
+      padding: 20px;&#13;
+      i.fa {&#13;
+        display: inline-block;&#13;
+        border-radius: 60px;&#13;
+        box-shadow: 0px 0px 2px #888;&#13;
+        padding: 0.5em 0.6em;&#13;
+        font-size: 40px;&#13;
+      }&#13;
+    }&#13;
+    .is_selected{&#13;
+      i.fa {&#13;
+        background-color:$primary;&#13;
+        color:#fff;&#13;
+      }&#13;
+    }&#13;
+  }&#13;
+  .help-section{&#13;
+    text-align:center;&#13;
+  }&#13;
+  .sp-helpful-percent{&#13;
+    padding-left: 0px;&#13;
+    display: block;&#13;
+    padding-top: 15px;&#13;
+    font-size:1em;&#13;
+  }&#13;
+    .rating-section{&#13;
+    text-align:center;&#13;
+  }&#13;
+  .help-content{&#13;
+    padding: 10px;&#13;
+  }&#13;
+  .help-buttons .btn{&#13;
+    margin: 20px;&#13;
+  }&#13;
+  .rating-section{&#13;
+    margin: 40px 0 15px 0;&#13;
+    .kb-inline{&#13;
+      font-size:20px !important;&#13;
+    }&#13;
+        .kb-rate-star{&#13;
+      padding-bottom: 20px;&#13;
+      display: block;&#13;
+      .kb-inline{&#13;
+        font-size: 35px !important;&#13;
+        span:focus {&#13;
+          outline: none !important;&#13;
+          border: none !important;&#13;
+          -webkit-box-shadow: none !important;&#13;
+          box-shadow: none !important;&#13;
+        }&#13;
+        .glyphicon{&#13;
+          padding:6px;&#13;
+        }&#13;
+      }&#13;
+    }&#13;
+  }&#13;
+}&#13;
+.transparent-button {&#13;
+    background-color: transparent;&#13;
+    background-repeat:no-repeat;&#13;
+    border: none;&#13;
+    cursor:pointer;&#13;
+    overflow: hidden;&#13;
+    outline:none;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) { 
+
+ }]]></link>
+        <name>SymCode - Feedback</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[(function($sp, input, data, options, gs) {
+    //(function($sp, input, data, options, gs) {
+    /* populate the 'data' object */
+    //data.table = $sp.getValue('table'); 
+    data.sys_id = $sp.getParameter("sys_id");
+    data.Owner = $sp.getParameter("owner");
+    //data.sys_id = input.sys_id || $sp.getParameter("sys_id");
+
+    // enter record with useful yes or no
+    var gr = new GlideRecord('x_ssnbv_symcode_feedback');
+    gr.initialize();
+    if (input && input.action == 'Useful_yes') {
+        gr.setValue('useful', input.parmeter1);
+        gr.setValue('package', data.sys_id);
+        gr.setValue('user', gs.getUserID());
+        var grSuccess = gr.insert();
+        if (grSuccess) {
+            gs.addInfoMessage("Thank you for the feedback. ", 700);
+        }
+    }
+    if (input && input.action == 'Useful_no') {
+        gr.setValue('useful', input.parmeter1);
+        gr.setValue('package', data.sys_id);
+        gr.setValue('user', gs.getUserID());
+        var grrSuccess = gr.insert();
+        if (grrSuccess) {
+            gs.addInfoMessage("Thank you for the feedback. ", 700);
+        }
+    }
+    if (input && input.action == 'getFeedBack') {
+        if (input.parmeter1 != undefined) {
+            gr.setValue('comment', input.parmeter1);
+            gr.setValue('package', data.sys_id);
+            gr.setValue('user', gs.getUserID());
+            var rSuccess = gr.insert();
+            var email = GetOwenrEmail();
+            gs.eventQueue("x_ssnbv_symcode.FeedbackToPackageOwner", gr);
+            if (rSuccess) {               
+                gs.addInfoMessage("Thank you for the feedback. ", 700);
+            }
+        }else{
+			gs.addErrorMessage("Please enter the Comments. ", 700);
+		}
+    }
+    if (input && input.action == 'Ratings') {
+        gr.setValue('rating', input.parmeter1);
+        gr.setValue('package', data.sys_id);
+        gr.setValue('user', gs.getUserID());
+        var strSuccess = gr.insert();
+        if (strSuccess) {
+            gs.addInfoMessage("Thank you for the feedback. ", 700);
+        }
+    }
+
+    // Insert record with comment
+
+    function GetOwenrEmail() {
+        var name;
+        var strpack = new GlideRecord('x_ssnbv_symcode_package');
+        strpack.addQuery('sys_id', data.sys_id);
+        strpack.query();
+        if (strpack.next()) {
+            name = strpack.owner.email;           
+        }
+        return name;
+    }
+
+})($sp, input, data, options, gs);]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Satish.Garud@fujitsu.com</sys_created_by>
+        <sys_created_on>2022-06-02 08:56:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a2cfa4d61bfb0d9070f8a868b04bcbc1</sys_id>
+        <sys_mod_count>156</sys_mod_count>
+        <sys_name>SymCode - Feedback</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_a2cfa4d61bfb0d9070f8a868b04bcbc1</sys_update_name>
+        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2022-06-10 12:33:54</sys_updated_on>
+        <template><![CDATA[<div class="kb-help-wrapper ng-scope kb-desktop">
+  <span><strong>User Feedback</strong></span><br/><br/>
+  <div class="kb-help-wrapper ng-scope kb-desktop">
+  <div class="row">
+      <div class="col-sm-6 help-section"> 
+        <div class="kb-inline">
+       <span class="kb-help-label ng-binding">Helpful?</span>
+      </div>
+      <div class="kb-inline help-use-button">    
+        <button type="button" class="btn btn-default btn-question kb-button" ng-click="c.Usefulyes()">Yes</button>
+        <button type="button" class="btn btn-default btn-question kb-button" ng-click="c.Usefulno()">No</button>
+     </div>
+    </div>
+  <hr class="kb-line visible-xs" aria-hidden="true">
+  <div class="col-sm-6 rating-section">
+    <div class="kb-rate-article kb-inline"> 
+      <span class="kb-inline">Rate this Package</span>  	
+    </div>
+    <div class="kb-rate-star" ng-class="{'r-pad-top' : c.KBRatingStyle}">
+      <span class="kb-inline">
+            
+              <span ng-click="c.submitRatings()" class="sp-stars" role="presentation">
+              <span uib-rating sp-rating ng-model="c.data.rating" max="5" state-on="'fa fa-star kb-star-on'" state-off="'fa fa-star kb-star-off'" />
+         
+            </span>            
+            </span>
+    </div>
+        
+  </div>
+    </div>
+    </div>
+   <br/><br/>
+  
+   <div>
+<textarea name="comments" id="article_comments" placeholder="Enter feedback here"  ng-model = "c.comments" class="form-control snc-kb-comments-entry form-control"></textarea>
+      
+  </div><br/><br/>
+  <div class="col-sm-4 float-left"> 
+   <button type="button" class="btn btn-primary" ng-click="c.submitFedback(getFeedBack)">Submit</button> 
+<span>{{c.data.msg}}</span>  
+  </div>
+  <br/><br/>
+</div>
+<style>
+  .kb-help-wrapper .rating-section{
+    text-align:right;
+  }
+  .kb-help-wrapper .kb-help-label {
+    display: inline;
+    position: relative;
+    left: 0rem;
+    top: 0.3rem;
+  }
+  .kb-help-wrapper .kb-rate-article{
+    padding-right : 1rem;
+    display: inline;
+  }
+  .kb-help-wrapper .sp-helpful-percent{
+    padding-left: 1rem;
+    display: inline-block;
+    font-size:1rem;
+  }
+  @media only screen and (min-width :1200px){
+    .kb-help-wrapper.kb-desktop .help-content .help-use-text{
+      display:inline;
+    }
+  }
+  @media only screen and (max-width :992px){
+    .kb-help-wrapper.kb-desktop .help-section{
+      text-align:center;
+    }
+    .kb-help-wrapper.kb-desktop .sp-helpful-percent{
+      padding-left: 0rem;
+      display: block;
+    }
+    .kb-help-wrapper.kb-desktop .rating-section{
+      text-align:center;
+    }
+    .kb-help-wrapper.kb-desktop .kb-help-label {
+      margin:0rem;
+      font-size: 2rem;
+      display: block;
+      position: inherit;
+    }
+    .kb-help-wrapper .kb-line{
+      border-color: #ccc;
+    }
+    .kb-help-wrapper >  .kb-line{
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    } 
+    .kb-help-wrapper.mesp-ui >  .kb-line{
+      margin-left: -1.6rem;
+      margin-right: -1.5rem;
+    } 
+    .kb-help-wrapper.mesp-ui .row .kb-line{
+      margin-left: -0.8rem;
+      margin-right: -0.7rem;
+    }
+    .kb-help-wrapper.kb-desktop .help-content{
+      padding: 1rem;
+    }
+    .kb-help-wrapper.kb-desktop .help-buttons .btn{
+      margin: 1.5rem;
+    }
+    .kb-help-wrapper.kb-desktop .rating-section{
+      margin: 1rem 0 1.5rem 0;
+    }
+    .kb-help-wrapper .rating-section .kb-rate-article{
+      padding-bottom: 0.8rem;
+      display: block;
+    }
+    .kb-help-wrapper.kb-desktop .rating-section .kb-rate-star .kb-inline{
+      font-size: 2.5rem !important;
+    }
+    .kb-help-wrapper .rating-section .kb-rate-star .kb-inline .glyphicon{
+      padding:0.6rem;
+    }
+  }
+
+  @media only screen and (min-width:768px) and (max-width: 992px) {
+    .kb-help-wrapper .kb-no-bottom, .kb-help-wrapper .kb-line{
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .kb-help-wrapper .rating-section .kb-rate-article{
+      padding-bottom: 1.5rem;
+      display: block;
+    }
+  }
+</style>]]></template>
+    </sp_widget>
+</record_update>

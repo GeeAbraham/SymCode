@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>standard</category>
+        <client_script><![CDATA[function ($rootScope, $scope, snRecordWatcher, spUtil, $location, $uibModal, cabrillo, $timeout, $window) {
+
+	$scope.avatarProfile = {
+		userID: $scope.user.sys_id,
+		name: $scope.user.name,
+		initials: $window.NOW.user_initials
+	};
+	
+	if ($window.NOW.user_avatar) {
+		$scope.avatarProfile.userImage = $window.NOW.user_avatar;
+	}
+
+	if (cabrillo.isNative())
+		$scope.isViewNative = true;
+
+	$scope.openPopUp = function() {
+		var url = "$chat_support.do?queueID=" + $scope.data.connect_support_queue_id;
+		var popup = window.open (url, "popup", "width=900, height=600");
+	};
+
+	$scope.openLogin = function () {
+		$scope.modalInstance = $uibModal.open({
+			templateUrl: 'modalLogin',
+			scope: $scope
+		});
+	};
+
+	var xsScreenSize = isXSScreenSize();
+	$scope.showXSAvatar = isXSScreenSize();
+	$scope.showAvatar = !isXSScreenSize();
+	
+	angular.element($window).on('resize', function () {
+		if(xsScreenSize !== isXSScreenSize() && (!$scope.showXSAvatar || !$scope.showAvatar)){
+			$scope.showXSAvatar = true;
+			$scope.showAvatar = true;
+		}	   
+	});
+	
+	
+	function isXSScreenSize() {
+		return $window.matchMedia('(max-width: 767px)').matches;
+	}
+	
+	$rootScope.$on('sp.avatar_changed', function() {
+		$scope.userID = "";
+		$timeout(function(){
+			$scope.userID = $scope.user.sys_id;
+		});
+	});
+
+	$scope.isHomepage = function() {
+		if (!$scope.page.id)
+			return true;
+
+		if ($scope.page.id == $scope.portal.homepage_dv)
+			return true;
+
+		return false;
+	};
+	
+	/**
+	* Matches heights of elements having approppriate eq classes.
+	*/
+	$scope.matchHeights = function() {
+		if (!$scope.matchHeightsTimeout) {
+			$scope.matchHeightsTimeout = $timeout(function(){
+				$scope.matchHeightsTimeout = null;
+				$.fn.matchHeight._groups.length = 0;
+				jQuery('.eq-panels .panel').matchHeight({});
+				jQuery('.eq-group .eq, .eq-group .eq-panel .panel').matchHeight({});
+			}, 0);
+		}
+	};
+
+	/**
+	* Initializes header.
+	*/
+	(function(){
+		$scope.loadingIndicator = $rootScope.loadingIndicator;
+		$scope.$on('sp_loading_indicator', function(e, value) { 
+			$scope.matchHeights();
+			$scope.loadingIndicator = value; 
+		});
+	})();
+	
+}
+		]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.navbar {&#13;
+  transition: 250ms opacity ease-in-out;&#13;
+  -webkit-transition: 250ms opacity ease-in-out;&#13;
+  border: 0;&#13;
+  border-bottom: 4px solid $sp-navbar-divider-color;&#13;
+}&#13;
+&#13;
+.navbar-fade {&#13;
+  opacity: 0.4;&#13;
+}&#13;
+&#13;
+.navbar-inverse .navbar-brand {&#13;
+    color: #000 !important;&#13;
+}&#13;
+&#13;
+.navbar-inverse {&#13;
+    background-color: #ffffff;    &#13;
+}&#13;
+&#13;
+.navbar-inverse .navbar-nav &gt; .open &gt; a, .navbar-inverse .navbar-nav &gt; .open &gt; a:hover, .navbar-inverse .navbar-nav &gt; .open &gt; a:focus {&#13;
+    background-color: #e6e6e6;&#13;
+    color: #cf1d25;&#13;
+}&#13;
+&#13;
+.panel-default &gt; .panel-heading {&#13;
+    color: #333;&#13;
+    background-color: #e5e5e5;&#13;
+    border-color: #e5e5e5;&#13;
+}&#13;
+&#13;
+.label-primary {&#13;
+    background-color: #686868;&#13;
+}&#13;
+&#13;
+.navbar-inverse .navbar-toggle {&#13;
+  border-color: rgba(255, 255, 255, 0.25);&#13;
+}&#13;
+&#13;
+header[role="banner"],&#13;
+.nav &gt; li &gt; a {&#13;
+  max-height: 60px;&#13;
+}&#13;
+&#13;
+&#13;
+@media screen and (max-width: 768px){&#13;
+  .nav &gt; li &gt; a {&#13;
+    padding-right: 0.5rem;&#13;
+    padding-left: 0.5rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+.navbar-brand {&#13;
+  max-height: 60px;&#13;
+  padding: 0;&#13;
+  padding-bottom: 0.5rem;&#13;
+}&#13;
+&#13;
+.navbar-brand img, .navbar-brand span {&#13;
+  margin-left: $sp-logo-margin-x;&#13;
+  margin-right: $sp-logo-margin-x;&#13;
+  margin-top: $sp-logo-margin-y;&#13;
+  margin-bottom: $sp-logo-margin-y;&#13;
+  display: block;&#13;
+  max-height: $sp-logo-max-height;&#13;
+  max-width: $sp-logo-max-width;&#13;
+  position: relative;&#13;
+  top: 50%;&#13;
+  -webkit-transform: translateY(-50%);&#13;
+  -ms-transform: translateY(-50%);&#13;
+  transform: translateY(-50%);&#13;
+}&#13;
+.breadcrumb-container {&#13;
+  background-color: $panel-bg;&#13;
+}&#13;
+&#13;
+/* for mobile app */&#13;
+.navbar-inverse.is-native {&#13;
+  background-color: #405060;&#13;
+}&#13;
+&#13;
+nav{&#13;
+ margin-bottom: 0px;&#13;
+ border-radius: 0px;&#13;
+}&#13;
+&#13;
+.navbar-collapse{&#13;
+padding-right: 0px;&#13;
+}&#13;
+&#13;
+.navbar-nav {&#13;
+margin: 0px;&#13;
+}&#13;
+&#13;
+// PRB711244: Dropdown menu is scrollable when too many items&#13;
+.scrollable-dropdown {&#13;
+  max-height: 80vh;&#13;
+  overflow: auto;&#13;
+  height: auto;&#13;
+}&#13;
+&#13;
+.is-native {&#13;
+ .scrollable-dropdown {&#13;
+  max-height: 100vh;&#13;
+  overflow: scroll;&#13;
+  height: auto;&#13;
+	}&#13;
+}&#13;
+&#13;
+&#13;
+/* PRB923910: Fix for Service Portal - Header Poorly Aligned in Safari */&#13;
+@media screen and (min-width: 768px) {&#13;
+  .navbar-collapse {&#13;
+    display: flex !important;&#13;
+  }&#13;
+}&#13;
+&#13;
+/* Pure CSS loading indicator */&#13;
+.loader-background {&#13;
+  position: fixed;&#13;
+  z-index: 999;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  background-color: #eeeeee;&#13;
+  opacity: 0.5;&#13;
+}&#13;
+&#13;
+.loader {&#13;
+  margin: 100px auto;&#13;
+  font-size: 25px;&#13;
+  width: 1em;&#13;
+  height: 1em;&#13;
+  border-radius: 50%;&#13;
+  position: relative;&#13;
+  top: 33%;&#13;
+  text-indent: -9999em;&#13;
+  -webkit-animation: load5 1.1s infinite ease;&#13;
+  animation: load5 1.1s infinite ease;&#13;
+  -webkit-transform: translateZ(0);&#13;
+  -ms-transform: translateZ(0);&#13;
+  transform: translateZ(0);&#13;
+}&#13;
+@-webkit-keyframes load5 {&#13;
+  0%,&#13;
+  100% {&#13;
+    box-shadow: 0em -2.6em 0em 0em #000000, 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.5), -1.8em -1.8em 0 0em rgba(0,0,0, 0.7);&#13;
+  }&#13;
+  12.5% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.7), 1.8em -1.8em 0 0em #000000, 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.5);&#13;
+  }&#13;
+  25% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.5), 1.8em -1.8em 0 0em rgba(0,0,0, 0.7), 2.5em 0em 0 0em #000000, 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  37.5% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.5), 2.5em 0em 0 0em rgba(0,0,0, 0.7), 1.75em 1.75em 0 0em #000000, 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  50% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.5), 1.75em 1.75em 0 0em rgba(0,0,0, 0.7), 0em 2.5em 0 0em #000000, -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  62.5% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.5), 0em 2.5em 0 0em rgba(0,0,0, 0.7), -1.8em 1.8em 0 0em #000000, -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  75% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.5), -1.8em 1.8em 0 0em rgba(0,0,0, 0.7), -2.6em 0em 0 0em #000000, -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  87.5% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.5), -2.6em 0em 0 0em rgba(0,0,0, 0.7), -1.8em -1.8em 0 0em #000000;&#13;
+  }&#13;
+}&#13;
+@keyframes load5 {&#13;
+  0%,&#13;
+  100% {&#13;
+    box-shadow: 0em -2.6em 0em 0em #000000, 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.5), -1.8em -1.8em 0 0em rgba(0,0,0, 0.7);&#13;
+  }&#13;
+  12.5% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.7), 1.8em -1.8em 0 0em #000000, 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.5);&#13;
+  }&#13;
+  25% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.5), 1.8em -1.8em 0 0em rgba(0,0,0, 0.7), 2.5em 0em 0 0em #000000, 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  37.5% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.5), 2.5em 0em 0 0em rgba(0,0,0, 0.7), 1.75em 1.75em 0 0em #000000, 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  50% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.5), 1.75em 1.75em 0 0em rgba(0,0,0, 0.7), 0em 2.5em 0 0em #000000, -1.8em 1.8em 0 0em rgba(0,0,0, 0.2), -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  62.5% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.5), 0em 2.5em 0 0em rgba(0,0,0, 0.7), -1.8em 1.8em 0 0em #000000, -2.6em 0em 0 0em rgba(0,0,0, 0.2), -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  75% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.5), -1.8em 1.8em 0 0em rgba(0,0,0, 0.7), -2.6em 0em 0 0em #000000, -1.8em -1.8em 0 0em rgba(0,0,0, 0.2);&#13;
+  }&#13;
+  87.5% {&#13;
+    box-shadow: 0em -2.6em 0em 0em rgba(0,0,0, 0.2), 1.8em -1.8em 0 0em rgba(0,0,0, 0.2), 2.5em 0em 0 0em rgba(0,0,0, 0.2), 1.75em 1.75em 0 0em rgba(0,0,0, 0.2), 0em 2.5em 0 0em rgba(0,0,0, 0.2), -1.8em 1.8em 0 0em rgba(0,0,0, 0.5), -2.6em 0em 0 0em rgba(0,0,0, 0.7), -1.8em -1.8em 0 0em #000000;&#13;
+  }&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function(scope, element) {
+	$(document).keyup(function(event) {
+		if (event.which == 9) { //tab key handler + arrow keys
+			if ($(event.target).parents(".dropdown-menu").length == 0) { //if we are NOT inside a dropdown...
+				//close the dropdowns
+				$(".dropdown").removeClass("open");
+				$("[data-toggle='dropdown']").attr("aria-expanded", "false");
+			}
+		}
+	});
+	
+	$(element).on('click.nav','.navbar-collapse.in',function(e) {
+		var target = $(e.target);
+		if (target.is('a')) {
+			if (target.hasClass('sp-menu-has-items'))
+				return; // menu item has a submenu, so just toggle it
+			
+			// collapse mobile nav if clicked an anchor
+			$(this).removeClass('in').addClass('collapse');
+			return;
+		}
+
+		if (target.parent().hasClass("toggle-dropdown")) {
+			// collapse mobile nav if parent has toggle-dropdown class
+			$(this).removeClass('in').addClass('collapse');
+			return;
+		}
+
+		// if neither target nor parent is an anchor, do nothing
+		if (!target.parent().is('a'))
+			return;
+
+		// collapse mobile nav if target is part of a submenu
+		if (target.parents("ul.dropdown-menu").length > 0)
+			$(this).removeClass('in').addClass('collapse');
+	});
+}]]></link>
+        <name>SymCode - Header</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[// Defines the support queue ID that will be linked to by the Live Chat link in header
+//data.connect_support_queue_id = $sp.getValue('sp_chat_queue');
+var company_queue = 0;
+var queue = $sp.getValue('sp_chat_queue');
+
+var x = new GlideRecord('core_company');
+x.addQuery("sys_id", gs.getUser().getCompanyID());
+x.query();
+while (x.next()) {
+    if (x.getValue("banner_text"))
+        data.company_slogan = x.getValue("banner_text");
+
+    if (x.getValue("u_service_id"))
+        data.company_sdc_id = x.getValue("u_service_id");
+
+    if (x.getDisplayValue("banner_image"))
+        data.company_logo = x.getDisplayValue("banner_image");
+
+    if (x.getValue("u_enable_chat"))
+        data.chat = x.getValue("u_enable_chat");
+
+    if (x.getValue("u_enable_secure_directclick"))
+        data.call = x.getValue("u_enable_secure_directclick");
+
+    if (x.getValue("u_portal_cart")) {
+        data.cart = x.getValue("u_portal_cart");
+    }
+    console.log(data.chat);
+
+    if (x.getValue("u_chat_queue")) company_queue = x.getValue("u_chat_queue");
+
+    //if(x.getValue("u_portal_cart" == true && options.enable_cart == true)) options.enable_cart=options.enable_cart||"false";
+}
+
+
+
+if (company_queue != queue && company_queue != 0)
+    data.connect_support_queue_id = company_queue;
+else data.connect_support_queue_id = '';
+
+
+
+
+// Defines the support queue ID that will be linked to by the Live Chat link in header
+data.connect_support_queue_id = $sp.getValue('sp_chat_queue');
+data.login_page = $sp.getValue('login_page');
+data.profileBtnMsg = gs.getMessage("User options");
+var menu = $sp.getValue("sp_rectangle_menu");
+data.menu = $sp.getWidgetFromInstance(menu);
+if (data.menu && data.menu.data) {
+    data.menu.data.replace = true;
+    // Hide login if menu already has link to login
+    data.hasLogin = false;
+    if (data.menu.data.menu.items) {
+        for (var i in data.menu.data.menu.items) {
+            var item = data.menu.data.menu.items[i];
+            if (item.type == 'page' && item.sp_page == data.login_page)
+                data.hasLogin = true;
+        }
+    }
+}
+
+data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+data.noChat = gs.getMessage('Live Chat is currently unavailable, please contact your Service Desk using an alternative method.');
+data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+data.typeahead = $sp.getWidgetFromInstance('typeahead-search');
+data.sdc_url = gs.getProperty('secure_directclick.url');
+
+ data.languageSelector = $sp.getWidget("language-picker", {});]]></script>
+        <servicenow>false</servicenow>
+        <static>false</static>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-01 14:56:26</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c9caacdd37f133005144549543990e72</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>SymCode - Header</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_header_footer_c9caacdd37f133005144549543990e72</sys_update_name>
+        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2021-11-11 06:18:13</sys_updated_on>
+        <template><![CDATA[<div>
+  <nav class="navbar-inverse" ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}"
+       role="navigation">
+    <div ng-show="::!isViewNative" class="navbar-header">
+      <a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}"><span>{{::portal.title}}</span></a>
+      <a class="navbar-brand navbar-brand-logo" ng-if="::portal.logo" href="?id={{::portal.homepage_dv}}" aria-label="${Go to homepage}">
+        <!--<img ng-src="{{::portal.logo}}" title="Symcode" role="presentation" alt="${Portal Logo}" />  -->
+         <img ng-if="::data.company_logo" ng-src="{{::data.company_logo}}" style="display:inline-block;">
+      <span ng-if="::data.company_slogan" style="display:inline-block;">{{::data.company_slogan}}</span>
+      </a>
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sp-nav-bar">
+        <span class="sr-only">${Toggle navigation}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div sp-navbar-toggle="" class="collapse navbar-collapse navbar-right scrollable-dropdown" id="sp-nav-bar">
+      <!-- Include The Menu -->
+      <sp-widget widget="::data.menu"></sp-widget>
+      <ul ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav" role="presentation">
+        <li role="presentation"><a href ng-click="::openLogin()">${Login}</a></li>
+      </ul>
+      <ul ng-if="::user.logged_in" class="nav navbar-nav" role="menubar">
+        <!-- chat, avatar, and logout -->
+        <li ng-if="::data.connect_support_queue_id" role="presentation"><a href ng-click="openPopUp()" role="menuitem">${Live Chat}</a></li>
+        <li ng-if="showAvatar" class="hidden-xs dropdown" role="presentation">
+          <a href class="toggle-dropdown" data-toggle="dropdown" aria-expanded="false" title="{{::data.profileBtnMsg}}" aria-label="{{::data.profileBtnMsg}}: {{::user.name}}" id="profile-dropdown"  role="menuitem" aria-haspopup="true">
+            <span class="navbar-avatar" aria-hidden="true"><sn-avatar class="avatar-small-medium" primary="avatarProfile" /></span>
+            <span class="visible-lg-inline">{{::user.name}}</span>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-label="{{::data.profileBtnMsg}}">
+            <li role="presentation"><a tabindex="-1" ng-href="?id=user_profile&sys_id={{::user.sys_id}}" role="menuitem">${Profile}</a></li>
+            <li ng-if="::!isViewNative" role="presentation"><a tabindex="-1" href="{{::portal.logoutUrl}}" role="menuitem">${Logout}</a></li>
+          </ul>
+        </li>
+        <li ng-if="showXSAvatar" class="visible-xs-block" role="presentation"><a role="menuitem" ng-href="?id=user_profile&sys_id={{::user.sys_id}}">
+          <span class="navbar-avatar"><sn-avatar class="avatar-small-medium" primary="avatarProfile" /></span>{{::user.name}}</a>
+        </li>
+        <li ng-if="::!isViewNative" class="visible-xs-block" role="presentation"><a role="menuitem" href="{{::portal.logoutUrl}}">${Logout}</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- Pure CSS loading incdicator -->
+<div class="loader-background" ng-show="loadingIndicator">
+  <div class="loader">Loading...</div>
+</div>]]></template>
+    </sp_header_footer>
+</record_update>

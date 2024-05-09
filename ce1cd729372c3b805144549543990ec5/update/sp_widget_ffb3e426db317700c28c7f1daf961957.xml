@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $window ,$uibModal) {
+	var c = this;
+	c.data.userName="";
+	c.data.passWord="";
+	
+	$scope.login = function(){
+		
+		if($scope.data.gotoUrl){
+			
+				/*document.getElementById('user_name').value = $scope.data.credential.fields.username.value;
+		document.getElementById('user_password').value = $scope.data.credential.fields.password.value;*/
+		
+		var form = document.getElementById('login_form');
+		form.action = $scope.data.instance.fields.url.value+'/login.do';
+		document.getElementById('sysparm_goto_url').value = $scope.data.gotoUrl;
+		form.submit();
+		}
+		else
+			{
+				$window.setTimeout($scope.login, 100);
+			}
+		
+	};
+			//added to get credentials
+	
+
+	 $scope.openModal = function() {
+	 c.modalInstance = $uibModal.open({
+	 templateUrl: 'modalTemplate',
+	 scope: $scope
+	 });
+	 };
+
+	 c.closeModal = function(user,pass) {
+		
+	 c.modalInstance.close();
+		c.data.action = "load";
+		 c.data.user_N = user;
+		c.data.pass_w = pass;
+		c.server.update().then(function() {
+		});
+	
+		$scope.login();
+		
+	 };
+	
+	success = function() {
+	 if(document.getElementById("userName").value==="" || document.getElementById("passWord").value==="") { 
+            document.getElementById('button').disabled = true; 
+        } else { 
+            document.getElementById('button').disabled = false;
+        }
+    };
+
+	(function(){
+		$scope.openModal();
+		
+	})();
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>SymCode - Install Version</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_ssnbv_symcode.user</roles>
+        <script><![CDATA[(function() {
+	
+	
+	
+	if(input){
+	if(input.action == "load"){
+		
+		// Get parameters
+	data.availableVersionId = $sp.getParameter('available_version_id');
+	
+		// Get version
+	var packageUtil = new SymCodePackageUtil();
+	var availableGr = new GlideRecord(packageUtil.TABLE_AVAILABLE_VERSION); 
+	if (!availableGr.get(data.availableVersionId)) throw 'Could not get available version!';
+	data.instanceId = availableGr.instance.toString();
+	data.versionId = availableGr.version.toString();
+	
+	// Get instance
+	var instanceUtil = new SymCodeInstanceUtil(data.instanceId,input.user_N,input.pass_w);
+	data.instance = instanceUtil.getInstance();
+	//data.credential = instanceUtil.getCredential();
+	
+	// Install version
+	var ids = instanceUtil.installVersion(data.versionId);
+	//data.gotoUrl = (ids.length > 1 ? '/sys_remote_update_set_list.do?sysparm_query=sys_idIN'+ids : '/sys_remote_update_set.do?sys_id='+ids);
+	data.gotoUrl = (ids.length > 1 ? '/sys_remote_update_set.do?sysparm_query=sys_idIN'+ids : '/sys_remote_update_set.do?sys_id='+ids);
+	}
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
+        <sys_created_on>2019-06-05 11:38:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ffb3e426db317700c28c7f1daf961957</sys_id>
+        <sys_mod_count>186</sys_mod_count>
+        <sys_name>SymCode - Install Version</sys_name>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sp_widget_ffb3e426db317700c28c7f1daf961957</sys_update_name>
+        <sys_updated_by>geevarughese.abraham@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2023-01-07 22:32:33</sys_updated_on>
+        <template><![CDATA[<div style="display:none";>
+  <form id="login_form" action="" method="post">
+  <!--<input type="text" name="user_name" id="user_name" value=""/><br/>
+    <input type="password" name="user_password" id="user_password" value=""/><br/> -->
+    <input type="text" name="user_name" id="user_name" ng-model="c.data.userName"/><br/>
+    <input type="password" name="user_password" id="user_password" ng-model="c.data.passWord"/><br/>
+    <input type="text" name="sysparm_goto_url" id="sysparm_goto_url" value=""/><br/>
+    <input type="text" name="ni.nolog.user_password" value="true"/><br/>
+    <input type="text" name="ni.noecho.user_name" value="true"/><br/>
+    <input type="text" name="ni.noecho.user_password" value="true"/><br/>
+    <input type="text" name="sys_action" value="sysverb_login"/><br/>
+    <input type="submit" value="Login"/>
+  </form>
+ 
+<!-- Modal to enter credentials-->
+<script type="text/ng-template" id="modalTemplate">
+ <div class="panel panel-default">
+ <div class="panel-heading">
+ <h4 class="panel-title">Please enter your credentials</h4>
+   </div>
+   <form id="myForm">
+ <div class="panel-body wrapper-xl">
+ <label>User Name:</label>
+ <input id="userName" type="text" class="form-control" onkeyup="success()" ng-model="c.data.userName" />
+ <label>Password:</label>
+<input id="passWord" type="password" class="form-control" onkeyup="success()" ng-model="c.data.passWord" />
+   </div>
+ <div class="panel-footer text-right">
+ <button id="button" class="btn btn-primary" type ="submit" disabled ng-click="c.closeModal(c.data.userName,c.data.passWord)">${Submit}</button>
+ </div>
+ </form>
+ </div>
+</script>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
