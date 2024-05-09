@@ -5,6 +5,8 @@
         <cleared>false</cleared>
         <disabled>ignore</disabled>
         <field/>
+        <field_message/>
+        <field_message_type>none</field_message_type>
         <mandatory>true</mandatory>
         <order>100</order>
         <sys_class_name>catalog_ui_policy_action</sys_class_name>
@@ -23,6 +25,8 @@
         <sys_updated_on>2022-01-19 10:26:05</sys_updated_on>
         <table/>
         <ui_policy display_value="Make name and build name mandatory">ffaff2871b45cd5070f8a868b04bcbab</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
         <variable>name</variable>
         <variable_set/>
         <visible>ignore</visible>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value="">2053d5ebc37986506e9e51fdd40131a0</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[Click on New]]></content>
+        <guide/>
+        <implicit>false</implicit>
+        <link/>
+        <name/>
+        <options>{"url":"/now/sow/list/params/list-id/9dc5fb4d533330105264ddeeff7b1275/tiny-id/aTcqS0wKpO7ONFGCx6yyovcnEEoLMGcI"}</options>
+        <order>2</order>
+        <placement>bottom</placement>
+        <skippable>false</skippable>
+        <step_type>step</step_type>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>sunilkumar.varikuppala@fujitsu.com</sys_created_by>
+        <sys_created_on>2024-05-02 07:20:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6853d5ebc37986506e9e51fdd40131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_6853d5ebc37986506e9e51fdd40131a2</sys_update_name>
+        <sys_updated_by>sunilkumar.varikuppala@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2024-05-02 07:20:21</sys_updated_on>
+        <target/>
+        <target_ref display_value="">2053d5ebc37986506e9e51fdd40131a0</target_ref>
+        <title/>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>now/sow/list</window>
+    </sys_embedded_tour_step>
+</record_update>

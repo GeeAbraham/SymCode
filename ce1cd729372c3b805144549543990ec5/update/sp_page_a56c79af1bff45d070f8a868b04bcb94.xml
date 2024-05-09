@@ -41,8 +41,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:57:03</sys_updated_on>
         <tablename>sp_page</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>패키지버전 세부정보</value>
     </sys_translated_text>
 </record_update>

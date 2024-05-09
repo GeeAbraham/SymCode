@@ -3,7 +3,7 @@
         <active>true</active>
         <approval_type/>
         <check_script_hash>false</check_script_hash>
-        <crypto_module display_value="com_snc_adaptive_authentication_glideencrypter">fa4b9cf4c31101102c5b4e483c40dd00</crypto_module>
+        <crypto_module display_value="global.com_snc_adaptive_authentication_glideencrypter">fa4b9cf4c31101102c5b4e483c40dd00</crypto_module>
         <crypto_spec/>
         <granular_operation/>
         <identity_group_alias/>

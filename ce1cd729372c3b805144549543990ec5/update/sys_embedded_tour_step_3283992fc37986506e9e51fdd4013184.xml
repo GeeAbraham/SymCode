@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value="">f683992fc37986506e9e51fdd4013181</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[Enter the Name]]></content>
+        <guide/>
+        <implicit>false</implicit>
+        <link/>
+        <name/>
+        <options>{"url":"/now/sow/record/cmdb_ci/-1_uid_1/params/query/sys_class_name%3Dcmdb_ci_appl%5EORsys_class_name%3Dcmdb_ci_microsoft_iis_web_server%5EORsys_class_name%3Dcmdb_ci_app_server_tomcat%5EORsys_class_name%3Dcmdb_ci_web_application%5EORsys_class_name%3Dcmdb_ci_email_server%5EORsys_class_name%3Dcmdb_ci_app_server_jboss%5EORsys_class_name%3Dcmdb_ci_web_service%5EORsys_class_name%3Dcmdb_ci_application_software%5EORsys_class_name%3Dcmdb_ci_appl_sharepoint%5EORsys_class_name%3Dcmdb_ci_app_server_weblogic%5EORsys_class_name%3Dcmdb_ci_exchange_mailbox%5EORsys_class_name%3Dcmdb_ci_web_server%5EORsys_class_name%3Dcmdb_ci_nginx_web_server%5EORsys_class_name%3Dcmdb_ci_app_server_websphere%5EORsys_class_name%3Dcmdb_ci_app_server_java%5EORsys_class_name%3Dcmdb_ci_iisdirectory%5EORsys_class_name%3Dcmdb_ci_tomcat_connector%5EORsys_class_name%3Dcmdb_ci_app_server_tomcat_war%5EORsys_class_name%3Dcmdb_ci_appl_sap_bo%5EORsys_class_name%3Dcmdb_ci_appl_generic%5EORsys_class_name%3Dcmdb_ci_web_site%5EORsys_class_name%3Dcmdb_ci_apache_web_server%5EORsys_class_name%3Dcmdb_ci_app_server"}</options>
+        <order>5</order>
+        <placement>right</placement>
+        <skippable>false</skippable>
+        <step_type>step</step_type>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>sunilkumar.varikuppala@fujitsu.com</sys_created_by>
+        <sys_created_on>2024-05-02 07:21:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3283992fc37986506e9e51fdd4013184</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_3283992fc37986506e9e51fdd4013184</sys_update_name>
+        <sys_updated_by>sunilkumar.varikuppala@fujitsu.com</sys_updated_by>
+        <sys_updated_on>2024-05-02 07:21:18</sys_updated_on>
+        <target/>
+        <target_ref display_value="">f683992fc37986506e9e51fdd4013181</target_ref>
+        <title/>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>now/sow/record</window>
+    </sys_embedded_tour_step>
+</record_update>

@@ -3,7 +3,7 @@
         <active>true</active>
         <approval_type/>
         <check_script_hash>false</check_script_hash>
-        <crypto_module display_value="com_snc_ha_glideencrypter">1b139678eb6320100fcee5b26b522899</crypto_module>
+        <crypto_module display_value="global.com_snc_ha_glideencrypter">1b139678eb6320100fcee5b26b522899</crypto_module>
         <crypto_spec/>
         <granular_operation/>
         <identity_group_alias/>

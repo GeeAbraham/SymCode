@@ -41,5 +41,6 @@
         <vendor/>
         <vendor_prefix/>
         <version>0.0.7</version>
+        <package_json/>
     </sys_app>
 </record_update>

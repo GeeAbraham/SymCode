@@ -5,6 +5,8 @@
         <cleared>false</cleared>
         <disabled>true</disabled>
         <field/>
+        <field_message/>
+        <field_message_type>none</field_message_type>
         <mandatory>ignore</mandatory>
         <order>100</order>
         <sys_class_name>catalog_ui_policy_action</sys_class_name>
@@ -23,6 +25,8 @@
         <sys_updated_on>2022-01-19 10:21:58</sys_updated_on>
         <table/>
         <ui_policy display_value="Make name and released on field read only">159d76431b45cd5070f8a868b04bcba9</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
         <variable>name</variable>
         <variable_set/>
         <visible>ignore</visible>

@@ -3,7 +3,7 @@
         <active>true</active>
         <approval_type/>
         <check_script_hash>false</check_script_hash>
-        <crypto_module display_value="glide_encrypter">657f9b7a77b310100f7a72f969106102</crypto_module>
+        <crypto_module display_value="sn_bm_client.glide_encrypter">657f9b7a77b310100f7a72f969106102</crypto_module>
         <crypto_spec/>
         <granular_operation/>
         <identity_group_alias/>

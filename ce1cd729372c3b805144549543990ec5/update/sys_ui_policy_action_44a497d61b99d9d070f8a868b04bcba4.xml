@@ -3,6 +3,8 @@
         <cleared>false</cleared>
         <disabled>true</disabled>
         <field>package</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>geevarughese.abraham@fujitsu.com</sys_created_by>
@@ -20,6 +22,8 @@
         <sys_updated_on>2022-08-16 10:28:17</sys_updated_on>
         <table>x_ssnbv_symcode_package_version</table>
         <ui_policy display_value="SymCOde: Make state read only">1c3217d21b99d9d070f8a868b04bcb48</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
         <visible>ignore</visible>
     </sys_ui_policy_action>
 </record_update>

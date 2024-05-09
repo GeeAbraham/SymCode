@@ -3,7 +3,7 @@
         <active>true</active>
         <approval_type/>
         <check_script_hash>false</check_script_hash>
-        <crypto_module display_value="password_reset">d41c3789773630100a9bcac5ec5a99e2</crypto_module>
+        <crypto_module display_value="sn_pwdreset_ah.password_reset">d41c3789773630100a9bcac5ec5a99e2</crypto_module>
         <crypto_spec display_value="password_reset --- Symmetric Key Wrapping/Unwrapping">8c2cb789773630100a9bcac5ec5a99b1</crypto_spec>
         <granular_operation/>
         <identity_group_alias/>

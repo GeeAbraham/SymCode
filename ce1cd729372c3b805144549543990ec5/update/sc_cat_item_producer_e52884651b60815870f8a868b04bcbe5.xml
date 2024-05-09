@@ -45,7 +45,7 @@
         <omit_price>false</omit_price>
         <order>0</order>
         <ordered_item_link/>
-        <owner display_value="Syed Imam">aaa195878733f89052f9ece30cbb35d7</owner>
+        <owner display_value="">aaa195878733f89052f9ece30cbb35d7</owner>
         <picture/>
         <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=e52884651b60815870f8a868b04bcbe5&amp;sysparm_preview=true", "summary");</preview>
@@ -93,6 +93,7 @@
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <workflow/>
+        <no_save_as_draft>false</no_save_as_draft>
     </sc_cat_item_producer>
     <sys_translated_text action="delete_multiple" query="documentkey=e52884651b60815870f8a868b04bcbe5"/>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -106,8 +107,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:38:59</sys_updated_on>
         <tablename>sc_cat_item</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>새 패키지 등록</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -121,8 +120,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 18:59:06</sys_updated_on>
         <tablename>sc_cat_item</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>註冊新包</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -136,8 +133,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:57:44</sys_updated_on>
         <tablename>sc_cat_item</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>Symcode 포털에서 생성된 새 패키지</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -151,8 +146,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:29:48</sys_updated_on>
         <tablename>sc_cat_item</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>從 symcode 門戶創建的新包</value>
     </sys_translated_text>
     <fx_price action="delete_multiple" query="id=e52884651b60815870f8a868b04bcbe5"/>
