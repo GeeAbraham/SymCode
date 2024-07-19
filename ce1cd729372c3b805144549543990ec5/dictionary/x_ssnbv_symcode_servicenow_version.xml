@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="045ff3601bcab09070f8a868b04bcbc9" label="ServiceNow version" max_length="40" name="x_ssnbv_symcode_servicenow_version" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Notified" max_length="40" name="notified" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Current" max_length="40" name="current" type="boolean"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+    </element>
+</database>

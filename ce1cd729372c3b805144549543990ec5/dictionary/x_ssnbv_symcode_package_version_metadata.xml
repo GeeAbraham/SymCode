@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="a75a76c037d1bf405144549543990e90" label="Package Version Metadata" max_length="40" name="x_ssnbv_symcode_package_version_metadata" type="collection">
+        <element label="Payload" max_length="65000" name="payload" type="string"/>
+        <element label="Checksum" max_length="40" name="checksum" type="string"/>
+        <element label="Name" max_length="250" name="name" type="string"/>
+        <element label="Table id" max_length="32" name="table_id" type="string"/>
+        <element label="Table name" max_length="100" name="table_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Version" max_length="32" name="version" reference="x_ssnbv_symcode_package_version" type="reference"/>
+        <index name="index">
+            <element name="version"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="e77267a1376c3b805144549543990eda" label="Package Version" max_length="40" name="x_ssnbv_symcode_package_version" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" choice_field="approval" choice_table="task" default="not requested" label="Approval" max_length="40" name="approval" type="choice">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" default="true" label="Require previous" max_length="40" name="require_previous" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="development" label="State" mandatory="true" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="I tukuna" language="mi" sequence="200" value="released"/>
+                <element inactive_on_update="false" label="發布" language="zh-TW" sequence="200" value="released"/>
+                <element inactive_on_update="false" label="Whanaketanga" language="mi" sequence="100" value="development"/>
+                <element inactive_on_update="false" label="發展" language="zh-TW" sequence="100" value="development"/>
+                <element inactive_on_update="false" label="Publié" language="fr" sequence="200" value="released"/>
+                <element inactive_on_update="false" label="過時的" language="zh-TW" sequence="300" value="obsolete"/>
+                <element inactive_on_update="false" label="Obsolete" sequence="300" value="obsolete"/>
+                <element inactive_on_update="false" label="Development" sequence="100" value="development"/>
+                <element inactive_on_update="false" label="Développement" language="fr" sequence="100" value="development"/>
+                <element inactive_on_update="false" label="Released" sequence="200" value="released"/>
+            </choice>
+        </element>
+        <element hint="Please provide the version of package" label="Version" mandatory="true" max_length="40" name="version" type="string"/>
+        <element label="Change log" max_length="65000" name="change_log" type="string"/>
+        <element label="Instructions" max_length="65000" name="instructions" type="string"/>
+        <element display="true" label="Name" max_length="250" name="name" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Package" mandatory="true" max_length="32" name="package" reference="x_ssnbv_symcode_package" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Released on" max_length="40" name="released_on" read_only="true" type="glide_date_time"/>
+        <index name="index">
+            <element name="package"/>
+        </index>
+    </element>
+</database>

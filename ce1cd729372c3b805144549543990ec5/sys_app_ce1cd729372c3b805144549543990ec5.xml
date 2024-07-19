@@ -16,6 +16,7 @@
         <logo/>
         <menu/>
         <name>SymCode</name>
+        <package_json/>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking/>
@@ -41,6 +42,5 @@
         <vendor/>
         <vendor_prefix/>
         <version>0.0.7</version>
-        <package_json/>
     </sys_app>
 </record_update>

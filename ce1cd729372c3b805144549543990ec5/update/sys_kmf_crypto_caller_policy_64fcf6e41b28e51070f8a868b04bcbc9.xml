@@ -3,7 +3,7 @@
         <active>true</active>
         <approval_type/>
         <check_script_hash>false</check_script_hash>
-        <crypto_module display_value="sn_cti_core.glide_encrypter">9b2dbf0473002010565db0a8d4f6a79c</crypto_module>
+        <crypto_module display_value="">9b2dbf0473002010565db0a8d4f6a79c</crypto_module>
         <crypto_spec/>
         <granular_operation/>
         <identity_group_alias/>

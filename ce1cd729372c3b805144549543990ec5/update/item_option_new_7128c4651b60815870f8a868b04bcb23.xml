@@ -113,8 +113,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:53:55</sys_updated_on>
         <tablename>question</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>패키지의 주요 기능을 제공해 주세요.</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -128,8 +126,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:26:23</sys_updated_on>
         <tablename>question</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>請提供軟件包的主要功能</value>
     </sys_translated_text>
     <fx_price action="delete_multiple" query="id=7128c4651b60815870f8a868b04bcb23"/>

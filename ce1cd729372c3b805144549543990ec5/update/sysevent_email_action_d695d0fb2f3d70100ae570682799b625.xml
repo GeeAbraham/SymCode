@@ -49,8 +49,6 @@ After recertification of your package, update the package's build version and co
 
 Thanks,
 TfSNow Support]]></message_text>
-        <messaging_channels/>
-        <messaging_content/>
         <name>SymCode Notify Owner</name>
         <omit_watermark>false</omit_watermark>
         <order>100</order>

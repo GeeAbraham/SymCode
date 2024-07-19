@@ -3,7 +3,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="089d0733371202002eed304643990e56">c29b413d3731b3005144549543990eab</list_id>
+            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="86fc17314f3202008201798e0210c756">c29b413d3731b3005144549543990eab</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
@@ -18,7 +18,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>active</element>
-            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="089d0733371202002eed304643990e56">c29b413d3731b3005144549543990eab</list_id>
+            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="86fc17314f3202008201798e0210c756">c29b413d3731b3005144549543990eab</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
@@ -33,7 +33,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>category</element>
-            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="089d0733371202002eed304643990e56">c29b413d3731b3005144549543990eab</list_id>
+            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="86fc17314f3202008201798e0210c756">c29b413d3731b3005144549543990eab</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
@@ -48,7 +48,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>description</element>
-            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="089d0733371202002eed304643990e56">c29b413d3731b3005144549543990eab</list_id>
+            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="86fc17314f3202008201798e0210c756">c29b413d3731b3005144549543990eab</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
@@ -63,7 +63,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>developers</element>
-            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="089d0733371202002eed304643990e56">c29b413d3731b3005144549543990eab</list_id>
+            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="86fc17314f3202008201798e0210c756">c29b413d3731b3005144549543990eab</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
@@ -78,7 +78,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>instructions</element>
-            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="089d0733371202002eed304643990e56">c29b413d3731b3005144549543990eab</list_id>
+            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="86fc17314f3202008201798e0210c756">c29b413d3731b3005144549543990eab</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
@@ -93,7 +93,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>latest_version</element>
-            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="089d0733371202002eed304643990e56">c29b413d3731b3005144549543990eab</list_id>
+            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="86fc17314f3202008201798e0210c756">c29b413d3731b3005144549543990eab</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
@@ -108,7 +108,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>owner</element>
-            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="089d0733371202002eed304643990e56">c29b413d3731b3005144549543990eab</list_id>
+            <list_id display_value="x_ssnbv_symcode_package" element="NULL" name="x_ssnbv_symcode_package" parent="NULL" relationship="NULL" sys_domain="global" view="86fc17314f3202008201798e0210c756">c29b413d3731b3005144549543990eab</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
@@ -147,7 +147,7 @@
             <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
             <sys_updated_on>2019-06-03 06:36:50</sys_updated_on>
             <sys_user/>
-            <view display_value="Mobile" name="Mobile">089d0733371202002eed304643990e56</view>
+            <view display_value="Mobile" name="Mobile">86fc17314f3202008201798e0210c756</view>
             <view_name/>
         </sys_ui_list>
     </sys_ui_list>

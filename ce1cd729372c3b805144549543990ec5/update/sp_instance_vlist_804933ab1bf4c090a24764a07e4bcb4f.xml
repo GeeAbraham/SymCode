@@ -85,8 +85,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:48:57</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>버전 기록</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -100,8 +98,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2021-11-11 18:19:07</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>Hītori putanga</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -115,8 +111,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:19:34</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>版本歷史</value>
     </sys_translated_text>
 </record_update>

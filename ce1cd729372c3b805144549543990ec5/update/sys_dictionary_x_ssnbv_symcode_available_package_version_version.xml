@@ -53,7 +53,6 @@
         <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
         <sys_created_on>2019-05-03 14:25:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>6cf221d0dbf4c8104eacfb261d96196a</sys_id>
         <sys_name>Version</sys_name>
         <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
         <sys_policy/>

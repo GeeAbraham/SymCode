@@ -3,10 +3,12 @@
         <active>true</active>
         <admin_overrides>true</admin_overrides>
         <advanced>false</advanced>
+        <applies_to/>
         <condition table="x_ssnbv_symcode_package">latest_versionISNOTEMPTY^active=true^EQ<item endquery="false" field="latest_version" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
             <item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </condition>
+        <decision_type>allow</decision_type>
         <description>Default access control on x_ssnbv_symcode_package</description>
         <local_or_existing>Local</local_or_existing>
         <name>x_ssnbv_symcode_package</name>

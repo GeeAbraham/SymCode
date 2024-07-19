@@ -113,8 +113,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:53:51</sys_updated_on>
         <tablename>question</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>시스템 요구 사항, 라이선스/구독, 플러그인, 스토어 앱 등을 설명합니다.</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -128,8 +126,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:26:16</sys_updated_on>
         <tablename>question</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>描述系統要求、許可證/訂閱、插件、商店應用程序等</value>
     </sys_translated_text>
     <fx_price action="delete_multiple" query="id=3528c4651b60815870f8a868b04bcb1e"/>

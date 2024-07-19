@@ -32,10 +32,6 @@
         <sys_update_name>sys_db_object_507ad31adbb93700c28c7f1daf9619d5</sys_update_name>
         <sys_updated_by>jari.eskelinen@symfoni-esm.com</sys_updated_by>
         <sys_updated_on>2019-10-25 06:52:59</sys_updated_on>
-        <u_all_csip_worksheets/>
-        <u_in_dashboard_csip_worksheets/>
-        <u_key_action_all_benefits_key_benefits_only/>
-        <u_visible_to_customer_all_benefits_customer_visible_benefits_only/>
         <update_access>false</update_access>
         <user_role display_value="x_ssnbv_symcode.symcode_package_builder" name="x_ssnbv_symcode.symcode_package_builder">5a2c5b29372c3b805144549543990efa</user_role>
         <ws_access>true</ws_access>

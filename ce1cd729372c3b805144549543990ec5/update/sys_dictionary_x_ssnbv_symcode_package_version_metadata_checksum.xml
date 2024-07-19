@@ -53,7 +53,6 @@
         <sys_created_by>jari.eskelinen@symfoni-esm.com</sys_created_by>
         <sys_created_on>2019-06-04 11:47:31</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>c1f261d0dbf4c8104eacfb261d961981</sys_id>
         <sys_name>Checksum</sys_name>
         <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
         <sys_policy/>

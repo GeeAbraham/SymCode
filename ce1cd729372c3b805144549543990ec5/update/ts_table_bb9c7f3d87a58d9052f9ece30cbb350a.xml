@@ -4,7 +4,7 @@
         <condition table="x_ssnbv_symcode_package">active=true^EQ<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </condition>
-        <group display_value="SymCode Packages">a18b777987a58d9052f9ece30cbb351c</group>
+        <group display_value="">a18b777987a58d9052f9ece30cbb351c</group>
         <label/>
         <name>x_ssnbv_symcode_package</name>
         <order>100</order>

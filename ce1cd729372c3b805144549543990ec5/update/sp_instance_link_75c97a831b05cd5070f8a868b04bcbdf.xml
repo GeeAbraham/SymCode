@@ -54,8 +54,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:39:47</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>여기에서 패키지의 새 버전을 등록하세요.</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -69,8 +67,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:00:32</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>從這裡註冊包的新版本</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -84,8 +80,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:48:57</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>패키지 버전 등록</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -99,8 +93,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:19:32</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>註冊包的版本</value>
     </sys_translated_text>
 </record_update>

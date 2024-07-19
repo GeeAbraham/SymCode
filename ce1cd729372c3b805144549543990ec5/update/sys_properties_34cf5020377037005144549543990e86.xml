@@ -37,8 +37,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:40:13</sys_updated_on>
         <tablename>sys_properties</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>오류, 경고, 정보, 디버그 또는 추적 등 로그의 자세한 정도를 구성합니다.</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -52,8 +50,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2021-11-11 18:08:08</sys_updated_on>
         <tablename>sys_properties</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>Ka whirihora i te kupu korero rangitaki: he hapa, he whakatupato, he korero, he patuiro, he tohu ranei.</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -67,8 +63,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:02:14</sys_updated_on>
         <tablename>sys_properties</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>配置日誌詳細程度：錯誤、警告、信息、調試或跟踪。</value>
     </sys_translated_text>
 </record_update>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="485dcfff37457f405144549543990e82" label="Available Package Version" max_length="40" name="x_ssnbv_symcode_available_package_version" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Instance" max_length="32" name="instance" reference="x_ssnbv_symcode_instance" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Version" max_length="32" name="version" reference="x_ssnbv_symcode_package_version" type="reference"/>
+        <index name="index">
+            <element name="instance"/>
+        </index>
+        <index name="index2">
+            <element name="version"/>
+        </index>
+    </element>
+</database>

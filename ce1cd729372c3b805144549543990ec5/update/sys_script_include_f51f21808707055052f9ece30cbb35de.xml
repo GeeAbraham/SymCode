@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>true</client_callable>
         <description>STRY0164733 - SymCode: Dynamically display what packages/versions have been installed on an instance without manually selecting 'Refresh' button</description>
+        <mobile_callable>false</mobile_callable>
         <name>SymcodeInstalledtoVersion</name>
+        <sandbox_callable>true</sandbox_callable>
         <script><![CDATA[var SymcodeInstalledtoVersion = Class.create();
 SymcodeInstalledtoVersion.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
@@ -34,14 +36,14 @@ SymcodeInstalledtoVersion.prototype = Object.extendsObject(global.AbstractAjaxPr
         <sys_created_on>2022-04-19 06:57:41</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>f51f21808707055052f9ece30cbb35de</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>SymcodeInstalledtoVersion</sys_name>
         <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
         <sys_update_name>sys_script_include_f51f21808707055052f9ece30cbb35de</sys_update_name>
-        <sys_updated_by>Satish.Garud@fujitsu.com</sys_updated_by>
-        <sys_updated_on>2022-04-22 08:07:13</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-07-12 23:41:38</sys_updated_on>
     </sys_script_include>
 </record_update>

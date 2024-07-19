@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="15d399311b8e02103722982f0a4bcbf7" sys_domain="global" table="x_ssnbv_symcode_package" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>Geevarughese.Abraham@uk.fujitsu.com</sys_created_by>
+            <sys_created_on>2024-05-09 07:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>11d399311b8e02103722982f0a4bcbf8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_ssnbv_symcode_package" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">15d399311b8e02103722982f0a4bcbf7</sys_ui_form>
+            <sys_ui_section caption="Release Instructions" display_value="Release Instructions" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">2cd486353775b3005144549543990e99</sys_ui_section>
+            <sys_updated_by>Geevarughese.Abraham@uk.fujitsu.com</sys_updated_by>
+            <sys_updated_on>2024-05-09 07:08:54</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>Geevarughese.Abraham@uk.fujitsu.com</sys_created_by>
+            <sys_created_on>2024-05-09 07:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>99d399311b8e02103722982f0a4bcbf8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_ssnbv_symcode_package" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">15d399311b8e02103722982f0a4bcbf7</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_ssnbv_symcode_package" sys_domain="774190f01f1310005a3637b8ec8b70ef" view="Default view">72f7cf211bf3099070f8a868b04bcbb9</sys_ui_section>
+            <sys_updated_by>Geevarughese.Abraham@uk.fujitsu.com</sys_updated_by>
+            <sys_updated_on>2024-05-09 07:08:54</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>Geevarughese.Abraham@uk.fujitsu.com</sys_created_by>
+            <sys_created_on>2024-05-09 07:08:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>65d3d9311b8e02103722982f0a4bcb19</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_ssnbv_symcode_package" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">15d399311b8e02103722982f0a4bcbf7</sys_ui_form>
+            <sys_ui_section caption="Description" display_value="Description" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">bec446353775b3005144549543990e23</sys_ui_section>
+            <sys_updated_by>Geevarughese.Abraham@uk.fujitsu.com</sys_updated_by>
+            <sys_updated_on>2024-05-09 07:08:55</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>Geevarughese.Abraham@uk.fujitsu.com</sys_created_by>
+            <sys_created_on>2024-05-09 07:08:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a1d3d9311b8e02103722982f0a4bcb1d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_ssnbv_symcode_package" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">15d399311b8e02103722982f0a4bcbf7</sys_ui_form>
+            <sys_ui_section caption="Activity log" display_value="Activity log" name="x_ssnbv_symcode_package" sys_domain="global" view="Default view">c9e40a353775b3005144549543990e0e</sys_ui_section>
+            <sys_updated_by>Geevarughese.Abraham@uk.fujitsu.com</sys_updated_by>
+            <sys_updated_on>2024-05-09 07:08:55</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_ssnbv_symcode_package</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>Geevarughese.Abraham@uk.fujitsu.com</sys_created_by>
+            <sys_created_on>2024-05-09 07:08:54</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>15d399311b8e02103722982f0a4bcbf7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_ssnbv_symcode_package</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="SymCode" source="x_ssnbv_symcode">ce1cd729372c3b805144549543990ec5</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SymCode">ce1cd729372c3b805144549543990ec5</sys_scope>
+            <sys_update_name>sys_ui_form_sections_15d399311b8e02103722982f0a4bcbf7</sys_update_name>
+            <sys_updated_by>Geevarughese.Abraham@uk.fujitsu.com</sys_updated_by>
+            <sys_updated_on>2024-05-09 07:08:54</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

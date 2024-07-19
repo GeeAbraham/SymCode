@@ -54,8 +54,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:39:47</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>여기에서 인스턴스를 등록하세요.</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -69,8 +67,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2021-11-11 18:06:49</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>Tirotiro me te rapu tuhinga, utu, tuku urupare ranei</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -84,8 +80,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:00:32</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>從這裡註冊您的實例</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -99,8 +93,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:48:57</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>인스턴스 등록</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -114,8 +106,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2021-11-11 18:19:06</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>Tauira</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -129,8 +119,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:19:33</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>註冊您的實例</value>
     </sys_translated_text>
 </record_update>

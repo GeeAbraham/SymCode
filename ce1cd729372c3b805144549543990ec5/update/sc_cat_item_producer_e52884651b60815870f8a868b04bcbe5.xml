@@ -24,6 +24,7 @@
         <ignore_price>true</ignore_price>
         <image/>
         <location/>
+        <make_item_non_conversational>false</make_item_non_conversational>
         <mandatory_attachment>true</mandatory_attachment>
         <meta/>
         <mobile_hide_price>false</mobile_hide_price>
@@ -40,6 +41,7 @@
         <no_proceed_checkout>false</no_proceed_checkout>
         <no_quantity>false</no_quantity>
         <no_quantity_v2>false</no_quantity_v2>
+        <no_save_as_draft>false</no_save_as_draft>
         <no_search>false</no_search>
         <no_wishlist_v2>false</no_wishlist_v2>
         <omit_price>false</omit_price>
@@ -93,7 +95,6 @@
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <workflow/>
-        <no_save_as_draft>false</no_save_as_draft>
     </sc_cat_item_producer>
     <sys_translated_text action="delete_multiple" query="documentkey=e52884651b60815870f8a868b04bcbe5"/>
     <sys_translated_text action="INSERT_OR_UPDATE">

@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
+        <mobile_callable>false</mobile_callable>
         <name>SymCodeUtil</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[var SymCodeUtil = Class.create();
 SymCodeUtil.prototype = {
 	TABLE_INSTANCE: 'x_ssnbv_symcode_instance',

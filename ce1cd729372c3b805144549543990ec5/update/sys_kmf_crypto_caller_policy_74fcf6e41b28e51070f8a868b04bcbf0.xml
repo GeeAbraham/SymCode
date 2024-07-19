@@ -3,7 +3,7 @@
         <active>true</active>
         <approval_type/>
         <check_script_hash>false</check_script_hash>
-        <crypto_module display_value="sn_azure_ad_spoke.glide_encrypter">9ff03e7b5b0320100c50534be281c7ed</crypto_module>
+        <crypto_module display_value="">9ff03e7b5b0320100c50534be281c7ed</crypto_module>
         <crypto_spec/>
         <granular_operation/>
         <identity_group_alias/>

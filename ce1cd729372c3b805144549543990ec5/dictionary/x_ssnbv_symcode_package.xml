@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="928d17e9372c3b805144549543990ec1" label="Package" max_length="40" name="x_ssnbv_symcode_package" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Specify Category" max_length="40" name="specify_category" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="Describe system requirements, licences/subscriptions, plugins, store app etc" label="Requirements" mandatory="true" max_length="65000" name="requirements" type="html"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false,tree_picker=true" hint="Please specify the category" label="Category" mandatory="true" max_length="40" name="category" reference="x_ssnbv_symcode_choice" reference_qual="table=x_ssnbv_symcode_package^element=category^EQ" reference_qual_condition="table=x_ssnbv_symcode_package^element=category^EQ" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" hint="Provide description of package" label="Description" mandatory="true" max_length="65000" name="description" type="html"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true,edge_encryption_enabled=true" label="Developers" max_length="4000" name="developers" reference="sys_user" type="glide_list"/>
+        <element attributes="edge_encryption_enabled=true" label="Effort actual (h)" max_length="20" name="effort_actual" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" label="Effort billable (h)" max_length="20" name="effort_billable" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" hint="Provide the release instructions of the package here" label="Release Instructions" mandatory="true" max_length="65000" name="instructions" type="html"/>
+        <element attributes="edge_encryption_enabled=true" label="Latest version" max_length="32" name="latest_version" read_only="true" reference="x_ssnbv_symcode_package_version" type="reference"/>
+        <element display="true" hint="Please provide descriptive name of package" label="Name" mandatory="true" max_length="250" name="name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Owner" mandatory="true" max_length="1024" name="owner" reference="sys_user" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="glide_list"/>
+        <element attributes="pdf_cell_type=image,edge_encryption_enabled=true" label="Picture" max_length="40" name="picture" type="user_image"/>
+        <element attributes="ref_qual_elements=category,ref_sequence=order,readonly_clickthrough=true,edge_encryption_enabled=true,ref_auto_completer=AJAXReferenceChoice" choice="1" dependent="category" dependent_on_field="category" label="Subcategory" max_length="40" name="subcategory" type="choice" use_dependent_field="true">
+            <choice>
+                <element dependent_value="process" inactive_on_update="false" label="Problem management" value="prb"/>
+                <element dependent_value="process" inactive_on_update="false" label="Base system setup" value="bss"/>
+                <element dependent_value="process" inactive_on_update="false" label="Tonoa te whakakii" language="mi" value="rff"/>
+                <element dependent_value="process" inactive_on_update="false" label="請求完成" language="zh-TW" value="rff"/>
+                <element dependent_value="process" inactive_on_update="false" label="更換管理層" language="zh-TW" value="chg"/>
+                <element inactive_on_update="false" label="Configuration du système de base" language="fr" value="bss"/>
+                <element dependent_value="process" inactive_on_update="false" label="問題管理" language="zh-TW" value="prb"/>
+                <element dependent_value="process" inactive_on_update="false" label="Request fullfilment" value="rff"/>
+                <element dependent_value="process" inactive_on_update="false" label="Change management" value="chg"/>
+                <element dependent_value="process" inactive_on_update="false" label="事件管理" language="zh-TW" value="inc"/>
+                <element dependent_value="process" inactive_on_update="false" label="Tatūnga pūnaha turanga" language="mi" value="bss"/>
+                <element dependent_value="process" inactive_on_update="false" label="Whakahaere Huri" language="mi" value="chg"/>
+                <element dependent_value="process" inactive_on_update="false" label="Problemų valdymas" language="lt" value="prb"/>
+                <element dependent_value="process" inactive_on_update="false" label="Incident management" value="inc"/>
+                <element dependent_value="process" inactive_on_update="false" label="基礎系統設置" language="zh-TW" value="bss"/>
+                <element inactive_on_update="false" label="Gestion des connaissances" language="fr" value="kb"/>
+                <element dependent_value="process" inactive_on_update="false" label="Whakahaerenga aitua" language="mi" value="inc"/>
+                <element inactive_on_update="false" label="Gestion des problèmes" language="fr" value="prb"/>
+                <element inactive_on_update="false" label="Gestion du changement" language="fr" value="chg"/>
+                <element inactive_on_update="false" label="La gestion des incidents" language="fr" value="inc"/>
+                <element inactive_on_update="false" label="Demande de fullfilment" language="fr" value="rff"/>
+                <element dependent_value="process" inactive_on_update="false" label="Knowledge management" value="kb"/>
+                <element dependent_value="process" inactive_on_update="false" label="Whakahaere Raruraru" language="mi" value="prb"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Build version" mandatory="true" max_length="32" name="build_version" reference="x_ssnbv_symcode_servicenow_version" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Technical" max_length="32" name="doc_tech" reference="kb_knowledge" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Marketing" max_length="32" name="doc_marketing" reference="kb_knowledge" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" choice_field="approval" choice_table="task" default="not requested" label="Approval" max_length="40" name="approval" type="choice">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Design" max_length="32" name="doc_design" reference="kb_knowledge" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="User guide" max_length="32" name="doc_user" reference="kb_knowledge" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,no_sort=true,slushbucket_ref_no_expand=true" label="Compatibility" max_length="1024" name="compatibility" reference="x_ssnbv_symcode_servicenow_version" type="glide_list"/>
+        <element attributes="edge_encryption_enabled=true" hint="Please provide key features of package" label="Key Features" mandatory="true" max_length="65000" name="key_features" type="html"/>
+        <element attributes="edge_encryption_enabled=true" label="Is Email Receiver" max_length="40" name="is_email_receiver" type="boolean"/>
+        <index name="index">
+            <element name="build_version"/>
+        </index>
+        <index name="index2">
+            <element name="category"/>
+        </index>
+        <index name="index3">
+            <element name="doc_design"/>
+        </index>
+        <index name="index4">
+            <element name="doc_marketing"/>
+        </index>
+        <index name="index5">
+            <element name="doc_tech"/>
+        </index>
+        <index name="index6">
+            <element name="doc_user"/>
+        </index>
+        <index name="index7">
+            <element name="latest_version"/>
+        </index>
+        <index name="index8">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>

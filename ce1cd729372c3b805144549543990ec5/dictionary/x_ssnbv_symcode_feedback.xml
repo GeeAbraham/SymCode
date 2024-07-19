@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="796fdd1e1bb34d9070f8a868b04bcb42" label="Feedback" max_length="40" name="x_ssnbv_symcode_feedback" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Package" max_length="32" name="package" reference="x_ssnbv_symcode_package" type="reference"/>
+        <element label="Comment" max_length="4000" name="comment" type="string"/>
+        <element choice="1" label="Useful" max_length="40" name="useful" type="string">
+            <choice>
+                <element inactive_on_update="false" label="No" sequence="20" value="no"/>
+                <element inactive_on_update="false" label="Yes" sequence="10" value="yes"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Rating" max_length="40" name="rating" type="integer"/>
+        <element label="Work notes" max_length="4000" name="work_notes" type="journal_input"/>
+        <index name="index">
+            <element name="package"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

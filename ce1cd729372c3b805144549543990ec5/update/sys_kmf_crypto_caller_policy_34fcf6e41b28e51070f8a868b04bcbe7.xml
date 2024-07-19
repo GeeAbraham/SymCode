@@ -3,7 +3,7 @@
         <active>true</active>
         <approval_type/>
         <check_script_hash>false</check_script_hash>
-        <crypto_module display_value="sn_msteams_ahv2.glide_encrypter">a5205671c30130105e0599ccc840dd7b</crypto_module>
+        <crypto_module display_value="">a5205671c30130105e0599ccc840dd7b</crypto_module>
         <crypto_spec/>
         <granular_operation/>
         <identity_group_alias/>

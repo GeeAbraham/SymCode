@@ -39,8 +39,6 @@
         <message_html><![CDATA[<p>${mail_script:symcode.packages.installedToInstance}</p>]]></message_html>
         <message_list/>
         <message_text/>
-        <messaging_channels/>
-        <messaging_content/>
         <name>symcode installed packages to instances</name>
         <omit_watermark>false</omit_watermark>
         <order>100</order>

@@ -113,8 +113,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:54:01</sys_updated_on>
         <tablename>question</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>여기에 설명을 입력하세요.</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -128,8 +126,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:26:27</sys_updated_on>
         <tablename>question</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>在此處提供描述</value>
     </sys_translated_text>
     <fx_price action="delete_multiple" query="id=c0fc6f2f1b60015070f8a868b04bcbc5"/>

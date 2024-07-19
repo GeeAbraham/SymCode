@@ -58,8 +58,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:48:53</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>설치된 버전</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -73,8 +71,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2021-11-11 18:19:01</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>Nga putanga kua whakauruhia</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -88,8 +84,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:19:25</sys_updated_on>
         <tablename>sp_instance</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>已安裝的版本</value>
     </sys_translated_text>
 </record_update>

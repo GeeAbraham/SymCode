@@ -113,8 +113,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2023-10-10 10:54:03</sys_updated_on>
         <tablename>question</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>패키지 설명 제공</value>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
@@ -128,8 +126,6 @@
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2022-05-13 19:26:30</sys_updated_on>
         <tablename>question</tablename>
-        <u_document_sys_id/>
-        <u_tmp/>
         <value>提供包裝說明</value>
     </sys_translated_text>
     <fx_price action="delete_multiple" query="id=f528c4651b60815870f8a868b04bcb19"/>
